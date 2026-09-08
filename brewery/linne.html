@@ -1,0 +1,815 @@
+<title>LINNÉ - くらそー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1eee3;
+    --surface: #faf8f1;
+    --ink: #23262b;
+    --indigo: #2c4a6e;
+    --indigo-deep: #1b3350;
+    --seal: #a8341f;
+    --muted: #726c5e;
+    --line: #ded8c5;
+    --day-shade: #eaebef;
+    --shadow: 0 1px 2px rgba(35,38,43,0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7;
+    font-variant-numeric: tabular-nums;
+  }
+  a { color: var(--indigo); }
+
+  .stripe {
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg, var(--indigo) 0 28px, var(--seal) 28px 32px, var(--indigo) 32px 60px, var(--paper) 60px 64px
+    );
+    opacity: 0.9;
+  }
+
+  header.hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 1.5rem;
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--seal);
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Hachi Maru Pop", cursive;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    margin: 0.4rem 0 0.75rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .hero-title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .hero-title-link:hover {
+    color: var(--indigo);
+  }
+  .back-to-top {
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+  }
+  .back-to-top a {
+    text-decoration: none;
+  }
+  .back-to-top a:hover {
+    text-decoration: underline;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  .lede-note {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 0.75rem;
+  }
+  .chips-label {
+    max-width: 760px;
+    margin: 0.25rem auto 0;
+    padding: 0 1.5rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  nav.chips {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--indigo-deep);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+  }
+  .chip:hover { border-color: var(--indigo); }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .timeline-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .panel-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .updated-at {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: -0.25rem 0 1.25rem;
+  }
+
+  .badge-category {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--indigo-deep);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  .entry-brewery {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--indigo);
+    text-decoration: none;
+    margin-right: 0.5rem;
+  }
+  .entry-brewery:hover { text-decoration: underline; }
+
+  .chips-archive {
+    padding-top: 0;
+  }
+  .chip-archive {
+    background: transparent;
+  }
+
+  .archive-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .archive-panel > h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  section.archive-category {
+    margin-bottom: 1.5rem;
+  }
+  section.archive-category h3 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .archive-count {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .brewery-list-heading {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.2rem;
+    margin: 0 0 1rem;
+  }
+
+  .badge-new {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    background: var(--seal);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge-cal {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .badge-draft {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: var(--seal);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .badge-tentative {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  .draft-banner {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.25rem;
+    border-radius: 10px;
+    background: var(--seal);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .badge-unofficial {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px dashed var(--muted);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .calendar-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .calendar-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+  }
+  .cal-brewery-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-brewery-select {
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+  }
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cal-nav-btn {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+  }
+  .cal-nav-btn:hover:not(:disabled) { border-color: var(--indigo); }
+  .cal-nav-btn:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .cal-nav-label {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    min-width: 6em;
+    text-align: center;
+  }
+  .cal-months {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .cal-months[hidden] { display: none; }
+  .cal-grid {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cal-dow-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    background: var(--paper);
+  }
+  .cal-dow {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    min-width: 0;
+  }
+  .cal-week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: auto minmax(20px, auto);
+    grid-auto-rows: minmax(20px, auto);
+    border-bottom: 1px solid var(--line);
+  }
+  .cal-week:last-child { border-bottom: none; }
+  .cal-daynum-cell {
+    min-width: 0;
+    padding: 0.3rem 0.3rem 0.2rem;
+    border-right: 1px solid var(--line);
+  }
+  .cal-daynum-cell-last { border-right: none; }
+  .cal-day-bg {
+    background: var(--day-shade);
+    pointer-events: none;
+  }
+  .cal-vline {
+    width: 1px;
+    justify-self: end;
+    background: var(--line);
+    pointer-events: none;
+  }
+  .cal-vline-outside { opacity: 0.35; }
+  .cal-day-outside { opacity: 0.35; }
+  .cal-daynum {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .cal-day-today .cal-daynum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--indigo-deep);
+    color: var(--paper);
+  }
+  .cal-bar {
+    display: block;
+    min-width: 0;
+    margin: 0 2px 2px;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
+  .cal-bar-continues-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    margin-left: 0;
+  }
+  .cal-bar-continues-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    margin-right: 0;
+  }
+  .cal-bar-overflow {
+    background: transparent;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    font-weight: 400;
+    text-align: center;
+  }
+  .cal-bar-overflow:hover { background: transparent; }
+
+  .agenda-heading {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  ul.agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .agenda-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-date {
+    flex: 0 0 9em;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+  .agenda-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .agenda-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .agenda-title:hover { color: var(--indigo); }
+  .agenda-breweries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .agenda-link {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--indigo);
+    text-decoration: none;
+    width: fit-content;
+  }
+  .agenda-link:hover { text-decoration: underline; }
+  .agenda-summary {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .agenda-empty { color: var(--muted); }
+
+  section.brewery {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--indigo);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  .brewery-head {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .brewery-name-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.85rem;
+  }
+  .brewery-name-row h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .brewery-location {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .brewery-official-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+  }
+  .brewery-official-link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .brewery-official-link:hover { text-decoration: underline; }
+
+  .link-icon {
+    display: block;
+  }
+  .brewery-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.6rem 0 0;
+  }
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    color: var(--indigo-deep);
+    background: var(--paper);
+  }
+  .social-icon:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .brewery-personal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.5rem 0 0;
+  }
+  .personal-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .personal-icon-link .link-icon {
+    color: var(--muted);
+  }
+  .personal-icon-link:hover,
+  .personal-icon-link:hover .link-icon {
+    color: var(--indigo);
+  }
+  .personal-label {
+    white-space: nowrap;
+  }
+
+  ul.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.entry {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px dashed var(--line);
+    scroll-margin-top: 1rem;
+  }
+  li.entry:last-child { border-bottom: none; }
+  ul.entries.is-collapsed li:nth-child(n+6) {
+    display: none;
+  }
+  .entries-toggle {
+    display: inline-block;
+    margin: 0.6rem 0 0.2rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    font-family: inherit;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .entries-toggle:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .entry-date {
+    flex: 0 0 7.5em;
+    color: var(--muted);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .entry-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .entry-title:hover { color: var(--indigo); }
+  .entry-source {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--indigo-deep);
+    margin-top: 0.3rem;
+  }
+  .entry-summary {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .no-entries {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+</style>
+
+<div class="stripe"></div>
+
+<header class="hero">
+  <div class="hero-top">
+    <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
+    <span class="badge-unofficial">非公式ファンサイト</span>
+  </div>
+  <h1><a class="hero-title-link" href="../index.html">くらそー</a></h1>
+  <p class="lede">
+    日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」(<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会</a>より引用)。
+    このページでは、クラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。
+  </p>
+  <p class="lede-note">
+    本当は協会加盟蔵すべての情報を集めたかったのですが、一人で追いきれず、まずは管理人が普段よく飲んでいる6蔵から情報収集を始めています。加盟蔵全体の一覧は<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">協会公式サイト</a>の会員一覧をご覧ください。
+  </p>
+</header>
+
+<div class="chips-label">酒蔵(協会HP掲載順)</div>
+<nav class="chips">
+<a class="chip" href="../brewery/haccoba.html">haccoba</a>
+<a class="chip" href="../brewery/libron.html">LIBROM</a>
+<a class="chip" href="../brewery/ine_to_agave.html">稲とアガベ</a>
+<a class="chip" href="../brewery/happy_taro.html">ハッピー太郎醸造所</a>
+<a class="chip" href="../brewery/pukupuku.html">ぷくぷく醸造</a>
+<a class="chip" href="../brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label">カテゴリ</div>
+<nav class="chips chips-archive">
+<a class="chip chip-archive" href="../archive/new_release.html">新商品・新酒</a>
+<a class="chip chip-archive" href="../archive/event.html">イベント・試飲会</a>
+<a class="chip chip-archive" href="../archive/brewery_news.html">酒蔵ニュース</a>
+</nav>
+
+<main>
+<p class="back-to-top"><a href="../index.html">← トップに戻る</a></p>
+      <section class="brewery" id="linne">
+        <div class="brewery-head">
+          <div class="brewery-name-row">
+            <h2>LINNÉ</h2>
+            <span class="brewery-location">京都府京都市</span>
+            <div class="brewery-official-links"><a class="brewery-official-link" href="https://linne-co.jp/" target="_blank" rel="noopener noreferrer">公式サイト ↗</a><a class="brewery-official-link" href="https://door.linne-co.jp/collections/all" target="_blank" rel="noopener noreferrer">オンラインストア ↗</a></div>
+          </div>
+          <div class="brewery-social"><a class="social-icon" href="https://www.instagram.com/linne.sake" target="_blank" rel="noopener noreferrer" title="Instagram"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a class="social-icon" href="http://www.youtube.com/@linne_sake" target="_blank" rel="noopener noreferrer" title="YouTube"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a class="social-icon" href="https://open.spotify.com/show/50kIvV2yPjPmezFu81chGc" target="_blank" rel="noopener noreferrer" title="Spotify"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a><a class="social-icon" href="https://note.com/shoya_imai" target="_blank" rel="noopener noreferrer" title="note"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/></svg></a><a class="social-icon" href="https://door.linne-co.jp/" target="_blank" rel="noopener noreferrer" title="ニュースレター"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.2"/></svg></a></div>
+          <div class="brewery-personal"><a class="personal-icon-link" href="https://x.com/shoya_imai" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg><span class="personal-label">(代表)</span></a></div>
+        </div>
+        <ul class="entries">
+        <li class="entry" id="linne-e0">
+          <div class="entry-date">2026年8月29日<span class="badge-new">NEW</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月26日〜31日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2093594693787361637" target="_blank" rel="noopener noreferrer">「800 栗 -2025-」期間限定EC予約販売を開始</a>
+            <span class="entry-source"><span class="badge-category">新商品・新酒</span>X(旧Twitter)</span>
+            <p class="entry-summary">LINNÉ最高峰酒シリーズ「800」の新作「800 栗 -2025-」(京丹波栗を丹念に麹にし栗皮まで抽出、京品種もち米も使用)の期間限定・数量限定オンライン予約販売を開始。ターム1は8/26〜31、発送は9/3〜予定(ターム2は10月以降)。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e1">
+          <div class="entry-date">2026年8月26日<span class="badge-new">NEW</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月26日〜28日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://web.hh-online.jp/hanshin/contents/str/img/20260826/event.pdf" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹」で麹作りデモ(8/26〜28)を実施</a>
+            <span class="entry-source"><span class="badge-category">イベント・試飲会</span>阪神百貨店「発酵マーケット麹/KOJI」イベントスケジュール(PDF)</span>
+            <p class="entry-summary">阪神百貨店梅田本店「第5回『日本人の発酵史』小倉ヒラク著発刊記念 発酵マーケット麹/KOJI」にて、「僕らはみんな麹を作ってるチーム」による麹作りデモを8/26(水)〜28(金)の3日間で実施。8/26:①製麹機 ②冷ます ③菌付ける。8/27:④混ぜる。8/28:⑤麹できあがる ⑥甘酒仕込む。参加発酵プレイヤーはLINNÉ(今井翔也)、みつか坊主(斉藤光典)ほか。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e2">
+          <div class="entry-date">2026年8月26日<span class="badge-new">NEW</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2092381249344332048" target="_blank" rel="noopener noreferrer">「Letter from LINNÉ」で京都・五条坂の蔵づくり始動(地鎮祭)を報告</a>
+            <span class="entry-source"><span class="badge-category">酒蔵ニュース</span>X(旧Twitter)</span>
+            <p class="entry-summary">LINNÉ公式ニュースレター「Letter from LINNÉ」にて、京都・清水五条坂の新醸造所建設に向けた「五条若宮陶器祭」出展や地鎮祭の実施を報告。蔵づくりが本格的に始動したことを伝えるエッセイを配信。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e3">
+          <div class="entry-date">2026年8月16日</div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2088842977388986445" target="_blank" rel="noopener noreferrer">「Voice of LINNÉ」#42で五条坂の醸造所計画と「800 薩摩芋」仕込み再開を発表</a>
+            <span class="entry-source"><span class="badge-category">酒蔵ニュース</span>X(旧Twitter)</span>
+            <p class="entry-summary">Podcast「Voice of LINNÉ」最新回(#42)を公開。京都・五条坂での醸造所建設(2027年春始動、9月より本格着工、醸造所・レストラン・陶芸体験が融合する空間を計画)や若手育成の「コンパニョナージュ構想」を語るとともに、人気商品「800 薩摩芋」の仕込み再開を発表。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e4">
+          <div class="entry-date">2026年8月8日<span class="badge-cal" title="カレンダーに掲載">📅 2026年8月7日〜10日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2086101442847449165" target="_blank" rel="noopener noreferrer">「五条若宮陶器祭2026」で試飲を提供</a>
+            <span class="entry-source"><span class="badge-category">イベント・試飲会</span>X(旧Twitter)</span>
+            <p class="entry-summary">京都・清水五条坂で開催の陶器市「五条若宮陶器祭2026」にて、陶芸家・清水愛子氏のギャラリー/工房でLINNÉの試飲を提供。醸造所建設予定地から徒歩5分の場所での出展。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e5">
+          <div class="entry-date">2026年8月3日<span class="badge-cal" title="カレンダーに掲載">📅 2026年8月6日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2084233195894259914" target="_blank" rel="noopener noreferrer">「SAKE LEADERS SUMMIT 2026」に登壇</a>
+            <span class="entry-source"><span class="badge-category">イベント・試飲会</span>X(旧Twitter)</span>
+            <p class="entry-summary">東京ビッグサイトで開催の日本酒業界カンファレンス「SAKE LEADERS SUMMIT 2026」(8/4〜6)のDay3セッション「造り手のネクストキャリアと後継の育成」に、LINNÉ代表・今井翔也氏が日本杜氏組合連合会会長・石川達也氏、出雲イトナミブルワリー代表・小島達也氏とともに登壇。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e6">
+          <div class="entry-date">2026年8月1日<span class="badge-cal" title="カレンダーに掲載">📅 2026年8月1日〜6日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/shoya_imai/status/2083512589943034138" target="_blank" rel="noopener noreferrer">WAKAZEとのコラボボタニカルジン「ORIENTAL ANNIVERSARY GIN」を数量限定発売</a>
+            <span class="entry-source"><span class="badge-category">新商品・新酒</span>X(旧Twitter)</span>
+            <p class="entry-summary">LINNÉ創業2周年とWAKAZE創業10周年を記念した「WAKAZE×LINNÉ周年記念酒」の酒粕を、稲とアガベの早苗饗蒸留所(秋田・男鹿)で蒸留したボタニカルジン「ORIENTAL ANNIVERSARY GIN」を製造217本限定で発売。オンラインストアで数量限定予約販売(8/6正午締切)。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e7">
+          <div class="entry-date">2026年7月21日<span class="badge-cal" title="カレンダーに掲載">📅 2026年8月30日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/nishimura_sake/status/2079410751119491202" target="_blank" rel="noopener noreferrer">「稲とアガベ・LINNÉ・ハッピー太郎」試飲会&amp;セミナーを京都で開催</a>
+            <span class="entry-source"><span class="badge-category">イベント・試飲会</span>X(旧Twitter)</span>
+            <p class="entry-summary">にしむら酒店主催、稲とアガベ・風の森・あべ・LINNÉ・ハッピー太郎が集結する試飲会&amp;セミナーを京都産業会館ホールで開催。造り手の想いや背景を知るセミナー付き、予約制。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e8">
+          <div class="entry-date">2026年7月2日<span class="badge-cal" title="カレンダーに掲載">📅 2026年9月30日〜2026年10月1日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.sakejump.com/ja/events/2026tokyo" target="_blank" rel="noopener noreferrer">「若手の夜明け2026 TOKYO」に出店(第1期 9/30〜10/1)</a>
+            <span class="entry-source"><span class="badge-category">イベント・試飲会</span>公式サイト</span>
+            <p class="entry-summary">大手町仲通り・内神田仲通り広場(東京)で開催される日本酒フェス「若手の夜明け2026 TOKYO」。シール杯売方式(約45mlずつ)で試飲でき、酒蔵エリア・フードエリア・物販・有料ガイドツアー等を展開。国内50蔵(25蔵×2期入替制)+海外蔵参加予定。第1期(9/30〜10/1)の出店。</p>
+          </div>
+        </li>
+
+        <li class="entry" id="linne-e9">
+          <div class="entry-date">2026年4月16日</div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000022.000147935.html" target="_blank" rel="noopener noreferrer">WAKAZE創業10周年×LINNÉ創業2周年 記念酒を発売</a>
+            <span class="entry-source"><span class="badge-category">新商品・新酒</span>プレスリリース(PR TIMES)</span>
+            <p class="entry-summary">WAKAZEの原点レシピ「FONIA」を復刻した限定醸造酒。京都拠点のLINNÉ（2024年4月創業）とWAKAZEの共同企画で2026年4月16日に一般販売開始。</p>
+          </div>
+        </li>
+        </ul>
+      </section>
+</main>
+
+<footer>
+  <p>
+    本ページは有志が個人的に運営する非公式のファンページです。掲載中の酒蔵・企業・団体
+    （株式会社モトックス、クラフトサケブリュワリー協会を含む）とは一切提携・関連しておらず、
+    公式の見解を示すものでもありません。「クラフトサケ」は株式会社モトックスの登録商標であり、
+    本ページではお酒のジャンルを指す一般的な呼び方として使用しています。
+  </p>
+  <p>
+    掲載情報は各蔵の公式サイト・プレスリリース・報道記事をもとに手作業で収集しており、
+    正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
+    ご確認ください。
+  </p>
+</footer>
