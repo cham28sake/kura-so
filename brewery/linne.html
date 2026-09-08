@@ -625,22 +625,20 @@
     scroll-margin-top: 1rem;
   }
   li.entry:last-child { border-bottom: none; }
-  ul.entries.is-collapsed li:nth-child(n+6) {
-    display: none;
-  }
-  .entries-toggle {
-    display: inline-block;
+  .entries-more {
     margin: 0.6rem 0 0.2rem;
+  }
+  .entries-more-link {
+    display: inline-block;
     padding: 0.35rem 0.9rem;
     font-size: 0.8rem;
-    font-family: inherit;
     color: var(--indigo-deep);
     background: transparent;
     border: 1px solid var(--line);
     border-radius: 999px;
-    cursor: pointer;
+    text-decoration: none;
   }
-  .entries-toggle:hover {
+  .entries-more-link:hover {
     border-color: var(--indigo);
     color: var(--indigo);
   }
