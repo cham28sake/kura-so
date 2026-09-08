@@ -60,15 +60,25 @@
   .hero-title-link:hover {
     color: var(--indigo);
   }
-  .back-to-top {
-    margin: 0 0 1rem;
-    font-size: 0.85rem;
+  .page-breadcrumb {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
   }
-  .back-to-top a {
+  .page-breadcrumb a {
+    color: var(--indigo-deep);
+    font-weight: 700;
     text-decoration: none;
   }
-  .back-to-top a:hover {
+  .page-breadcrumb a:hover {
     text-decoration: underline;
+  }
+  .page-breadcrumb span {
+    color: var(--muted);
   }
   .lede {
     color: var(--muted);
