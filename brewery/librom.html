@@ -230,14 +230,19 @@
   }
 
   .badge-new {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--paper);
     background: var(--seal);
-    padding: 0.1rem 0.4rem;
-    border-radius: 4px;
+    padding: 0.03rem 0.3rem;
+    border-radius: 3px;
     white-space: nowrap;
+  }
+  .entry-date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
   }
   .badge-cal {
     font-size: 0.65rem;
@@ -731,7 +736,7 @@
         </div>
         <ul class="entries">
         <li class="entry" id="librom-e0">
-          <div class="entry-date">2026年7月2日<span class="badge-cal" title="カレンダーに掲載">📅 2026年9月30日〜2026年10月1日</span></div>
+          <div class="entry-date"><span class="entry-date-row">2026年7月2日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月30日〜2026年10月1日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://www.sakejump.com/ja/events/2026tokyo" target="_blank" rel="noopener noreferrer">「若手の夜明け2026 TOKYO」に出店(第1期 9/30〜10/1)</a>
             <span class="entry-source"><span class="badge-category">イベント・試飲会</span>公式サイト</span>
@@ -740,7 +745,7 @@
         </li>
 
         <li class="entry" id="librom-e1">
-          <div class="entry-date">2026年4月20日</div>
+          <div class="entry-date"><span class="entry-date-row">2026年4月20日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://jp.sake-times.com/special/press/p_202603_craft-sake-week-2026" target="_blank" rel="noopener noreferrer">「CRAFT SAKE WEEK 2026」六本木ヒルズに出店</a>
             <span class="entry-source"><span class="badge-category">イベント・試飲会</span>SAKETIMES</span>
