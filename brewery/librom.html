@@ -169,24 +169,29 @@
   .badge-category {
     display: inline-block;
     font-size: 0.68rem;
+    font-weight: 400;
     color: var(--indigo-deep);
-    background: rgba(44, 74, 110, 0.32);
-    padding: 0.05rem 0.45rem;
+    background: rgba(44, 74, 110, 0.1);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
     border-radius: 4px;
     margin-right: 0.5rem;
+    text-decoration: none;
   }
+  .badge-category:hover { text-decoration: underline; }
   .entry-brewery {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
     margin-right: 0.5rem;
   }
-  .entry-brewery:hover { text-decoration: underline; }
+  .entry-brewery:hover { border-color: var(--indigo); }
 
   .chips-archive {
     padding-top: 0;
@@ -519,13 +524,14 @@
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
   }
-  .agenda-link:hover { text-decoration: underline; }
+  .agenda-link:hover { border-color: var(--indigo); }
   .agenda-source-link {
     font-size: 0.74rem;
     color: var(--indigo-deep);
@@ -758,7 +764,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月2日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月30日〜10月1日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://www.sakejump.com/ja/events/2026tokyo" target="_blank" rel="noopener noreferrer">「若手の夜明け2026 TOKYO」に出店(第1期 9/30〜10/1)</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://www.sakejump.com/ja/events/2026tokyo" target="_blank" rel="noopener noreferrer">公式サイト</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.sakejump.com/ja/events/2026tokyo" target="_blank" rel="noopener noreferrer">公式サイト</a></span>
             <p class="entry-summary">大手町仲通り・内神田仲通り広場(東京)で開催される日本酒フェス「若手の夜明け2026 TOKYO」。シール杯売方式(約45mlずつ)で試飲でき、酒蔵エリア・フードエリア・物販・有料ガイドツアー等を展開。国内50蔵(25蔵×2期入替制)+海外蔵参加予定。第1期(9/30〜10/1)の出店。</p>
           </div>
         </li>
@@ -767,7 +773,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年4月20日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://jp.sake-times.com/special/press/p_202603_craft-sake-week-2026" target="_blank" rel="noopener noreferrer">「CRAFT SAKE WEEK 2026」六本木ヒルズに出店</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://jp.sake-times.com/special/press/p_202603_craft-sake-week-2026" target="_blank" rel="noopener noreferrer">SAKETIMES</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://jp.sake-times.com/special/press/p_202603_craft-sake-week-2026" target="_blank" rel="noopener noreferrer">SAKETIMES</a></span>
             <p class="entry-summary">全国130蔵が集う国内最大級の日本酒イベントに出店。4/20(月)のテーマは「継承と革新、SAKEムーブメントの日」。</p>
           </div>
         </li>

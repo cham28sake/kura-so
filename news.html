@@ -169,24 +169,29 @@
   .badge-category {
     display: inline-block;
     font-size: 0.68rem;
+    font-weight: 400;
     color: var(--indigo-deep);
-    background: rgba(44, 74, 110, 0.32);
-    padding: 0.05rem 0.45rem;
+    background: rgba(44, 74, 110, 0.1);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
     border-radius: 4px;
     margin-right: 0.5rem;
+    text-decoration: none;
   }
+  .badge-category:hover { text-decoration: underline; }
   .entry-brewery {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
     margin-right: 0.5rem;
   }
-  .entry-brewery:hover { text-decoration: underline; }
+  .entry-brewery:hover { border-color: var(--indigo); }
 
   .chips-archive {
     padding-top: 0;
@@ -519,13 +524,14 @@
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
   }
-  .agenda-link:hover { text-decoration: underline; }
+  .agenda-link:hover { border-color: var(--indigo); }
   .agenda-source-link {
     font-size: 0.74rem;
     color: var(--indigo-deep);
@@ -751,7 +757,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月10日〜12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第1週 9/10〜12)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             <p class="entry-summary">haccoba 内神田醸造所(通称「haccoba {kankan}」)の9月プレオープン詳細を案内。9/10・11・12、9/17・18・19、9/24・25・26の週3日×3週で営業(前半16:30-19:30/後半19:30-22:30の二部制)、10月グランドオープン予定。初週(9/10-12)の予約を一般開放、予約はGoogleフォームで受付。</p>
           </div>
         </li>
@@ -760,7 +766,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月17日〜19日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第2週 9/17〜19)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             <p class="entry-summary">haccoba 内神田醸造所(通称「haccoba {kankan}」)の9月プレオープン詳細を案内。9/10・11・12、9/17・18・19、9/24・25・26の週3日×3週で営業(前半16:30-19:30/後半19:30-22:30の二部制)、10月グランドオープン予定。</p>
           </div>
         </li>
@@ -769,7 +775,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月24日〜26日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第3週 9/24〜26)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             <p class="entry-summary">haccoba 内神田醸造所(通称「haccoba {kankan}」)の9月プレオープン詳細を案内。9/10・11・12、9/17・18・19、9/24・25・26の週3日×3週で営業(前半16:30-19:30/後半19:30-22:30の二部制)、10月グランドオープン予定。</p>
           </div>
         </li>
@@ -778,7 +784,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月11日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">レストラン「8go」(東京)とのペアリングディナーを開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">東京のレストラン「8go」と稲とアガベによる特別なペアリングディナーを開催。代表・岡住修兵も参加し、料理とクラフトサケの組み合わせや酒造りの背景を紹介。全国ツアー「日本酩酊計画2026」(7/28〜9/30)の一環。予約はTableCheckで受付。</p>
           </div>
         </li>
@@ -787,7 +793,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">「吟の酒きぶね」(盛岡)で店頭販売</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。岩手・盛岡の「吟の酒きぶね」で稲とアガベの店頭販売を実施(13:30〜15:30)。お酒の特徴や楽しみ方を紹介。同日夕方には「MINE」でもイベントを開催。</p>
           </div>
         </li>
@@ -796,7 +802,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097227151456284807" target="_blank" rel="noopener noreferrer">「MINE」(盛岡)でイベント開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227151456284807" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227151456284807" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。岩手・盛岡の「MINE」で、岩手・紫波の「酒と学校」も参加するイベントを開催(16:00〜20:00)。17:00〜17:30には代表・岡住修兵によるセミナーも実施。参加費2,000円(ワンプレート+お酒2杯付き)。基本予約不要。追加注文はキャッシュオン。</p>
           </div>
         </li>
@@ -805,7 +811,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月15日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097227243097575860" target="_blank" rel="noopener noreferrer">「ビームス ライフ 横浜」でクラフトサケを提供</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227243097575860" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227243097575860" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。「ビームス ライフ 横浜」1Fフードカウンターにて、クラフトサケ7種類の提供・ボトル販売を実施(16:00〜20:00)。代表・岡住修兵による30分間のトークを2回開催(16:30〜17:00、18:00〜18:30)。入場無料・予約不要。</p>
           </div>
         </li>
@@ -814,7 +820,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月23日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097227990379700593" target="_blank" rel="noopener noreferrer">「居酒屋ちぇけ」(東京)で交流イベント</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227990379700593" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227990379700593" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。東京の「居酒屋ちぇけ」にて、代表・岡住修兵と一緒に飲み語らう交流イベントを開催(12:00〜)。</p>
           </div>
         </li>
@@ -823,7 +829,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月25日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097228191756882037" target="_blank" rel="noopener noreferrer">「CHEESE STAND」(渋谷)とのペアリングイベントを開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228191756882037" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228191756882037" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。東京・渋谷の「CHEESE STAND」にて、コース料理5品+稲とアガベのお酒5種を合わせるペアリングイベントを開催(18:00〜、会費8,000円)。予約はGoogleフォームで受付。</p>
           </div>
         </li>
@@ -832,7 +838,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月26日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097228583425257786" target="_blank" rel="noopener noreferrer">「和食日和おさけと 大手町」でペアリングイベント「おさけの会」を開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228583425257786" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228583425257786" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。東京・大手町の「和食日和おさけと 大手町」にて、熱燗DJ・つけたろう監修のペアリングイベント「おさけの会」を開催(18:00〜21:00、会費18,000円、定員25名)。</p>
           </div>
         </li>
@@ -841,7 +847,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月27日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097228803378700796" target="_blank" rel="noopener noreferrer">「SAKE Street」(東京)でイベントを開催予定</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228803378700796" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228803378700796" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。東京の「SAKE Street」でイベントを予定。開催時間・内容・参加方法は決まり次第noteで発表予定。</p>
           </div>
         </li>
@@ -850,7 +856,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月27日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097228985927340338" target="_blank" rel="noopener noreferrer">「清澄白河ぽんしゅホール」でイベントを開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228985927340338" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097228985927340338" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">全国ツアー「日本酩酊計画2026」の一環。東京・清澄白河の「清澄白河ぽんしゅホール」にて、全3回入替制のイベントを開催(①17:30〜18:45 ②19:00〜20:15 ③20:30〜21:45、各回同内容)。着席はテーブルチャージ440円、立ち見はチャージ不要(いずれも1ドリンク以上要注文)。予約なしでも参加可。</p>
           </div>
         </li>
@@ -859,7 +865,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月6日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2096466531022737827" target="_blank" rel="noopener noreferrer">「ハニカム葡萄extra」を製法変更のうえ限定発売</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2096466531022737827" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2096466531022737827" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">「ハニカム葡萄extra」の製法を刷新し、以前とは全く別物のどぶろくとして発売。製造50本限定で、定期便でほぼ完売のため店頭在庫はごく僅か。</p>
           </div>
         </li>
@@ -868,7 +874,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月5日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2096036844307964300" target="_blank" rel="noopener noreferrer">メロンのどぶろく「いずみメロン」が新登場</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2096036844307964300" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2096036844307964300" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">かわさき農園のメロンを使ったどぶろく「いずみメロン」が店頭に登場。涼やかで軽い、夏の終わりにぴったりの一本(黒文字は完売)。</p>
           </div>
         </li>
@@ -877,7 +883,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年11月13日〜15日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000020.000099382.html" target="_blank" rel="noopener noreferrer">「SAKE PARK 7杯」に出店</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000020.000099382.html" target="_blank" rel="noopener noreferrer">プレスリリース(PR TIMES)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000020.000099382.html" target="_blank" rel="noopener noreferrer">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">渋谷 MIYASHITA PARK屋上で開催される日本酒イベント「SAKE PARK 7杯」。全国の酒蔵・クラフトサケ醸造所計約31社が集まり、造り手との交流やライブミュージック、グルメも楽しめる。テーマは「五穀豊醸 -Music For SAKE-」。チケットはMakuakeで9/4〜11/13に販売。</p>
           </div>
         </li>
@@ -886,7 +892,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">「SAKE PARK 7杯」「若手の夜明け2026 TOKYO」に不参加</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">今年のSAKE PARK 7杯にはぷくぷく醸造として初めて不参加。「若手の夜明け」にも今年はエントリーせず不参加。スタッフ増員など新たな挑戦に注力するため。</p>
           </div>
         </li>
@@ -895,7 +901,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月10日〜12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">世田谷・三宿に出没予定(10/10〜12)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><span class="badge-category">イベント</span><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><a class="badge-category" href="category/event.html">イベント</a><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">10/10〜12、東京・世田谷の三宿にぷくぷく醸造が出没予定。詳細は未発表。</p>
           </div>
         </li>
@@ -904,7 +910,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月24日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">高輪に出没予定(10/24)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><span class="badge-category">イベント</span><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく醸造</a><a class="badge-category" href="category/event.html">イベント</a><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">10/24、東京・高輪にぷくぷく醸造が出没予定。詳細は未発表。</p>
           </div>
         </li>
@@ -913,7 +919,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月31日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月2日〜15日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2094265428063256804" target="_blank" rel="noopener noreferrer">秋田西武で催事「稲とアガベとアートと私」を開催、9/5トークセッション・9/6竹脇まりなさん登場</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2094265428063256804" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2094265428063256804" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">秋田西武にて2週間の催事「稲とアガベとアートと私」を開催。稲とアガベのお酒・発酵マヨに加え、おがやのラーメン、マッチャイナの麻婆豆腐、PZのピザなどを催事スペースで提供(日替わり)。秋田出身の女優・花柳のぞみさんとのコラボ餃子も展開。9/5にトークセッション、9/6にYouTuber竹脇まりなさんが登場予定。</p>
           </div>
         </li>
@@ -922,7 +928,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月30日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2093868520073515505" target="_blank" rel="noopener noreferrer">stables社と共同で「クラフトサケ ワールドアワード」を新設</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2093868520073515505" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2093868520073515505" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             <p class="entry-summary">稲とアガベ代表・岡住修兵氏がstables社と共同で「クラフトサケ ワールドアワード」を新設。クラフトサケブリュワリー協会への加盟有無や酒類の種別を問わず、米ベースの醸造酒であればマッコリ等も含めエントリー可能。ブラインドテイスティング等の予審を経て上位6社が決勝でプレゼンし、その年のナンバーワンを決める。現在プレエントリー受付中。</p>
           </div>
         </li>
@@ -931,7 +937,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月29日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月14日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2093512102820601964" target="_blank" rel="noopener noreferrer">ミシュランシェフとのペアリングイベントを武蔵小山「余白」で開催予定</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093512102820601964" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093512102820601964" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">武蔵小山「余白」にて、ミシュランシェフ湯川司(フレンチ&amp;和食)とハッピー太郎醸造所・造り手の池島幸太郎氏によるペアリングイベントを開催。一部17:00-19:30、二部20:15-22:45(満席)、各9席、会費20,000円(税サ込)、お酒8種・料理8種。予約はGoogleフォームで受付。</p>
           </div>
         </li>
@@ -940,7 +946,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月29日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月26日〜31日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/shoya_imai/status/2093594693787361637" target="_blank" rel="noopener noreferrer">「800 栗 -2025-」期間限定EC予約販売を開始</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/shoya_imai/status/2093594693787361637" target="_blank" rel="noopener noreferrer">X(@shoya_imai)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><a class="badge-category" href="category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2093594693787361637" target="_blank" rel="noopener noreferrer">X(@shoya_imai)</a></span>
             <p class="entry-summary">LINNÉ最高峰酒シリーズ「800」の新作「800 栗 -2025-」(京丹波栗を丹念に麹にし栗皮まで抽出、京品種もち米も使用)の期間限定・数量限定オンライン予約販売を開始。ターム1は8/26〜31、発送は9/3〜予定(ターム2は10月以降)。</p>
           </div>
         </li>
@@ -949,7 +955,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月28日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月30日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2093125791471325292" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹」で小倉ヒラクさんと発酵談義を開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093125791471325292" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093125791471325292" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">阪神百貨店梅田本店で開催の「第5回『日本人の発酵史』小倉ヒラク著発刊記念 発酵マーケット麹/KOJI」(8/26〜31)にて、8/30(日)14:45〜15:30、小倉ヒラクさんホストによる発酵談義「麹と納豆は本当に仲良くできない?」を開催。ゲストはハッピー太郎醸造所とらくだ坂納豆工房(伊庭川浩一氏)。</p>
           </div>
         </li>
@@ -958,7 +964,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月28日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月19日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2093275432057504223" target="_blank" rel="noopener noreferrer">「木桶醤油もろみに会いに行こう」醤油講座&amp;水谷醤油醸造場見学を開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093275432057504223" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093275432057504223" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">醤油ソムリエール黒島慶子氏による少人数醤油講座と、50年ぶりに木桶醤油仕込みを復活させた水谷醤油醸造場の見学をハッピー太郎醸造所集合で開催。会費12,000円、最低5名〜最大12名。</p>
           </div>
         </li>
@@ -967,7 +973,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月28日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月29日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2093165040883179541" target="_blank" rel="noopener noreferrer">JR大阪駅「エキマルシェ・山中酒の店」で試飲販売会を開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093165040883179541" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2093165040883179541" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">JR大阪駅すぐのエキマルシェ「山中酒の店」にて試飲販売会を開催。阪神百貨店には出品していない、今季限りのどぶろくも持ち込み。</p>
           </div>
         </li>
@@ -976,7 +982,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月27日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/happytaro2017/status/2092809020428140553" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹」出店、「関西クラフトサケ総選挙」実施</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/happytaro2017/status/2092809020428140553" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/happytaro.html">ハッピー太郎醸造所</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2092809020428140553" target="_blank" rel="noopener noreferrer">X(@happytaro2017)</a></span>
             <p class="entry-summary">阪神百貨店「発酵マーケット麹」に8/27・8/30の日程で出店。8/27 17:00〜19:00は「角打バー」(ゲストバーテンダー:福島県『仁井田本家』女将 仁井田真樹)として『関西クラフトサケ総選挙』を実施、会場で最も心が動いた一杯に投票する企画(8/30は小倉ヒラクさんとの発酵談義)。</p>
           </div>
         </li>
@@ -985,7 +991,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月26日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月26日〜28日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://web.hh-online.jp/hanshin/contents/str/img/20260826/event.pdf" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹」で麹作りデモ(8/26〜28)を実施</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://web.hh-online.jp/hanshin/contents/str/img/20260826/event.pdf" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹/KOJI」イベントスケジュール(PDF)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://web.hh-online.jp/hanshin/contents/str/img/20260826/event.pdf" target="_blank" rel="noopener noreferrer">阪神百貨店「発酵マーケット麹/KOJI」イベントスケジュール(PDF)</a></span>
             <p class="entry-summary">阪神百貨店梅田本店「第5回『日本人の発酵史』小倉ヒラク著発刊記念 発酵マーケット麹/KOJI」にて、「僕らはみんな麹を作ってるチーム」による麹作りデモを8/26(水)〜28(金)の3日間で実施。8/26:①製麹機 ②冷ます ③菌付ける。8/27:④混ぜる。8/28:⑤麹できあがる ⑥甘酒仕込む。参加発酵プレイヤーはLINNÉ(今井翔也)、みつか坊主(斉藤光典)ほか。</p>
           </div>
         </li>
@@ -994,7 +1000,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月26日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/shoya_imai/status/2092381249344332048" target="_blank" rel="noopener noreferrer">「Letter from LINNÉ」で京都・五条坂の蔵づくり始動(地鎮祭)を報告</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><span class="badge-category">酒蔵ニュース</span><a class="entry-source-link" href="https://x.com/shoya_imai/status/2092381249344332048" target="_blank" rel="noopener noreferrer">X(@shoya_imai)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/linne.html">LINNÉ</a><a class="badge-category" href="category/brewery_news.html">酒蔵ニュース</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2092381249344332048" target="_blank" rel="noopener noreferrer">X(@shoya_imai)</a></span>
             <p class="entry-summary">LINNÉ公式ニュースレター「Letter from LINNÉ」にて、京都・清水五条坂の新醸造所建設に向けた「五条若宮陶器祭」出展や地鎮祭の実施を報告。蔵づくりが本格的に始動したことを伝えるエッセイを配信。</p>
           </div>
         </li>

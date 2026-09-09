@@ -169,24 +169,29 @@
   .badge-category {
     display: inline-block;
     font-size: 0.68rem;
+    font-weight: 400;
     color: var(--indigo-deep);
-    background: rgba(44, 74, 110, 0.32);
-    padding: 0.05rem 0.45rem;
+    background: rgba(44, 74, 110, 0.1);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
     border-radius: 4px;
     margin-right: 0.5rem;
+    text-decoration: none;
   }
+  .badge-category:hover { text-decoration: underline; }
   .entry-brewery {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
     margin-right: 0.5rem;
   }
-  .entry-brewery:hover { text-decoration: underline; }
+  .entry-brewery:hover { border-color: var(--indigo); }
 
   .chips-archive {
     padding-top: 0;
@@ -519,13 +524,14 @@
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
   }
-  .agenda-link:hover { text-decoration: underline; }
+  .agenda-link:hover { border-color: var(--indigo); }
   .agenda-source-link {
     font-size: 0.74rem;
     color: var(--indigo-deep);
@@ -751,7 +757,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月10日〜12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第1週 9/10〜12)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             
           </div>
         </li>
@@ -760,7 +766,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月17日〜19日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第2週 9/17〜19)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             
           </div>
         </li>
@@ -769,7 +775,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月24日〜26日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第3週 9/24〜26)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/haccoba.html">haccoba</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">X(@taisuke_haccoba)</a></span>
             
           </div>
         </li>
@@ -778,7 +784,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月11日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">レストラン「8go」(東京)とのペアリングディナーを開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097226867363520572" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             
           </div>
         </li>
@@ -787,7 +793,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">「吟の酒きぶね」(盛岡)で店頭販売</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/ine_to_agave.html">稲とアガベ</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/OkazumiSakehei/status/2097227052047040657" target="_blank" rel="noopener noreferrer">X(@OkazumiSakehei)</a></span>
             
           </div>
         </li>

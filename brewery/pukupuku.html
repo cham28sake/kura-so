@@ -169,24 +169,29 @@
   .badge-category {
     display: inline-block;
     font-size: 0.68rem;
+    font-weight: 400;
     color: var(--indigo-deep);
-    background: rgba(44, 74, 110, 0.32);
-    padding: 0.05rem 0.45rem;
+    background: rgba(44, 74, 110, 0.1);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
     border-radius: 4px;
     margin-right: 0.5rem;
+    text-decoration: none;
   }
+  .badge-category:hover { text-decoration: underline; }
   .entry-brewery {
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
     margin-right: 0.5rem;
   }
-  .entry-brewery:hover { text-decoration: underline; }
+  .entry-brewery:hover { border-color: var(--indigo); }
 
   .chips-archive {
     padding-top: 0;
@@ -519,13 +524,14 @@
     display: inline-block;
     font-size: 0.68rem;
     font-weight: 400;
-    color: var(--paper);
-    background: var(--indigo);
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
     text-decoration: none;
   }
-  .agenda-link:hover { text-decoration: underline; }
+  .agenda-link:hover { border-color: var(--indigo); }
   .agenda-source-link {
     font-size: 0.74rem;
     color: var(--indigo-deep);
@@ -758,7 +764,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日<span class="badge-new">NEW</span></span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">「SAKE PARK 7杯」「若手の夜明け2026 TOKYO」に不参加</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">今年のSAKE PARK 7杯にはぷくぷく醸造として初めて不参加。「若手の夜明け」にも今年はエントリーせず不参加。スタッフ増員など新たな挑戦に注力するため。</p>
           </div>
         </li>
@@ -767,7 +773,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月10日〜12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">世田谷・三宿に出没予定(10/10〜12)</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#mishuku" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">10/10〜12、東京・世田谷の三宿にぷくぷく醸造が出没予定。詳細は未発表。</p>
           </div>
         </li>
@@ -776,7 +782,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年9月4日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月24日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">高輪に出没予定(10/24)</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><span class="badge-tentative">詳細未定・続報あり</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2095868235338195415#takanawa" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">10/24、東京・高輪にぷくぷく醸造が出没予定。詳細は未発表。</p>
           </div>
         </li>
@@ -785,7 +791,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年8月22日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2091088825976332503" target="_blank" rel="noopener noreferrer">「ぷくぷくホップ VaVaVa」2026夏仕様で再販開始</a>
-            <span class="entry-source"><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2091088825976332503" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2091088825976332503" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">伝統的な花酛をベースに、南相馬の有機米を蔵付酵母で醸したダブルドライホップどぶろく。トロピカルでジューシーな2026夏仕様として再販開始。</p>
           </div>
         </li>
@@ -794,7 +800,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月26日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月25日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2081359825573969947" target="_blank" rel="noopener noreferrer">Teenage Brewingコラボ「DAKUON」発売</a>
-            <span class="entry-source"><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2081359825573969947" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2081359825573969947" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">Teenage Brewingとのコラボ作。オーツ麦と小麦の麦汁をお米と発酵させ、同品種のホップを投入したHopped SAKE。日本酒とビールが溶け合ったシトラストロピカルなニゴリ酒。</p>
           </div>
         </li>
@@ -803,7 +809,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月17日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月22日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0722" target="_blank" rel="noopener noreferrer">Teenage Brewing×浜田屋酒店×ぷくぷく醸造「新作リリースイベント」を渋谷で開催</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0722" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0722" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">渋谷「RINN」にて新作リリースイベントを開催。UNITED ARROWSとのコラボグッズ(Tシャツ・バケットハット・サングラス)も予約制で持ち込み販売、予約不要のキャッシュオンイベント。</p>
           </div>
         </li>
@@ -812,7 +818,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月17日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月24日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0724" target="_blank" rel="noopener noreferrer">Whisky&amp;Co.×ぷくぷく醸造 コラボイベントを渋谷「未来日本酒店」で開催</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0724" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0724" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">渋谷「未来日本酒店」にてコラボイベントを開催。UNITED ARROWSとのコラボグッズも予約制で持ち込み販売、予約不要のキャッシュオンイベント。</p>
           </div>
         </li>
@@ -821,7 +827,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月17日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月25日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0725" target="_blank" rel="noopener noreferrer">「ワダヤ頒布会イベント」を大井町「WADAYA STAND」で開催</a>
-            <span class="entry-source"><span class="badge-category">イベント</span><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0725" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tachikawa_tetsu/status/2078112689138921849#event-0725" target="_blank" rel="noopener noreferrer">X(@tachikawa_tetsu)</a></span>
             <p class="entry-summary">大井町「WADAYA STAND」にて頒布会イベントを開催。UNITED ARROWSとのコラボグッズも予約制で持ち込み販売、予約不要のキャッシュオンイベント。</p>
           </div>
         </li>
@@ -830,7 +836,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月11日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2075803773252120670" target="_blank" rel="noopener noreferrer">「ぷくぷくホップ KiKiKi」2026夏仕様で再販開始</a>
-            <span class="entry-source"><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2075803773252120670" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2075803773252120670" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">南相馬の有機栽培米を蔵付酵母(野生酵母)で醸したホップサケ。夏らしく甘さ控えめでホップの柑橘系の香りが広がる2026夏仕様として再販開始。</p>
           </div>
         </li>
@@ -839,7 +845,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年7月2日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2072570733700776147" target="_blank" rel="noopener noreferrer">2026年7月のスケジュール(角打ち休業日)を告知、東京イベント多数予定</a>
-            <span class="entry-source"><span class="badge-category">酒蔵ニュース</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2072570733700776147" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">酒蔵ニュース</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2072570733700776147" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">7月2日(木)および7月9日(木)は酒蔵併設の角打ちを休業。7月は東京でのイベントが多いとのアナウンス。</p>
           </div>
         </li>
@@ -848,7 +854,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年6月6日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2063170467163455603" target="_blank" rel="noopener noreferrer">「ぷくぷくホップ SuSuSu SUMMER2026」発売</a>
-            <span class="entry-source"><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2063170467163455603" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2063170467163455603" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">酵母無添加の花酛を土台に、ドライホップにネルソン・ソーヴィンのシングルホップを使用した「すすす」の夏バージョンを各特約店にて発売。</p>
           </div>
         </li>
@@ -857,7 +863,7 @@
           <div class="entry-date"><span class="entry-date-row">2026年3月14日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/pukupukubrewing/status/2032806309809238401" target="_blank" rel="noopener noreferrer">クラフトビールVERTEREとのコラボ「スタウトどぶろく」発売</a>
-            <span class="entry-source"><span class="badge-category">新商品</span><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2032806309809238401" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2032806309809238401" target="_blank" rel="noopener noreferrer">X(@pukupukubrewing)</a></span>
             <p class="entry-summary">仕込み水の代わりにVERTEREのスタウト麦汁を使用した黒いどぶろくが完成、コーヒーのようなコク深い味わいで発売。日本酒とビールの境界線を溶かした新しいコラボ商品。</p>
           </div>
         </li>
