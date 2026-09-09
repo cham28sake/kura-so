@@ -489,6 +489,7 @@
     border-bottom: 1px dashed var(--line);
     font-size: 0.85rem;
   }
+  .agenda-item[hidden] { display: none; }
   .agenda-item:last-child { border-bottom: none; }
   .agenda-date {
     flex: 0 0 9em;
@@ -519,6 +520,19 @@
     width: fit-content;
   }
   .agenda-link:hover { text-decoration: underline; }
+  .agenda-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-left: 0.6rem;
+    border-left: 1px solid var(--line);
+  }
+  .agenda-source-link {
+    font-size: 0.74rem;
+    color: var(--indigo-deep);
+    text-decoration: none;
+  }
+  .agenda-source-link:hover { text-decoration: underline; }
   .agenda-summary {
     margin: 0.1rem 0 0;
     color: var(--muted);
