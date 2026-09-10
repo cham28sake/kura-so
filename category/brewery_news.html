@@ -540,7 +540,6 @@
     color: var(--indigo-deep);
     text-decoration: underline;
   }
-  .agenda-source-link:hover { color: var(--indigo); }
   .agenda-summary {
     margin: 0.1rem 0 0;
     color: var(--muted);
@@ -695,7 +694,15 @@
     text-decoration: underline;
     margin-right: 0.5rem;
   }
-  .entry-source-link:hover { color: var(--indigo); }
+  .entry-source-link:hover,
+  .agenda-source-link:hover,
+  .lede-quote a:hover,
+  .lede-note a:hover,
+  .entry-summary a:hover,
+  .agenda-summary a:hover {
+    background: rgba(44, 74, 110, 0.12);
+    border-radius: 2px;
+  }
   .entry-summary {
     font-size: 0.88rem;
     color: var(--muted);
