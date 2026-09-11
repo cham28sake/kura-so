@@ -337,6 +337,8 @@
     color: var(--muted);
     margin: 0 0 1.25rem;
   }
+  .legend-event { color: var(--indigo); font-weight: 700; }
+  .legend-release { color: var(--seal); font-weight: 700; }
   .cal-brewery-row {
     display: flex;
     align-items: center;
@@ -514,6 +516,16 @@
   }
   .agenda-item[hidden] { display: none; }
   .agenda-item:last-child { border-bottom: none; }
+  .agenda-item-cat-event {
+    border-left: 3px solid var(--indigo);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
   .agenda-date {
     flex: 0 0 9em;
   }
