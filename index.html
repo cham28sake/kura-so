@@ -14,6 +14,7 @@
     --indigo: #2c4a6e;
     --indigo-deep: #1b3350;
     --seal: #a8341f;
+    --mustard: #9c7a1f;
     --muted: #726c5e;
     --line: #ded8c5;
     --day-shade: #eaebef;
@@ -337,7 +338,7 @@
     color: var(--muted);
     margin: 0 0 1.25rem;
   }
-  .legend-event { color: var(--indigo); font-weight: 700; }
+  .legend-event { color: var(--mustard); font-weight: 700; }
   .legend-release { color: var(--seal); font-weight: 700; }
   .cal-brewery-row {
     display: flex;
@@ -357,6 +358,32 @@
     border-radius: 999px;
     padding: 0.3rem 0.8rem;
   }
+  .cal-category-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-category-label { white-space: nowrap; }
+  .cal-category-chips { display: flex; gap: 0.4rem; }
+  .cat-filter-chip {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .cat-filter-both { color: var(--indigo); border: 1.5px dashed var(--indigo); }
+  .cat-filter-both.is-active { background: rgba(44, 74, 110, 0.2); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
+  .cat-filter-event.is-active { background: rgba(156, 122, 31, 0.2); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
+  .cat-filter-release.is-active { background: rgba(168, 52, 31, 0.2); color: var(--seal); border: 1.5px solid var(--seal); }
   .cal-nav {
     display: flex;
     align-items: center;
@@ -469,7 +496,7 @@
   }
   .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
   .cal-bar-cat-event {
-    border-left: 3px solid var(--indigo);
+    border-left: 3px solid var(--mustard);
     padding-left: 0.35rem;
   }
   .cal-bar-cat-release {
@@ -517,7 +544,7 @@
   .agenda-item[hidden] { display: none; }
   .agenda-item:last-child { border-bottom: none; }
   .agenda-item-cat-event {
-    border-left: 3px solid var(--indigo);
+    border-left: 3px solid var(--mustard);
     padding-left: 0.7rem;
     margin-left: -0.7rem;
   }
@@ -859,6 +886,14 @@
 <option value="pukupuku">ぷくぷく醸造</option>
 <option value="linne">LINNÉ</option>
       </select>
+    </div>
+    <div class="cal-category-row">
+      <span class="cal-category-label">表示するカテゴリ</span>
+      <div class="cal-category-chips">
+        <button type="button" class="cat-filter-chip cat-filter-both is-active" data-category="all">両方</button>
+        <button type="button" class="cat-filter-chip cat-filter-event" data-category="event">イベント</button>
+        <button type="button" class="cat-filter-chip cat-filter-release" data-category="new_release">新商品</button>
+      </div>
     </div>
     <div class="cal-nav">
       <button type="button" id="cal-prev-btn" class="cal-nav-btn">← 前月</button>
@@ -2076,6 +2111,7 @@
     });
 
     var activeKey = "all";
+    var activeCategory = "all";
     var monthKeys = (groupMonthEls[activeKey] || []).map(function (el) { return el.getAttribute("data-ym"); });
     var currentYm = "2026-09";
     var idx = monthKeys.indexOf(currentYm);
@@ -2091,6 +2127,7 @@
     var prevBtn = document.getElementById("cal-prev-btn");
     var nextBtn = document.getElementById("cal-next-btn");
     var brewerySelect = document.getElementById("cal-brewery-select");
+    var categoryChips = Array.prototype.slice.call(document.querySelectorAll(".cat-filter-chip"));
 
     var agendaPanels = [upcomingPanel].concat(Object.keys(pastPanels).map(function (k) { return pastPanels[k]; }))
       .filter(Boolean);
@@ -2118,16 +2155,30 @@
         var visibleCount = 0;
         items.forEach(function (li) {
           var slugs = (li.getAttribute("data-breweries") || "").split(",");
-          var visible = activeKey === "all" || slugs.indexOf(activeKey) !== -1;
+          var breweryOk = activeKey === "all" || slugs.indexOf(activeKey) !== -1;
+          var categoryOk = activeCategory === "all"
+            || (activeCategory === "event" && li.classList.contains("agenda-item-cat-event"))
+            || (activeCategory === "new_release" && li.classList.contains("agenda-item-cat-release"));
+          var visible = breweryOk && categoryOk;
           li.hidden = !visible;
           if (visible) { visibleCount += 1; }
         });
         var hasStaticEmpty = !!panel.querySelector(".agenda-item.agenda-empty:not(.agenda-empty-dynamic)");
         var notice = ensureEmptyNotice(panel);
         if (notice) {
-          notice.hidden = hasStaticEmpty || activeKey === "all" || visibleCount > 0 || items.length === 0;
-          if (!notice.hidden) { notice.textContent = "この蔵の該当イベントはありません。"; }
+          notice.hidden = hasStaticEmpty || (activeKey === "all" && activeCategory === "all") || visibleCount > 0 || items.length === 0;
+          if (!notice.hidden) { notice.textContent = "該当するイベントはありません。"; }
         }
+      });
+    }
+
+    function applyCategoryFilterToCalendar() {
+      var bars = Array.prototype.slice.call(document.querySelectorAll(".cal-bar:not(.cal-bar-overflow)"));
+      bars.forEach(function (bar) {
+        var visible = activeCategory === "all"
+          || (activeCategory === "event" && bar.classList.contains("cal-bar-cat-event"))
+          || (activeCategory === "new_release" && bar.classList.contains("cal-bar-cat-release"));
+        bar.hidden = !visible;
       });
     }
 
@@ -2146,6 +2197,7 @@
       if (prevBtn) { prevBtn.disabled = idx <= 0; }
       if (nextBtn) { nextBtn.disabled = idx >= monthKeys.length - 1; }
       applyBreweryFilterToAgenda();
+      applyCategoryFilterToCalendar();
     }
 
     if (prevBtn) {
@@ -2164,6 +2216,13 @@
         render();
       });
     }
+    categoryChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        activeCategory = chip.getAttribute("data-category");
+        categoryChips.forEach(function (c) { c.classList.toggle("is-active", c === chip); });
+        render();
+      });
+    });
 
     render();
   })();

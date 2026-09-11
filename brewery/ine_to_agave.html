@@ -14,6 +14,7 @@
     --indigo: #2c4a6e;
     --indigo-deep: #1b3350;
     --seal: #a8341f;
+    --mustard: #9c7a1f;
     --muted: #726c5e;
     --line: #ded8c5;
     --day-shade: #eaebef;
@@ -337,7 +338,7 @@
     color: var(--muted);
     margin: 0 0 1.25rem;
   }
-  .legend-event { color: var(--indigo); font-weight: 700; }
+  .legend-event { color: var(--mustard); font-weight: 700; }
   .legend-release { color: var(--seal); font-weight: 700; }
   .cal-brewery-row {
     display: flex;
@@ -357,6 +358,32 @@
     border-radius: 999px;
     padding: 0.3rem 0.8rem;
   }
+  .cal-category-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-category-label { white-space: nowrap; }
+  .cal-category-chips { display: flex; gap: 0.4rem; }
+  .cat-filter-chip {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .cat-filter-both { color: var(--indigo); border: 1.5px dashed var(--indigo); }
+  .cat-filter-both.is-active { background: rgba(44, 74, 110, 0.2); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
+  .cat-filter-event.is-active { background: rgba(156, 122, 31, 0.2); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
+  .cat-filter-release.is-active { background: rgba(168, 52, 31, 0.2); color: var(--seal); border: 1.5px solid var(--seal); }
   .cal-nav {
     display: flex;
     align-items: center;
@@ -469,7 +496,7 @@
   }
   .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
   .cal-bar-cat-event {
-    border-left: 3px solid var(--indigo);
+    border-left: 3px solid var(--mustard);
     padding-left: 0.35rem;
   }
   .cal-bar-cat-release {
@@ -517,7 +544,7 @@
   .agenda-item[hidden] { display: none; }
   .agenda-item:last-child { border-bottom: none; }
   .agenda-item-cat-event {
-    border-left: 3px solid var(--indigo);
+    border-left: 3px solid var(--mustard);
     padding-left: 0.7rem;
     margin-left: -0.7rem;
   }
