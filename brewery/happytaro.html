@@ -338,8 +338,6 @@
     color: var(--muted);
     margin: 0 0 1.25rem;
   }
-  .legend-event { color: var(--mustard); font-weight: 700; }
-  .legend-release { color: var(--seal); font-weight: 700; }
   .cal-brewery-row {
     display: flex;
     align-items: center;
@@ -494,6 +492,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .cal-bar[hidden] { display: none; }
   .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
   .cal-bar-cat-event {
     border-left: 3px solid var(--mustard);

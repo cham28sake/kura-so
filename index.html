@@ -338,8 +338,6 @@
     color: var(--muted);
     margin: 0 0 1.25rem;
   }
-  .legend-event { color: var(--mustard); font-weight: 700; }
-  .legend-release { color: var(--seal); font-weight: 700; }
   .cal-brewery-row {
     display: flex;
     align-items: center;
@@ -494,6 +492,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .cal-bar[hidden] { display: none; }
   .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
   .cal-bar-cat-event {
     border-left: 3px solid var(--mustard);
@@ -871,10 +870,7 @@
 
   <div class="calendar-panel">
     <h2>イベントカレンダー</h2>
-    <p class="panel-note">
-      <span class="legend-release">新商品の発売日</span>や<span class="legend-event">イベントの実施日</span>など、
-      日程（予定含む）が公開されているものだけを表示しています。
-    </p>
+    <p class="panel-note">イベントの実施日や新商品の発売日など、日程（予定含む）が公開されているものだけを表示しています。</p>
     <div class="cal-brewery-row">
       <label for="cal-brewery-select">表示する酒蔵</label>
       <select id="cal-brewery-select" class="cal-brewery-select">
