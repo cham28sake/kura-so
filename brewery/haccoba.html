@@ -242,14 +242,30 @@
   }
 
   .badge-new {
-    font-size: 0.55rem;
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--paper);
     background: var(--seal);
-    padding: 0.03rem 0.3rem;
+    padding: 0.08rem 0.5rem;
     border-radius: 3px;
     white-space: nowrap;
+  }
+  .badge-updated {
+    /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+    background: var(--indigo);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .entry-badge-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
   }
   .entry-date-row {
     display: flex;
@@ -725,6 +741,7 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.3rem;
   }
   .entry-title {
@@ -836,7 +853,7 @@
         </div>
         <ul class="entries">
         <li class="entry" id="haccoba-260915-01">
-          <div class="entry-date"><span class="entry-date-row">2026年9月15日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月1日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月15日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月1日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2099783789815992684" target="_blank" rel="noopener noreferrer">haccoba {kankan}にて「神燗合宿」を開催</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2099783789815992684" target="_blank" rel="noopener noreferrer" title="X(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>(@taisuke_haccoba)</a></span>
@@ -845,7 +862,7 @@
         </li>
 
         <li class="entry" id="haccoba-260908-01">
-          <div class="entry-date"><span class="entry-date-row">2026年9月8日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月10日〜12日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月10日〜12日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第1週 9/10〜12)</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878" target="_blank" rel="noopener noreferrer" title="X(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>(@taisuke_haccoba)</a></span>
@@ -854,7 +871,7 @@
         </li>
 
         <li class="entry" id="haccoba-260908-02">
-          <div class="entry-date"><span class="entry-date-row">2026年9月8日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月17日〜19日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月17日〜19日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第2週 9/17〜19)</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week2" target="_blank" rel="noopener noreferrer" title="X(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>(@taisuke_haccoba)</a><a class="entry-source-link" href="https://x.com/haccoba/status/2099073275859173737" target="_blank" rel="noopener noreferrer" title="X(@haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>(@haccoba)</a></span>
@@ -863,7 +880,7 @@
         </li>
 
         <li class="entry" id="haccoba-260908-03">
-          <div class="entry-date"><span class="entry-date-row">2026年9月8日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月24日〜26日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月8日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月24日〜26日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」プレオープンの詳細と予約一般開放を案内(第3週 9/24〜26)</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2097256056238059878#week3" target="_blank" rel="noopener noreferrer" title="X(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>(@taisuke_haccoba)</a></span>
@@ -872,7 +889,7 @@
         </li>
 
         <li class="entry" id="haccoba-260904-01">
-          <div class="entry-date"><span class="entry-date-row">2026年9月4日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年11月13日〜15日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月4日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年11月13日〜15日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000020.000099382.html" target="_blank" rel="noopener noreferrer">「SAKE PARK 7杯」に出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000020.000099382.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>

@@ -242,14 +242,30 @@
   }
 
   .badge-new {
-    font-size: 0.55rem;
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--paper);
     background: var(--seal);
-    padding: 0.03rem 0.3rem;
+    padding: 0.08rem 0.5rem;
     border-radius: 3px;
     white-space: nowrap;
+  }
+  .badge-updated {
+    /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+    background: var(--indigo);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .entry-badge-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
   }
   .entry-date-row {
     display: flex;
@@ -725,6 +741,7 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.3rem;
   }
   .entry-title {
@@ -836,7 +853,7 @@
         </div>
         <ul class="entries">
         <li class="entry" id="konohanano-260904-01">
-          <div class="entry-date"><span class="entry-date-row">2026年9月4日<span class="badge-new">NEW</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月17日〜18日</span></div>
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-row">2026年9月4日</span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月17日〜18日</span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://liveazuma.jp/market/konohanano-brewery/" target="_blank" rel="noopener noreferrer">「LIVE AZUMA 2026」MARKETエリアに出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://liveazuma.jp/market/konohanano-brewery/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト">イベント公式サイト</a></span>
