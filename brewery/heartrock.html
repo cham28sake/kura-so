@@ -1,0 +1,1305 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>秋保ハートロックサケ - くらそー</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1eee3;
+    --surface: #faf8f1;
+    --ink: #23262b;
+    --indigo: #2c4a6e;
+    --indigo-deep: #1b3350;
+    --seal: #a8341f;
+    --mustard: #9c7a1f;
+    --cal-other: #3f6b4a;
+    --muted: #726c5e;
+    --line: #ded8c5;
+    --day-shade: #eaebef;
+    --shadow: 0 1px 2px rgba(35,38,43,0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7;
+    font-variant-numeric: tabular-nums;
+  }
+  a { color: var(--indigo); }
+
+  .stripe {
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg, var(--indigo) 0 28px, var(--seal) 28px 32px, var(--indigo) 32px 60px, var(--paper) 60px 64px
+    );
+    opacity: 0.9;
+  }
+
+  header.hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 1.5rem;
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--seal);
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Hachi Maru Pop", cursive;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    margin: 0.4rem 0 0.75rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .hero-title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .hero-title-link:hover {
+    color: var(--indigo);
+  }
+  .page-breadcrumb {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
+  }
+  .page-breadcrumb a {
+    color: var(--indigo-deep);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .page-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .page-breadcrumb span {
+    color: var(--muted);
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin: 0;
+  }
+  .lede-quote {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin: 0 0 0.6rem;
+    padding-left: 0.5rem;
+  }
+  .lede-note {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 0.75rem;
+  }
+  .chips-label {
+    max-width: 760px;
+    margin: 0.25rem auto 0;
+    padding: 0 1.5rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  nav.chips {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--indigo-deep);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+  }
+  .chip:hover { border-color: var(--indigo); }
+  .chip.chip-current {
+    background: var(--indigo);
+    color: var(--paper);
+    border-color: var(--indigo);
+    font-weight: 700;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .timeline-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .panel-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .updated-at {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: -0.25rem 0 1.25rem;
+  }
+
+  .badge-category {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: rgba(44, 74, 110, 0.1);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
+  .badge-category:hover { text-decoration: underline; }
+  .entry-brewery {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 0.5rem;
+  }
+  .entry-brewery:hover { border-color: var(--indigo); }
+  .entry-brewery-other { border-style: dashed; }
+
+  .chips-archive {
+    padding-top: 0;
+  }
+  .chip-archive {
+    background: rgba(44, 74, 110, 0.1);
+    border-color: transparent;
+  }
+  .chip-archive.chip-current {
+    background: rgba(44, 74, 110, 0.32);
+    border-color: transparent;
+    color: var(--indigo-deep);
+    font-weight: 700;
+  }
+
+  .archive-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .archive-panel > h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  section.archive-category {
+    margin-bottom: 1.5rem;
+  }
+  section.archive-category h3 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .archive-count {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .badge-new {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    background: var(--seal);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .badge-updated {
+    /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+    background: var(--indigo);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .entry-badge-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-updated-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .badge-cal {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  a.badge-cal:hover {
+    border-color: var(--indigo);
+    background: rgba(44, 74, 110, 0.08);
+  }
+  .badge-draft {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: var(--muted);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .badge-tentative {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  .draft-banner {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.25rem;
+    border-radius: 10px;
+    background: var(--seal);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .draft-banner-link {
+    flex: none;
+    color: #fff;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+  .draft-banner-text {
+    flex: 1;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .badge-unofficial {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px dashed var(--muted);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .calendar-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .calendar-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+  }
+  .cal-brewery-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-brewery-select {
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+  }
+  .cal-category-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-category-label { white-space: nowrap; }
+  .cal-category-chips { display: flex; gap: 0.4rem; }
+  .cat-filter-chip {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .cat-filter-all { color: var(--indigo); border: 1.5px dashed var(--indigo); }
+  .cat-filter-all.is-active { background: rgba(44, 74, 110, 0.2); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
+  .cat-filter-event.is-active { background: rgba(156, 122, 31, 0.2); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
+  .cat-filter-release.is-active { background: rgba(168, 52, 31, 0.2); color: var(--seal); border: 1.5px solid var(--seal); }
+  .cat-filter-other { color: var(--cal-other); border: 1.5px dashed var(--cal-other); }
+  .cat-filter-other.is-active { background: rgba(63,107,74,0.2); color: var(--cal-other); border: 1.5px solid var(--cal-other); }
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cal-nav-btn {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+  }
+  .cal-nav-btn:hover:not(:disabled) { border-color: var(--indigo); }
+  .cal-nav-btn:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .cal-nav-label {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    min-width: 6em;
+    text-align: center;
+  }
+  .cal-months {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .cal-months[hidden] { display: none; }
+  .cal-grid {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cal-dow-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    background: var(--paper);
+  }
+  .cal-dow {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    min-width: 0;
+  }
+  .cal-week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: auto minmax(20px, auto);
+    grid-auto-rows: minmax(20px, auto);
+    border-bottom: 1px solid var(--line);
+  }
+  .cal-week:last-child { border-bottom: none; }
+  .cal-daynum-cell {
+    min-width: 0;
+    padding: 0.3rem 0.3rem 0.2rem;
+    border-right: 1px solid var(--line);
+  }
+  .cal-daynum-cell-last { border-right: none; }
+  .cal-day-bg {
+    background: var(--day-shade);
+    pointer-events: none;
+  }
+  .cal-vline {
+    width: 1px;
+    justify-self: end;
+    background: var(--line);
+    pointer-events: none;
+  }
+  .cal-vline[hidden] { display: none; }
+  .cal-vline-outside { opacity: 0.35; }
+  .cal-day-outside { opacity: 0.35; }
+  .cal-daynum {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .cal-day-today .cal-daynum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--indigo-deep);
+    color: var(--paper);
+  }
+  .cal-bar {
+    display: block;
+    min-width: 0;
+    margin: 0 2px 2px;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cal-bar[hidden] { display: none; }
+  .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
+  .cal-bar-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-continues-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    margin-left: 0;
+  }
+  .cal-bar-continues-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    margin-right: 0;
+  }
+  .cal-bar-overflow {
+    background: transparent;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    font-weight: 400;
+    text-align: center;
+  }
+  .cal-bar-overflow:hover { background: transparent; }
+
+  .agenda-heading {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  ul.agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .agenda-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .agenda-item[hidden] { display: none; }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-item-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-date {
+    flex: 0 0 9em;
+  }
+  .agenda-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .agenda-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .agenda-title:hover { color: var(--indigo); }
+  .agenda-breweries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .agenda-link {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .agenda-link:hover { border-color: var(--indigo); }
+  .agenda-source-link {
+    font-size: 0.74rem;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+  }
+  .agenda-summary {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .agenda-empty { color: var(--muted); }
+
+  section.brewery {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--indigo);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  .brewery-head {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .brewery-name-row {
+    margin: 0 0 0.4rem;
+  }
+  .brewery-name-row h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .brewery-location {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .brewery-official-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .brewery-official-link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .brewery-official-link:hover { text-decoration: underline; }
+
+  .link-icon {
+    display: block;
+  }
+  .brewery-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.6rem 0 0;
+  }
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    color: var(--indigo-deep);
+    background: var(--paper);
+  }
+  .social-icon:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .brewery-personal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.5rem 0 0;
+  }
+  .personal-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .personal-icon-link .link-icon {
+    color: var(--muted);
+  }
+  .personal-icon-link:hover,
+  .personal-icon-link:hover .link-icon {
+    color: var(--indigo);
+  }
+  .personal-label {
+    white-space: nowrap;
+  }
+
+  ul.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.entry {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px dashed var(--line);
+    scroll-margin-top: 3.5rem;
+  }
+  li.entry:last-child { border-bottom: none; }
+  .entries-more {
+    margin: 0.6rem 0 0.2rem;
+  }
+  .entries-more-link {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .entries-more-link:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .entry-date {
+    flex: 0 0 7.5em;
+    color: var(--muted);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .entry-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .entry-title:hover { color: var(--indigo); }
+  .entry-source {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--indigo-deep);
+    margin-top: 0.3rem;
+  }
+  .entry-source-link {
+    color: inherit;
+    text-decoration: underline;
+    margin-right: 0.5rem;
+  }
+  .icon-inline-source {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-right: 0.15em;
+  }
+  .entry-source-link:hover,
+  .agenda-source-link:hover,
+  .lede-quote a:hover,
+  .lede-note a:hover,
+  .entry-summary a:hover,
+  .agenda-summary a:hover,
+  .entry-update-note:hover {
+    background: rgba(44, 74, 110, 0.12);
+    border-radius: 2px;
+  }
+  .entry-summary {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.6rem;
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note {
+    display: inline-block;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+    font-size: 0.85rem;
+  }
+  .no-entries {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+</style>
+
+<div class="stripe"></div>
+
+<div class="page-breadcrumb">
+  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span>秋保ハートロックサケ</span>
+</div>
+<header class="hero">
+  <div class="hero-top">
+    <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
+    <span class="badge-unofficial">非公式ファンサイト</span><span class="badge-unofficial">協会外</span>
+  </div>
+  <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
+  <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
+  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ</a>（以下、協会ページ）</p>
+  <p class="lede">このページでは、クラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
+  <p class="lede-note">
+    現在は、協会加盟醸造所＋αの情報となっていますが、余裕が出てきたら他の気になる醸造所の情報も掲載するかもしれません。<br>
+    内容の間違いや挙動がおかしいところなどがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake</a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+  </p>
+</header>
+
+<div class="chips-label">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips">
+<a class="chip" href="../brewery/konohanano.html">木花之</a>
+<a class="chip" href="../brewery/haccoba.html">haccoba</a>
+<a class="chip" href="../brewery/librom.html">LIBROM</a>
+<a class="chip" href="../brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="../brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="../brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="../brewery/hiraroku.html">平六</a>
+<a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="../brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="../brewery/hajimari.html">はじまり</a>
+<a class="chip" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="../brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="../brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label">気になる醸造所</div>
+<nav class="chips">
+<a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
+<a class="chip chip-current" href="../brewery/heartrock.html">秋保♡ロック</a>
+</nav>
+<div class="chips-label">カテゴリ</div>
+<nav class="chips chips-archive">
+<a class="chip chip-archive" href="../category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="../category/event.html">イベント</a>
+<a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive" href="../category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="../category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="../category/other.html">その他</a>
+</nav>
+
+<main>
+
+      <section class="brewery" id="heartrock">
+        <div class="brewery-head">
+          <div class="brewery-name-row">
+            <h2>秋保ハートロックサケ</h2>
+          </div>
+          <p class="brewery-location">宮城県仙台市青葉区</p>
+          <div class="brewery-official-links"><a class="brewery-official-link" href="https://heartrock-sake.co.jp/" target="_blank" rel="noopener noreferrer">公式サイト ↗</a><a class="brewery-official-link" href="https://heartrock-sake.co.jp/storelist" target="_blank" rel="noopener noreferrer">買える店 ↗</a></div>
+          <div class="brewery-social"><a class="social-icon" href="https://x.com/AkiuHeartRock" target="_blank" rel="noopener noreferrer" title="X"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a><a class="social-icon" href="https://www.instagram.com/heartrocksake1111/" target="_blank" rel="noopener noreferrer" title="Instagram"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a></div>
+          <div class="brewery-personal"><a class="personal-icon-link" href="https://www.instagram.com/heikiisawa03/" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="personal-label">(社長)</span></a><a class="personal-icon-link" href="https://www.threads.com/@heizo_isawa" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg><span class="personal-label">(会長)</span></a><a class="personal-icon-link" href="https://www.instagram.com/heizo_isawa/" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="personal-label">(会長)</span></a></div>
+        </div>
+        <ul class="entries">
+        <li class="entry" id="heartrock-260919-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月19日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月19日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2101225044236173539" target="_blank" rel="noopener noreferrer">「磊峡 Honey Rose Tea PROTOTYPE 1.0」をLa Jomonで先行発売</a>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2101225044236173539" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2100165740590752249" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">先行提供</a></span>
+            <p class="entry-summary">香港・樂茶軒(LockCha)の蜜香紅茶とドライローズで醸した新作「磊峡 Honey Rose Tea PROTOTYPE 1.0」を、La Jomonで数量限定で先行取扱開始。上立ち香にバラ、含み香に桃のような香りが広がる。9/16にはフォーサケ(東京)でも<a href="https://x.com/AkiuHeartRock/status/2100165740590752249" target="_blank" rel="noopener noreferrer">先行提供</a>されていた。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260909-01">
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-updated">UPDATE</span></span><span class="entry-date-group"><span class="entry-date-row">2026年9月9日</span><span class="entry-updated-row">2026年9月29日更新</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月27日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/tsukiya_ankh/status/2097563418366734519" target="_blank" rel="noopener noreferrer">つきや酒店(経堂)で蔵元イベントを開催</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2097563418366734519" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@tsukiya_ankh</a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2103311994153803800" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)">続報1</a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2104035483617787938" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)">続報2</a></span>
+            <p class="entry-summary">9月27日(日)13:00〜15:00、世田谷区経堂のつきや酒店でペアリングイベントを開催。おつまみペアリング付きで6種類+αのお酒を楽しみ、蔵元・伊澤平輝氏から造りの話を聞ける(会費6,600円)。終了後も同日16:00〜21:00にフリータイム営業を実施し、蔵元は「多くの方に来ていただいた」と報告している。</p>
+            <span class="entry-update-note-row"><a class="entry-update-note" href="https://x.com/AkiuHeartRock/status/2104840041147380147" target="_blank" rel="noopener noreferrer">実施後の反応はこちら↗</a></span>
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260908-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月8日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月11日〜13日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2097280913180917968" target="_blank" rel="noopener noreferrer">はせがわ酒店スカイツリー店で試飲販売会を開催</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2097280913180917968" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2098308678621466633" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a><a class="entry-source-link" href="https://www.instagram.com/p/DdGUylPJrnU/" target="_blank" rel="noopener noreferrer" title="Instagram(@heizo_isawa)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heizo_isawa</a><a class="entry-source-link" href="https://www.instagram.com/p/DdGY155P8gg/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">9月11日(金)〜13日(日)、はせがわ酒店スカイツリー店で試飲販売会を開催。前回は2商品だったが、今回はレギュラー4商品に限定2種を加えて持ち込む。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260905-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月5日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月26日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/forsake_tokyo/status/2096200701462614283" target="_blank" rel="noopener noreferrer">フォーサケ(東京)で蔵元来店・秋保ハートロックサケ限定営業</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/forsake_tokyo/status/2096200701462614283" target="_blank" rel="noopener noreferrer" title="X(@forsake_tokyo)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@forsake_tokyo</a></span>
+            <p class="entry-summary">9月26日(土)14時から、東京の「for the sake of SAKE」が秋保ハートロックサケだけの限定営業を実施。蔵元・伊澤氏が来店し、当日限定の酒も用意して来店客と交流する。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260829-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月29日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DcnZbv4D-qI/" target="_blank" rel="noopener noreferrer">La Jomon熊谷さんがSake Worldで紹介、「磊眞 鳳凰単欉烏龍茶」もおすすめに</a>
+            <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.instagram.com/p/DcnZbv4D-qI/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">山形のLa Jomonの熊谷さんを紹介するSake Worldの記事で、「磊眞 鳳凰単欉烏龍茶」がおすすめの一本として紹介され、「世界にも通用する可能性を感じる」と評価された。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260820-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月20日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年9月1日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DcQIfdKTfAH/" target="_blank" rel="noopener noreferrer">五反田「チャコールグリル山武商店」でイベント(浜田屋酒店PRESENTS)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.instagram.com/p/DcQIfdKTfAH/" target="_blank" rel="noopener noreferrer" title="Instagram(@hamadaya_saketen)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@hamadaya_saketen</a><a class="entry-source-link" href="https://www.instagram.com/p/Dcfn7xDDxNo/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2094269405014397257" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">9/1(火)17:30〜21:00、五反田のチャコールグリル山武商店(品川区東五反田)で、浜田屋酒店PRESENTSのイベントを開催。蔵代表の伊澤平輝さんを迎え、想いや説明を聞きながら楽しめる(通常営業・会費なし、席の確保は山武商店へ予約)。ラインナップは磊眞ホップ、磊眞和紅茶スパークリング、磊峡ホップドライ、磊峡和紅茶、磊峡鳳凰単欉烏龍茶、磊峡柚子香る烏龍茶の6種で、宮城県の食材を使ったおつまみも用意。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260819-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月19日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月30日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/sake_st_store/status/2090024533470420994" target="_blank" rel="noopener noreferrer">浅草橋「SAKE Street」で有料試飲販売会(8/30)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sake_st_store/status/2090024533470420994" target="_blank" rel="noopener noreferrer" title="X(@sake_st_store)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sake_st_store</a><a class="entry-source-link" href="https://www.instagram.com/p/DcbBkUxjyBq/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2091860156439302408" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2093904430819385814" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2094268070068113444" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2</a></span>
+            <p class="entry-summary">取引開始後初の開催となる有料試飲販売会。8/30(日)13:00〜18:00、浅草橋のSAKE Streetに伊澤平輝さんが来店。レギュラー4種に加え、柚子や烏龍茶を使った新作も用意。1杯は磊峡シリーズ300円、磊眞シリーズ500円。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260819-02">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月19日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月18日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DcNlEnUvjA_/" target="_blank" rel="noopener noreferrer">香港のPondsideでペアリングディナーを開催(約70名)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.instagram.com/p/DcNlEnUvjA_/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">8/18の夜、香港の老舗茶舗Lockcha(樂茶軒)の創始者Wingchi氏が手がけるレストランPondsideで、秋保ハートロックサケとのペアリングディナーを開催。約70名が集まり大盛況だった。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260809-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月9日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月13日〜15日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DbyNmLXD5J5/" target="_blank" rel="noopener noreferrer">香港国際茶展(International Tea Fair)のセミナーで新製品をお披露目</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.instagram.com/p/DbyNmLXD5J5/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DbyJsbWmB-e/" target="_blank" rel="noopener noreferrer" title="Instagram(@heizo_isawa)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heizo_isawa</a></span>
+            <p class="entry-summary">8/13〜15に香港会議展覧中心で開かれるInternational Tea Fair(香港国際茶展)のセミナーで、樂茶軒の茶葉「鳳凰単欉」を副原材料に米・米麹と並行複発酵で醸した新製品のお披露目と試飲会が行われる。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260808-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月8日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月7日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/magokoroishii/status/2085997547219554706" target="_blank" rel="noopener noreferrer">「まごころ いし井」を訪問、お盆後発売予定の2種を持参</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/magokoroishii/status/2085997547219554706" target="_blank" rel="noopener noreferrer" title="X(@magokoroishii)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@magokoroishii</a><a class="entry-source-link" href="https://www.instagram.com/p/DbxXZi0lFKP/" target="_blank" rel="noopener noreferrer" title="Instagram(@magokoroishii)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@magokoroishii</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2086080238036169186" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">8/7(金)、代表取締役社長の伊澤平輝さんが「まごころ いし井」を訪問。お盆明けに発売予定の新作2種を先行で持ち込み、同店で飲める。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260726-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月26日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DbQQM_xj-fB/" target="_blank" rel="noopener noreferrer">山形の酒販店La Jomonを訪問</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DbQQM_xj-fB/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">山形を代表する酒販店La Jomonを訪問。四合瓶の売り場は冷蔵庫ひとつ分(扉3枚)で、店主の熊谷太郎さんが本当に届けたい酒だけが並ぶと紹介。同店に取り扱ってもらえることを「造り手にとって名誉」として感謝を述べた。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260719-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月19日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月19日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2078810038559560140" target="_blank" rel="noopener noreferrer">第79回塩竈みなと祭の前夜祭VIP席でお酒を提供</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078810038559560140" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://www.city.shiogama.miyagi.jp/soshiki/17/56484.html" target="_blank" rel="noopener noreferrer" title="塩竈市公式サイト">塩竈市公式サイト</a></span>
+            <p class="entry-summary">7/19に開かれた第79回塩竈みなと祭の前夜祭で、VIP席にてお酒をサーブした。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260718-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月18日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月18日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2078416143057105155" target="_blank" rel="noopener noreferrer">浅草橋の「SAKE Street」と取引開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078416143057105155" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078476074619752583" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a></span>
+            <p class="entry-summary">日本酒販売&amp;角打ちの「SAKE Street」(浅草橋)と取引を開始。ホップ・和紅茶・烏龍茶などの副原料を組み合わせたクラフトサケとして紹介された。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260718-02">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月18日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2078373688148361459" target="_blank" rel="noopener noreferrer">「磊峡 和紅茶の酒粕甘酒」を紹介(発売日未定)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078373688148361459" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://www.instagram.com/p/Da7OAQsPJ5I/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">和紅茶の酒粕で作った甘酒。とろっと濃厚でなめらか、りんごや蜂蜜を思わせる甘く華やかな香りで、酒粕特有のクセはほとんどない。発売日は未定。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260717-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月17日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月1日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2078067059842556032" target="_blank" rel="noopener noreferrer">日本酒ゴーアラウンド仙台で「和醸良酒○たけ」とコラボ参加</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078067059842556032" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2105233897659506801" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a><a class="entry-source-link" href="https://x.com/w_marutake/status/2093202909278413309" target="_blank" rel="noopener noreferrer" title="X(@w_marutake)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@w_marutake</a><a class="entry-source-link" href="https://www.instagram.com/p/Dd7W50ej-V9/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/Dd7xPJzTCop/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報</a></span>
+            <p class="entry-summary">10月1日(木)11:00〜20:00、仙台・大町の「和醸良酒○たけ」(まるたけ)で日本酒ゴーアラウンド2026にコラボ参加。新ロットの「磊眞 和紅茶スパークリング」にカタラーナを合わせるほか、好評の「磊峡 鳳凰単欉烏龍茶」の熱燗も提供。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260713-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月13日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年8月22日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2076649171634069990" target="_blank" rel="noopener noreferrer">「秋保温泉MUSIC BAR 2026」に初出店(秋保・里センター)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2076649171634069990" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2090761541432000725" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a><a class="entry-source-link" href="https://www.instagram.com/p/DcTNjsCvvb6/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">「音楽」「お酒」「温泉」をテーマにした「秋保温泉MUSIC BAR 2026 vol.18」に初出店。8/22(土)11:00〜16:30、秋保・里センターで開催。新作も持参。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260713-02">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月13日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月12日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2076648765944131848" target="_blank" rel="noopener noreferrer">さぶん酒店で取扱開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2076648765944131848" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">さぶん酒店で新規取扱が始まった。同店は「暑い夏でもカジュアルに楽しめる、甘くてポップなサケ」とし、オンザロックでミントを添えて飲むのがお気に入りと紹介している。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260710-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月10日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/Dam0qNHS2rU/" target="_blank" rel="noopener noreferrer">オーストラリア・香港への出荷準備が完了、海外輸出を拡大</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/Dam0qNHS2rU/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2075784293167890489" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">オーストラリア(初出荷)と香港への出荷準備が完了。すでに韓国・シンガポール・オランダにも取引先があり、今後はマレーシア・カナダ・台湾にも輸出予定。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260706-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月6日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年7月6日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DaciSHPj9jR/" target="_blank" rel="noopener noreferrer">仙台三越のお中元で取扱開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DaciSHPj9jR/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">磊眞/磊峡が仙台三越のお中元で取り扱われた。「磊眞クラフトギフト(和紅茶スパークリング&amp;ホップ)」6,050円(税込)と、「磊峡クラフトギフト(Japanese black tea/Hops)」4,400円(税込)の2種。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260702-01">
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-updated">UPDATE</span></span><span class="entry-date-group"><span class="entry-date-row">2026年7月2日</span><span class="entry-updated-row">2026年10月2日更新</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年10月2日〜4日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2072623166711861435" target="_blank" rel="noopener noreferrer">「若手の夜明け2026」に初出店(10/2〜4、ブース④)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2072623166711861435" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://www.instagram.com/p/DaSVKA5jzLd/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DdGhg-njza2/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報1</a><a class="entry-source-link" href="https://www.instagram.com/p/Dd-v0_Tj6ro/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報2</a></span>
+            <p class="entry-summary">大手町仲通りで開催の「若手の夜明け2026 TOKYO」第2期(10/2〜4)に初出店。ブース④で、「磊眞 和紅茶スパークリング」「磊眞 ホップ」「磊峡 和紅茶」「磊峡 鳳凰単欉烏龍茶」の4種を提供する。</p>
+            <span class="entry-update-note-row"><a class="entry-update-note" href="https://x.com/AkiuHeartRock/status/2105895732821819608" target="_blank" rel="noopener noreferrer">更新情報はこちら↗</a></span>
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260701-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月1日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DaPerFzSqi8/" target="_blank" rel="noopener noreferrer">鳳凰単欉烏龍茶の磊眞・磊峡が完売、Prototype 02を開発中</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DaPerFzSqi8/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">樂茶軒の鳳凰単欉烏龍茶を使った「磊眞 鳳凰単欉烏龍茶」「磊峡 Phoenix Dancong Oolong Tea」が完売(酒販店取扱分)。このモデルとしては今回限りの限定リリースで、レシピや茶葉の使い方を変えたPrototype 02と、別のお茶を使った新しいクラフトサケを開発中。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260620-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年6月20日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DZzsvsPj2W8/" target="_blank" rel="noopener noreferrer">香港・樂茶軒の会長Mr. Wing-chi Ipさんが来日</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DZzsvsPj2W8/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">鳳凰単欉烏龍茶を提供した香港の樂茶軒より、会長のMr. Wing-chi Ipさんが5日間滞在。完成した酒の出来についての意見交換のほか、鳳凰単欉の香りを引き出す抽出方法や、今後使うお茶について話し合った。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260602-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年6月2日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.khb-tv.co.jp/news/16611323" target="_blank" rel="noopener noreferrer">khb東日本放送で代表・伊澤平輝さんと磊眞の醸造現場が紹介される</a>
+            <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.khb-tv.co.jp/news/16611323" target="_blank" rel="noopener noreferrer" title="khb東日本放送">khb東日本放送</a><a class="entry-source-link" href="https://www.instagram.com/p/DY_njb_j4mS/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DZFQWdzPOeW/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2060986513794662892" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061594235133219227" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061769401511338043" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2</a><a class="entry-source-link" href="https://www.threads.com/@heizo_isawa/post/DZEQnJYmG3e" target="_blank" rel="noopener noreferrer" title="Threads(@heizo_isawa)">Threads(@heizo_isawa)</a></span>
+            <p class="entry-summary">6/2のニュースで、日本酒ベースのクラフト酒で起業した若手社長として紹介。浅勘酒造店(大崎市)での醸造現場を取材し、3月の香港の日本酒販売イベントで磊眞の2種が販売本数1位・2位を独占したことや、将来は秋保に自社蔵を構える構想を紹介。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260529-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月29日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2060340864816427336" target="_blank" rel="noopener noreferrer">「磊峡 鳳凰単欉烏龍茶」を発売</a>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2060340864816427336" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2062843715392258065" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2065770110036648244" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2</a></span>
+            <p class="entry-summary">香港・鳳凰山の麓でしか採れない最高級の烏龍茶「鳳凰単欉」を低温抽出し、仕込水として醸した新商品。10g単位で量り売りされる希少な茶葉(標高1000m以上・樹齢200年以上の単一の木)を使用し、白桃やマスカット、蜂蜜を思わせる香り。5/29に未発売品として紹介、6/6〜7の日本酒と西公園に出展し、6/13の投稿で発売を報告。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260515-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月15日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年5月14日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2055227031533896008" target="_blank" rel="noopener noreferrer">SAKEKAMIYA(亀有)で取扱開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2055227031533896008" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">東京・亀有の「SAKEKAMIYA」で、磊眞シリーズの取扱が始まった(亀有に初上陸)。同店は「磊々峡のハート岩をモチーフにしたラベルが可愛い。ホップを使ったタイプや和紅茶のスパークリングなど、自由でワクワクする味わい」と紹介している。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260514-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月14日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年5月14日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DYUW08UPUMM/" target="_blank" rel="noopener noreferrer">JR仙台駅の「おみやげ処せんだい9号店」で取扱開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DYUW08UPUMM/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2055159867149885503" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">JR仙台駅2Fの「おみやげ処せんだい9号店」(新幹線改札へ上がるエスカレーター乗り場すぐ、お店正面奥の冷蔵庫)で、磊眞シリーズの取扱が始まった。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260514-02">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月14日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年6月6日〜7日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2054771962510205280" target="_blank" rel="noopener noreferrer">「日本酒と西公園 2026」に緊急参加(仙台、ブース24番)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2054771962510205280" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2062837961830662642" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2063200598179328090" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2</a><a class="entry-source-link" href="https://www.instagram.com/p/DZMr3-DD8jN/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">仙台の「日本酒と西公園 2026」に緊急参加。地元仙台でのイベント初参加で、ブースは24番(受付から見て5つ目のテント)。初日の6/6は用意した分が完売し、翌日補充した。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260509-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月9日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年5月8日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2053058815604756820" target="_blank" rel="noopener noreferrer">酒のまるけん(秋田)で取扱開始</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2053058815604756820" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">秋田の地酒とマニアックウイスキーの店「酒のまるけん」で、ホップや和紅茶を使ったクラフトサケの取扱が始まった。同店は「特に和紅茶のタイプが超絶オススメ」とし、すでに予約も入っているという。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260506-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月6日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年5月8日〜10日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2051921305793147254" target="_blank" rel="noopener noreferrer">むとう屋仙台駅店で試飲販売会(5/8〜10)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2051921305793147254" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2052629679023247414" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2052721993515159741" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2</a><a class="entry-source-link" href="https://www.instagram.com/p/DX_UZU7D12m/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DYERYI1jy8R/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報1</a><a class="entry-source-link" href="https://www.instagram.com/p/DYMqJPqDxIJ/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報2</a></span>
+            <p class="entry-summary">5/8(金)〜10(日)の3日間、むとう屋仙台駅店で試飲販売会を開催。代表兼杜氏が来場し、「美味しい」はもちろん「ここが好き」「好みが分かれそう」といった率直な感想も歓迎した。初日はたくさんの来場があった。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260506-02">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月6日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年5月9日〜10日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2051921305793147254" target="_blank" rel="noopener noreferrer">秋保ヴィレッジ アグリエの森で試飲販売会(5/9〜10)</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2051921305793147254" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2052711544392450204" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a><a class="entry-source-link" href="https://www.instagram.com/p/DX_UZU7D12m/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DYE1ny3j6tO/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報1</a><a class="entry-source-link" href="https://www.instagram.com/p/DYMqJPqDxIJ/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報2</a><a class="entry-source-link" href="https://www.instagram.com/p/DYI3JN7mO_k/" target="_blank" rel="noopener noreferrer" title="Instagram(@heizo_isawa)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heizo_isawa</a></span>
+            <p class="entry-summary">5/9(土)〜10(日)、秋保ヴィレッジ アグリエの森で試飲販売会を開催。取締役会長が来場し、地元の人にも遠方からの人にも、新しい日本酒・クラフトサケを体験してほしいと呼びかけた。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260416-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月16日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2044763342225780767" target="_blank" rel="noopener noreferrer">「磊眞 和紅茶スパークリング」を紹介</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2044763342225780767" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
+            <p class="entry-summary">アルコール7%。蜜のような柔らかな甘味と、和紅茶由来の芳醇な香りが後を引く味わい。瓶内二次発酵によるきめ細やかな炭酸で、より爽やかに、軽やかに楽しめる。「秋保ハートロックサケの原点」として紹介された。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260410-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月10日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DW8tzjTSt3V/" target="_blank" rel="noopener noreferrer">「Akiu Heart Rock Sakeにかける想い」を発信</a>
+            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DW8tzjTSt3V/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">古川の浅勘酒造店の協力のもと、紅茶やホップを取り入れた新ジャンルのクラフト酒「磊眞-RAIZIN-」「磊峡-RAIKYO-」を造っていると紹介。アルコール度数は一般的な日本酒の15〜16%に対して10%以下で、日本酒が苦手な人や初めての人にも飲みやすさを追求したと説明している。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260408-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月8日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年4月9日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2041877799187968326" target="_blank" rel="noopener noreferrer">新シリーズ「磊峡 -RAIKYO-」を発売、磊眞シリーズもリニューアル</a>
+            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2041877799187968326" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2042219426377089036" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a><a class="entry-source-link" href="https://www.instagram.com/p/DW8eY7mklbY/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://www.instagram.com/p/DW_cHtlDE8U/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報</a></span>
+            <p class="entry-summary">新シリーズ「磊峡 -RAIKYO-」(コンセプトは「より身近に、それでも特別な一杯を」)を発売。Hops Dry(13%・1,800円、白ブドウ系ホップを使いうっすらピンク色)と和紅茶(8%・1,900円、300本限定仕込み)の2種。磊眞シリーズのリニューアルも同時に実施。当初のオンライン購入先は「こぐま酒店」「大江酒店」で、順次他の酒販店にも拡大予定。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260403-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月3日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DWqC967D-0D/" target="_blank" rel="noopener noreferrer">香港「UMAI Magazine」Vol.99に掲載</a>
+            <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.instagram.com/p/DWqC967D-0D/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">茶葉やホップなどの副原料を掛け合わせた「クラフトサケ」への挑戦、親子二代で取り組むブランドストーリー、日本酒の価値を再定義して海外市場へ広げるビジョンが紹介された。</p>
+            
+          </div>
+        </li>
+
+        <li class="entry" id="heartrock-260401-01">
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月1日</span></span><span class="badge-cal" title="カレンダーに掲載">📅 2026年3月27日〜29日</span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://www.instagram.com/p/DWlZNVSDxPP/" target="_blank" rel="noopener noreferrer">香港「SAKEPOP」に出展、磊眞が売上首位で完売</a>
+            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.instagram.com/p/DWlZNVSDxPP/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
+            <p class="entry-summary">3/27〜29に香港で開かれた「SAKEPOP」に出展。有料試飲も多くの来場者に楽しまれ、物販では「磊眞」が売上首位を獲得して完売した。</p>
+            
+          </div>
+        </li>
+        </ul>
+      </section>
+</main>
+
+<div class="chips-label">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips">
+<a class="chip" href="../brewery/konohanano.html">木花之</a>
+<a class="chip" href="../brewery/haccoba.html">haccoba</a>
+<a class="chip" href="../brewery/librom.html">LIBROM</a>
+<a class="chip" href="../brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="../brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="../brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="../brewery/hiraroku.html">平六</a>
+<a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="../brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="../brewery/hajimari.html">はじまり</a>
+<a class="chip" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="../brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="../brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label">気になる醸造所</div>
+<nav class="chips">
+<a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
+<a class="chip chip-current" href="../brewery/heartrock.html">秋保♡ロック</a>
+</nav>
+<div class="chips-label">カテゴリ</div>
+<nav class="chips chips-archive">
+<a class="chip chip-archive" href="../category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="../category/event.html">イベント</a>
+<a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive" href="../category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="../category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="../category/other.html">その他</a>
+</nav>
+
+<footer>
+  <p>
+    本ページは個人的に運営する非公式のファンページです。掲載中の醸造所・企業・団体
+    （株式会社モトックス、クラフトサケブリュワリー協会を含む）とは一切提携・関連しておらず、
+    公式の見解を示すものでもありません。「クラフトサケ」は株式会社モトックスの登録商標であり、
+    本ページではお酒のジャンルを指す一般的な呼び方として使用しています。
+  </p>
+  <p>
+    掲載情報は各蔵の公式サイト・プレスリリース・報道記事をもとに手作業で収集しており、
+    正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
+    ご確認ください。
+  </p>
+</footer>
