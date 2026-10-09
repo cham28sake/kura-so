@@ -16,6 +16,7 @@
     --seal: #a8341f;
     --mustard: #9c7a1f;
     --cal-other: #3f6b4a;
+    --chip-org-bg: #eee9d9; /* 業界全般のチップ背景(通常チップ var(--surface) #faf8f1 より一段だけ濃い) */
     --muted: #726c5e;
     --line: #ded8c5;
     --day-shade: #eaebef;
@@ -127,6 +128,11 @@
     border-radius: 999px;
   }
   .chip:hover { border-color: var(--indigo); }
+  /* 業界全般(醸造所ではない枠)のチップ: 破線ボーダー+背景を少しだけ濃く */
+  .chip.chip-organization {
+    border-style: dashed;
+    background: var(--chip-org-bg);
+  }
   .chip.chip-current {
     background: var(--indigo);
     color: var(--paper);
@@ -878,10 +884,11 @@
 <a class="chip" href="../brewery/iyasaka.html">弥栄</a>
 <a class="chip" href="../brewery/linne.html">LINNÉ</a>
 </nav>
-<div class="chips-label">気になる醸造所</div>
+<div class="chips-label">気になる醸造所・業界全般</div>
 <nav class="chips">
 <a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
 <a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
 </nav>
 <div class="chips-label">カテゴリ</div>
 <nav class="chips chips-archive">
@@ -1225,10 +1232,11 @@
 <a class="chip" href="../brewery/iyasaka.html">弥栄</a>
 <a class="chip" href="../brewery/linne.html">LINNÉ</a>
 </nav>
-<div class="chips-label">気になる醸造所</div>
+<div class="chips-label">気になる醸造所・業界全般</div>
 <nav class="chips">
 <a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
 <a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
 </nav>
 <div class="chips-label">カテゴリ</div>
 <nav class="chips chips-archive">
