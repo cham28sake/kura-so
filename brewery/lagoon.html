@@ -1,7 +1,24 @@
 <!doctype html>
+<html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LAGOON BREWERY - くらそー</title>
+<meta name="description" content="LAGOON BREWERYの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
+<link rel="canonical" href="https://cham28sake.github.io/kura-so/brewery/lagoon.html">
+<meta property="og:url" content="https://cham28sake.github.io/kura-so/brewery/lagoon.html">
+<meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="くらそー">
+<meta property="og:title" content="LAGOON BREWERY - くらそー">
+<meta property="og:description" content="LAGOON BREWERYの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LAGOON BREWERY - くらそー">
+<meta name="twitter:description" content="LAGOON BREWERYの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -317,6 +334,45 @@
     border-color: var(--indigo);
     background: rgba(44, 74, 110, 0.08);
   }
+  .badge-archived {
+    /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    background: #e4e1d6;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .entry-archived-note {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  /* リンク切れ: クリックできない形(span)にして、取り消し線のグレー表示+小さな「リンク切れ」バッジ */
+  .link-dead,
+  .entry-source-link.link-dead,
+  .agenda-source-link.link-dead {
+    color: var(--muted);
+    text-decoration: line-through;
+    cursor: default;
+  }
+  .entry-title-dead {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .badge-dead {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
   .badge-draft {
     font-size: 0.65rem;
     font-weight: 700;
@@ -403,6 +459,10 @@
     gap: 0.6rem;
     margin-bottom: 1rem;
     font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-load-status {
+    font-size: 0.78rem;
     color: var(--muted);
   }
   .cal-brewery-select {
@@ -932,6 +992,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2109137179805204928" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://www.nagaokauniv.ac.jp/2026/10/09/news_topics/110089/" target="_blank" rel="noopener noreferrer" title="長岡大学">長岡大学</a></span>
             <p class="entry-summary">代表の田中洋介氏が、長岡大学で学生向けに講演。題目は「新潟で酒蔵をつくる 〜県外出身の私が東京・海外を経て新潟で起業したわけ〜」。新潟県と連携し、県内の若手起業家を講師に招く科目「企業経営研究」の一回。</p>
             
+            
           </div>
         </li>
 
@@ -941,6 +1002,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2108108167347614107" target="_blank" rel="noopener noreferrer">サブスクの今期の新規受付は残り4枠、10/10まで(「酔いどれブドウ 槽搾り生」「自然栽培亀の尾どぶろく」をお届け)</a>
             <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2108108167347614107" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">サブスクリプションの今期の新規受付が残り4枠で、10/10(土)まで。今期のお届けは、巨峰を米とともに醸した「酔いどれブドウ 槽搾り生」(500ml・2026年版、新潟・白根のヤマヨ果樹園の巨峰を使用)と、蔵のある地元産の自然栽培「亀ノ尾」100%で造る米と米麹のみの「自然栽培亀の尾どぶろく」(500ml・2026年版・168本限定生産、上澄みをボトリングしたジューシードライなニゴリ酒)の2アイテム。継続中の会員は申込み不要。</p>
+            
             
           </div>
         </li>
@@ -952,6 +1014,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2108169348347248982" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">ぽんしゅ館新潟驛店が開催する「第31回 新潟日本酒リーグフェスタ 2026 秋」(新潟の酒の試飲販売＆酒の肴販売、10/10(土)・10/11(日)の11:00〜17:00、新潟駅西側連絡通路)に初めて出展。LAGOON BREWERYの出展は10/10のみ。</p>
             
+            
           </div>
         </li>
 
@@ -961,6 +1024,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/DeBf80AAWKu/" target="_blank" rel="noopener noreferrer">蔵売店の10月営業スケジュールを案内</a>
             <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.instagram.com/p/DeBf80AAWKu/" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">福島潟の蔵売店の10月の営業スケジュールを案内。蔵のある福島潟には冬の使者ハクチョウやヒシクイが訪れており、10月はイベントも多数予定されている。</p>
+            
             
           </div>
         </li>
@@ -972,6 +1036,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.sakagura-press.com/sake/lagoon-brewery2026/" target="_blank" rel="noopener noreferrer" title="media(酒蔵プレス)">media(酒蔵プレス)</a><a class="entry-source-link" href="https://x.com/SakaguraPress/status/2104757492861587863" target="_blank" rel="noopener noreferrer" title="X(@SakaguraPress)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@SakaguraPress</a></span>
             <p class="entry-summary">酒蔵プレスの連載企画「地域で愛される酒蔵」でLAGOON BREWERYを特集。</p>
             
+            
           </div>
         </li>
 
@@ -981,6 +1046,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2103079886403547443" target="_blank" rel="noopener noreferrer">「カンパイ群馬2026」に出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2103079886403547443" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://www.instagram.com/p/DdqxOlWgTAB/" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">Gメッセ群馬(高崎)で開催される「カンパイ群馬2026」の新潟ブースに、LAGOON BREWERYとして出店。代表・田中氏が2日間ブースに立ち、新潟清酒とクラフトサケを提供(9月25日16:00〜20:30、9月26日11:00〜19:00)。</p>
+            
             
           </div>
         </li>
@@ -992,6 +1058,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/niigatasakefair/status/2102684396037812561" target="_blank" rel="noopener noreferrer" title="X(@niigatasakefair)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@niigatasakefair</a><a class="entry-source-link" href="https://niigata-sakefair.com/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト">イベント公式サイト</a></span>
             <p class="entry-summary">新潟県内13メーカーが出店する日本酒・ワイン・クラフトビールイベント「新潟SAKEフェアFINAL」(今年で最終回)にLAGOON BREWERYが出店。11月3日(火・祝)10:00〜18:00、古町ルフル/ふるまちモール7(新潟市)にて開催。</p>
             
+            
           </div>
         </li>
 
@@ -1001,6 +1068,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2101124181668802830" target="_blank" rel="noopener noreferrer">「福島潟自然文化祭」開催中、光のアート「雁迎灯」も点灯</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2101124181668802830" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">蔵のある福島潟で毎年恒例の「福島潟自然文化祭」が開催中。夕方からは光のアート『雁迎灯』が9月26日(土)まで潟を彩る。19日夜19時からは花火ショーも実施。LAGOON BREWERYのShop&amp;Cafeも20時までの特別営業。</p>
+            
             
           </div>
         </li>
@@ -1012,6 +1080,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sakefes.com/tokyo32/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト(和酒フェス)">イベント公式サイト(和酒フェス)</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2095718036368183749" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://x.com/sakefes/status/2108468759769809374" target="_blank" rel="noopener noreferrer" title="X(@sakefes)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sakefes</a></span>
             <p class="entry-summary">中目黒GTタワー前広場(東京都目黒区)で開催される「第32回 和酒フェス in 中目黒」に、クラフトサケ枠でLAGOON BREWERY「翔空」が初出展。全国52蔵・260種類以上の和酒を飲み比べるイベントで、各日2部制(12:00〜14:10/15:00〜17:10)、飲み比べパスは前売のみ3,600円。</p>
             
+            
           </div>
         </li>
 
@@ -1021,6 +1090,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000001528.000069859.html" target="_blank" rel="noopener noreferrer">「日本酒祭」(高島屋大阪店)のクラフトサケBARに出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000001528.000069859.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2094967809256444364" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">大阪高島屋店(なんば)で開催される「日本酒祭」にて、LAGOON BREWERY・ADACHI NOJO・稲とアガベの3蔵が「クラフトサケBAR」形式で出店。立ち飲みスタイルで有料提供。クラフトサケメンバーによるトークショーも9月6日(日)13時〜開催。</p>
+            
             
           </div>
         </li>
@@ -1032,6 +1102,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2087554018184777890" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">代表・田中洋介氏がYouTubeチャンネル『蔵元の出張』を開設。「SAKE×旅」をテーマに、出張中の移動やSAKEイベント・営業の様子、現地の食・文化などを発信予定。</p>
             
+            
           </div>
         </li>
 
@@ -1041,6 +1112,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000005.000091772.html" target="_blank" rel="noopener noreferrer">アップサイクル酒「ResonEcho(レゾネコ) 梅と茶」を発売</a>
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000005.000091772.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2084549902265446696" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">麒麟山酒造(新潟県阿賀町)提供の梅酒製造後の梅の実と、冨士美園(新潟県村上市)提供のお茶抽出後の茶殻を、米とともに発酵させた『ResonEcho（レゾネコ） 梅と茶』を、2026年8月7日より一般発売。2025年の試験醸造版を改良し、720ml・2,200円(税別)で一般発売。</p>
+            
             
           </div>
         </li>
@@ -1052,6 +1124,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2085988818575143398" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">サブスクリプションの新規受付にあわせ、新潟産ブランドイチゴ「越後姫」を使った「酔いどれイチゴ2026 槽搾り生」をサブスク会員向けに提供。あわせて、ブドウ「巨峰」を皮ごと使った新商品「酔いどれブドウ2026 どぶろく」をサブスク先行リリースとして提供。</p>
             
+            
           </div>
         </li>
 
@@ -1061,6 +1134,7 @@
             <a class="entry-title" href="https://sakerama.sg/" target="_blank" rel="noopener noreferrer">シンガポール初のCRAFT SAKEの祭典「SAKERAMA 2026」に出展</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sakerama.sg/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト">イベント公式サイト</a><a class="entry-source-link" href="https://sakerama.sg/pages/lineup" target="_blank" rel="noopener noreferrer" title="イベント公式サイト(出店蔵一覧)">イベント公式サイト(出店蔵一覧)</a></span>
             <p class="entry-summary">シンガポール初のCRAFT SAKEフェスティバル「SAKERAMA 2026」(7月25日・26日、Tanjong Pagar Distripark)に出展。100種類以上の日本酒・クラフトサケが集結し、日本からはhaccoba・ハッピー太郎醸造所・稲とアガベ・LAGOON BREWERY・LIBROM・ぷくぷく醸造・Fermenteriaが参加。</p>
+            
             
           </div>
         </li>
@@ -1072,6 +1146,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://www.instagram.com/p/DbFKiEwmNvK/" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">シンガポール初となるクラフトサケ特化イベントに出展。会場は37 Tanjong Pagar Distripark。</p>
             
+            
           </div>
         </li>
 
@@ -1081,6 +1156,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2075574170998775989" target="_blank" rel="noopener noreferrer">「にいがた酒 夏の陣」に出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2075574170998775989" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://www.instagram.com/p/DanTjmTGBew/?img_index=1" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">新潟市・古町で開催される、県内43蔵が集まる「にいがた酒 夏の陣」に出店。名物「どぶろくレモンサワー」の特別バージョンのほか、「HOP SAKEほっぺ」「レゾネコ 梅と茶(火入れ、先行販売)」「森のSAKE クロモジ」を無料試飲提供、夏の陣限定42本の「酔いどれイチゴ ウスニゴリ」を有料試飲。</p>
+            
             
           </div>
         </li>
@@ -1092,6 +1168,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2074844210243723272" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">「浅野日本酒店」にて、昨年に続き今年もLAGOON BREWERYのフェアを10月下旬に開催予定。</p>
             
+            
           </div>
         </li>
 
@@ -1101,6 +1178,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2074851168942190863" target="_blank" rel="noopener noreferrer">免許取得5周年、決算は黒字で終了</a>
             <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2074851168942190863" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">2月決算のLAGOON BREWERYが、今期の決算を黒字で終えたことを報告。累積損失は残るものの、免許取得5周年となる今期も事業を継続。</p>
+            
             
           </div>
         </li>
@@ -1112,6 +1190,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><span class="badge-tentative">詳細未定</span><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2074859177164603800" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2088562127632285854" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報</a></span>
             <p class="entry-summary">11月に迎える免許取得5周年の記念酒として、越淡麗39%精米×新潟県産ホップを使った「スーパーほっぺ」(仮称)を構想。新潟県内のホップ農家を訪問し、収穫終盤の畑を見学。</p>
             
+            
           </div>
         </li>
 
@@ -1121,6 +1200,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2064270367686791198" target="_blank" rel="noopener noreferrer">サブスク限定で新商品「HOP SAKE JUMP」「ニゴリのHOP SAKEほっぺ」を先行展開</a>
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2064270367686791198" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">サブスクリプションの新規受付にあわせ、量販店限定の新商品「HOP SAKE JUMP」(ネルソンソーヴィン×シトラの2種ホップ使用)と、「ニゴリのHOP SAKEほっぺ」(黄麹・白麹ハイブリッド)をサブスク会員向けに先行展開。</p>
+            
             
           </div>
         </li>
@@ -1132,6 +1212,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2063174324731904482" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">『HOP SAKE ほっぺ』が、SAKEコンペティション「Tokyo SAKE Challenge 2026」でGOLD SAKE(金賞)を受賞。2年連続の受賞となった。</p>
             
+            
           </div>
         </li>
 
@@ -1141,6 +1222,7 @@
             <a class="entry-title" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer">「混祭2026」に出店</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer" title="おいしいSAKE">おいしいSAKE</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2060609702430748955" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">クラフトサケブリュワリー協会加盟蔵として、東京・高輪のイベント「混祭2026」(TAKANAWA GATEWAY CITY)に出店。</p>
+            
             
           </div>
         </li>
@@ -1152,6 +1234,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://www.instagram.com/p/DY_5aSSPvMJ/" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">「酔いどれイチゴ2026」の発売が近いことを予告。</p>
             
+            
           </div>
         </li>
 
@@ -1161,6 +1244,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2060642656527773743" target="_blank" rel="noopener noreferrer">新商品「森のSAKE クロモジ」を発売</a>
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2060642656527773743" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">日本固有の和ハーブ「クロモジ」を使った新商品「森のSAKE クロモジ」を公式オンラインショップで発売。上品な甘さとキレを両立した「飲む和菓子」のような味わい。</p>
+            
             
           </div>
         </li>
@@ -1172,6 +1256,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sagami-oono.com/uncategorized/2026/05/18/syurakusai2026/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト">イベント公式サイト</a><a class="entry-source-link" href="https://www.instagram.com/p/DXHAmHtEanO/?img_index=1" target="_blank" rel="noopener noreferrer" title="Instagram(@sagamioonoshurakusai_since2024)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@sagamioonoshurakusai_since2024</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2058104210969985319" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">神奈川・相模大野のコリドー通りで開催される日本酒イベント「さがみおおの酒楽祭」に初出店。全国30蔵・90種以上が集まる時間内試飲フリーのイベント。</p>
             
+            
           </div>
         </li>
 
@@ -1181,6 +1266,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2045411579240567009" target="_blank" rel="noopener noreferrer">「CRAFT SAKE WEEK 2026」に出店(4/20)</a>
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2045411579240567009" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2046025322894942658" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報1</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2046499179414061222" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報2</a></span>
             <p class="entry-summary">全国130蔵が参加する国内最大級の日本酒イベント「CRAFT SAKE WEEK 2026」(六本木ヒルズアリーナ)に出店。4/20(月)のテーマは「継承と革新、SAKEムーブメントの日」。</p>
+            
             
           </div>
         </li>
@@ -1192,6 +1278,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2045411579240567009" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2046025322894942658" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報1</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2046499179414061222" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報2</a></span>
             <p class="entry-summary">「CRAFT SAKE WEEK 2026」(4/20出店)にあわせ、「森のSAKE クロモジ 生」「SAKEマルゲリータ one week」「HOP SAKE ほっぺ 生」のCSW限定酒3種を提供。イベントオーガナイザーの中田英寿氏からも試飲コメントをもらった。</p>
             
+            
           </div>
         </li>
 
@@ -1202,6 +1289,7 @@
             <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sakeworld.jp/special/2604niigata_sakesakura/" target="_blank" rel="noopener noreferrer" title="メディア(Sake World)">メディア(Sake World)</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2043542756254228612" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">新潟市「新潟日報メディアシップ」で初開催された、海外輸出に取り組む県内10蔵が参加する「新潟SAKE SAKURA祭」に出展。海外バイヤー・一般来場者向けの試飲会で、海外の来場者も多数訪れた。</p>
             
+            
           </div>
         </li>
 
@@ -1211,6 +1299,7 @@
             <a class="entry-title" href="https://x.com/sho_ku_tanaka/status/2034154483765408233" target="_blank" rel="noopener noreferrer">サブスク限定で「令和7年度の挑戦 越淡麗 純米大吟醸メソッド(出品規格ニゴリ酒)」「レゾネコ 梅と茶(無濾過生)」（どちらも一般販売なしの酒の陣限定）を提供</a>
             <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2034154483765408233" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2041796944755093706" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)">続報</a></span>
             <p class="entry-summary">サブスクリプション会員向けに、一般販売なしの「酒の陣」限定酒2種を提供。出品規格ニゴリ酒「令和7年度の挑戦 越淡麗 純米大吟醸メソッド」(500ml)と、無濾過生タイプの「レゾネコ 梅と茶」(720ml)。新規受付は4月10日まで。</p>
+            
             
           </div>
         </li>

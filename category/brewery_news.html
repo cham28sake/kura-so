@@ -1,7 +1,24 @@
 <!doctype html>
+<html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>醸造所ニュース - くらそー</title>
+<meta name="description" content="クラフトサケ醸造所の「醸造所ニュース」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
+<link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
+<link rel="canonical" href="https://cham28sake.github.io/kura-so/category/brewery_news.html">
+<meta property="og:url" content="https://cham28sake.github.io/kura-so/category/brewery_news.html">
+<meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="くらそー">
+<meta property="og:title" content="醸造所ニュース - くらそー">
+<meta property="og:description" content="クラフトサケ醸造所の「醸造所ニュース」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="醸造所ニュース - くらそー">
+<meta name="twitter:description" content="クラフトサケ醸造所の「醸造所ニュース」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -317,6 +334,45 @@
     border-color: var(--indigo);
     background: rgba(44, 74, 110, 0.08);
   }
+  .badge-archived {
+    /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    background: #e4e1d6;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .entry-archived-note {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  /* リンク切れ: クリックできない形(span)にして、取り消し線のグレー表示+小さな「リンク切れ」バッジ */
+  .link-dead,
+  .entry-source-link.link-dead,
+  .agenda-source-link.link-dead {
+    color: var(--muted);
+    text-decoration: line-through;
+    cursor: default;
+  }
+  .entry-title-dead {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .badge-dead {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
   .badge-draft {
     font-size: 0.65rem;
     font-weight: 700;
@@ -403,6 +459,10 @@
     gap: 0.6rem;
     margin-bottom: 1rem;
     font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-load-status {
+    font-size: 0.78rem;
     color: var(--muted);
   }
   .cal-brewery-select {
@@ -915,7 +975,7 @@
 <main>
 
       <div class="archive-panel">
-        <h2>醸造所ニュース<span class="archive-count">41件</span></h2>
+        <h2>醸造所ニュース<span class="archive-count">40件</span></h2>
         <p class="panel-note">これまでに収集した情報を一覧表示しています。</p>
         <ul class="entries">
         <li class="entry">
@@ -924,6 +984,7 @@
             <a class="entry-title" href="https://x.com/sake_ikko/status/2108127827233329290" target="_blank" rel="noopener noreferrer">haccobaの醸造チームが弥栄醸造を訪問</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-brewery" href="../brewery/iyasaka.html">弥栄</a><a class="entry-source-link" href="https://x.com/sake_ikko/status/2108127827233329290" target="_blank" rel="noopener noreferrer" title="X(@sake_ikko)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sake_ikko</a></span>
             <p class="entry-summary">福島のhaccobaの醸造チームが、新潟の弥栄醸造を訪問した。弥栄醸造の代表・坂本イッコー氏は、阿部酒造の卒業生としても、クラフトサケのブルワリーとしても先輩にあたるhaccobaの佐藤太亮氏からいつも良い刺激を受けているとして、弥栄醸造も精進していくと述べた。</p>
+            
             
           </div>
         </li>
@@ -935,6 +996,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/lagoon.html">LAGOON</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2108108167347614107" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">サブスクリプションの今期の新規受付が残り4枠で、10/10(土)まで。今期のお届けは、巨峰を米とともに醸した「酔いどれブドウ 槽搾り生」(500ml・2026年版、新潟・白根のヤマヨ果樹園の巨峰を使用)と、蔵のある地元産の自然栽培「亀ノ尾」100%で造る米と米麹のみの「自然栽培亀の尾どぶろく」(500ml・2026年版・168本限定生産、上澄みをボトリングしたジューシードライなニゴリ酒)の2アイテム。継続中の会員は申込み不要。</p>
             
+            
           </div>
         </li>
 
@@ -944,6 +1006,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000086.000061904.html" target="_blank" rel="noopener noreferrer">タイの酒蔵「Devanom」と互いの麹を交換して醸すコラボレーションを発表</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000086.000061904.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a><a class="entry-source-link" href="https://www.instagram.com/p/DeOqXd0EwFD/" target="_blank" rel="noopener noreferrer" title="Instagram(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@taisuke_haccoba</a></span>
             <p class="entry-summary">タイの米の醸造酒「サートー(SATO)」を醸すDevanomとのコラボを発表。haccobaは白麹、Devanomはタイの麹「カオマーク」を持ち寄り、7月にタイ、8月に福島でそれぞれ仕込んだ。12月にタイで開催されるフェス「Wonderfruit」のSakeseekerパビリオンでお披露目予定で、商品の詳細は後日発表。</p>
+            
             
           </div>
         </li>
@@ -955,6 +1018,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://x.com/taisuke_haccoba/status/2107401735216250885" target="_blank" rel="noopener noreferrer" title="X(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@taisuke_haccoba</a><a class="entry-source-link" href="https://www.instagram.com/p/DeJdi7wE7iw/" target="_blank" rel="noopener noreferrer" title="Instagram(@taisuke_haccoba)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@taisuke_haccoba</a></span>
             <p class="entry-summary">大手町駅すぐのスタンディングバー兼ボトルショップ「haccoba {kankan}｜haccoba 内神田醸造所」(東京都千代田区内神田1-1-16 大手町ゲートビルディング2階201区)が10/7(水)に本オープン。当面は営業日を絞り、水・木・金の16:30〜22:30に営業して体験の質を高めたうえで、無理のない形で営業日数を増やす方針。営業日は<a href="https://x.com/taisuke_haccoba/status/2107408192775082146" target="_blank" rel="noopener noreferrer">10月の営業カレンダー</a>を参照。予約はInstagram(@haccoba_kankan)のDMで、空席があれば予約なしも可。ビルの「仲通り散歩橋」側にある専用の外階段からのみ入れる。</p>
             
+            
           </div>
         </li>
 
@@ -964,6 +1028,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/DeBf80AAWKu/" target="_blank" rel="noopener noreferrer">蔵売店の10月営業スケジュールを案内</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/lagoon.html">LAGOON</a><a class="entry-source-link" href="https://www.instagram.com/p/DeBf80AAWKu/" target="_blank" rel="noopener noreferrer" title="Instagram(@lagoon_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@lagoon_brewery</a></span>
             <p class="entry-summary">福島潟の蔵売店の10月の営業スケジュールを案内。蔵のある福島潟には冬の使者ハクチョウやヒシクイが訪れており、10月はイベントも多数予定されている。</p>
+            
             
           </div>
         </li>
@@ -975,6 +1040,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/iyasaka.html">弥栄</a><a class="entry-source-link" href="https://www.instagram.com/p/Dd58742vho-/" target="_blank" rel="noopener noreferrer" title="Instagram(@iyasaka_brewery)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@iyasaka_brewery</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18626761069020838/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@iyasaka_brewery)">Instagram ハイライト(@iyasaka_brewery)</a></span>
             <p class="entry-summary">稲刈りも落ち着いたことから、10月より直売所の営業を本格的に開始。営業時間は13:00〜17:00で、営業日はカレンダー通りを予定しているが、急な変更があればInstagramで告知する。</p>
             
+            
           </div>
         </li>
 
@@ -984,6 +1050,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/Dd6bHTMH30d/?img_index=1" target="_blank" rel="noopener noreferrer">10月27日に創業3周年、周年イベントは11月に実施予定</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/adachi_noujo.html">足立</a><a class="entry-source-link" href="https://www.instagram.com/p/Dd6bHTMH30d/?img_index=1" target="_blank" rel="noopener noreferrer" title="Instagram(@adachi_noujo_sake.official)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@adachi_noujo_sake.official</a></span>
             <p class="entry-summary">10月27日に足立農醸は創業3周年を迎える。10月はイベントが立て込んでいるため、周年イベントは11月に実施する予定。</p>
+            
             
           </div>
         </li>
@@ -995,15 +1062,6 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://note.com/haccoba/n/n58df05e48707" target="_blank" rel="noopener noreferrer" title="note(haccoba)">note(haccoba)</a></span>
             <p class="entry-summary">haccoba 内神田醸造所(愛称「haccoba {kankan}」)を紹介するnote記事を公開。「神田で、缶と、ときどきお燗」をテーマに醸造所・スタンディングバー・ボトルショップで構成され、缶とタップ提供が中心。近所のパン屋「BEAVER BREAD」と協力した「酒とパンとアテ」を提供し、今後は醸造体験プログラムも予定。お気に入りのレコード持参で、その日から半年間haccobaのお酒を1杯無料にする企画も実施中。</p>
             
-          </div>
-        </li>
-
-        <li class="entry">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月24日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90haccoba%E3%80%91%E3%80%8Chaccoba+%E5%86%85%E7%A5%9E%E7%94%B0%E9%86%B8%E9%80%A0%E6%89%80%E3%80%8D%E3%81%8C10%E6%9C%881%E6%97%A5%E3%81%AB%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3&amp;dates=20261001%2F20261002&amp;details=9%E6%9C%88%E3%81%AE%E3%83%97%E3%83%AC%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%92%E7%B5%8C%E3%81%A6%E3%80%81%E6%9D%B1%E4%BA%AC%E3%83%BB%E5%A4%A7%E6%89%8B%E7%94%BA%E3%82%B2%E3%83%BC%E3%83%88%E3%83%93%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B02%E9%9A%8E%E3%81%AE%E3%80%8Chaccoba+%E5%86%85%E7%A5%9E%E7%94%B0%E9%86%B8%E9%80%A0%E6%89%80%E3%80%8D%E3%81%8C10%E6%9C%881%E6%97%A5%28%E6%9C%A8%29%E3%81%AB%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%80%82%E5%B0%8F%E9%AB%98%E3%81%AE%E9%86%B8%E9%80%A0%E6%89%80%E3%81%AE%E9%85%92%E3%82%92%E6%A5%BD%E3%81%97%E3%82%81%E3%82%8B%E3%81%BB%E3%81%8B%E3%80%81%E6%9D%B1%E4%BA%AC%E3%81%A8%E5%B0%8F%E9%AB%98%E3%82%92%E3%81%A4%E3%81%AA%E3%81%90%E4%BA%A4%E6%B5%81%E6%8B%A0%E7%82%B9%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E9%85%92%E3%82%92%E8%B5%B7%E7%82%B9%E3%81%AB%E5%9C%B0%E5%9F%9F%E3%81%AE%E6%96%87%E5%8C%96%E3%83%BB%E4%BA%BA%E3%83%BB%E9%A3%9F%E3%81%AE%E9%AD%85%E5%8A%9B%E3%82%92%E7%99%BA%E4%BF%A1%E3%81%97%E3%81%A6%E3%81%84%E3%81%8F%28%E7%A6%8F%E5%B3%B6%E7%9B%B8%E5%8F%8C%E5%BE%A9%E8%88%88%E6%8E%A8%E9%80%B2%E6%A9%9F%E6%A7%8B%28%E5%AE%98%E6%B0%91%E5%90%88%E5%90%8C%E3%83%81%E3%83%BC%E3%83%A0%29%E3%81%8C%E7%99%BA%E8%A1%A8%29%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%28PR+TIMES%29%3A+https%3A%2F%2Fprtimes.jp%2Fmain%2Fhtml%2Frd%2Fp%2F000000064.000126324.html" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年10月1日</a></div>
-          <div class="entry-body">
-            <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000064.000126324.html" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」が10月1日にグランドオープン</a>
-            <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000064.000126324.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
-            <p class="entry-summary">9月のプレオープンを経て、東京・大手町ゲートビルディング2階の「haccoba 内神田醸造所」が10月1日(木)にオープン。小高の醸造所の酒を楽しめるほか、東京と小高をつなぐ交流拠点として、酒を起点に地域の文化・人・食の魅力を発信していく(福島相双復興推進機構(官民合同チーム)が発表)。</p>
             
           </div>
         </li>
@@ -1015,6 +1073,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/hiraroku.html">平六</a><a class="entry-brewery" href="../brewery/hiraroku.html">平六</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/17852309298429509/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@hiraitei1921)">Instagram ハイライト(@hiraitei1921)</a></span>
             <p class="entry-summary">10月の営業カレンダーを案内。営業時間は11:00〜17:00(最終入場16:30)。10月10日・24日は「さんさん朝市」「はたけ部」。</p>
             
+            
           </div>
         </li>
 
@@ -1024,6 +1083,7 @@
             <a class="entry-title" href="https://asakusa.keizai.biz/headline/1082/" target="_blank" rel="noopener noreferrer">駒形から浅草の新店舗へ移転、醸造スペースを3倍に拡大</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/konohanano.html">木花之</a><a class="entry-source-link" href="https://asakusa.keizai.biz/headline/1082/" target="_blank" rel="noopener noreferrer" title="浅草経済新聞">浅草経済新聞</a><a class="entry-source-link" href="https://x.com/allwright_tokyo/status/2101221764068159950" target="_blank" rel="noopener noreferrer" title="X(@allwright_tokyo)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@allwright_tokyo</a></span>
             <p class="entry-summary">木花之醸造所が東京都台東区駒形の店舗から浅草の新店舗へ移転。醸造スペースを畳10枚分から約3倍、麹室を約4.5倍、冷蔵庫を畳1枚分から6畳分に拡張し、醸造所を主軸に据えた設計に一新した。新店舗は2026年9月18日にグランドオープン。</p>
+            
             
           </div>
         </li>
@@ -1035,6 +1095,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/ine_to_agave.html">稲アガ</a><a class="entry-source-link" href="https://www.city.oga.akita.jp/living_information/shiseijoho/kakushukeikaku/8721.html" target="_blank" rel="noopener noreferrer" title="男鹿市公式サイト">男鹿市公式サイト</a><a class="entry-source-link" href="https://www.sakigake.jp/news/article/20260917AK0001/" target="_blank" rel="noopener noreferrer" title="秋田魁新報">秋田魁新報</a></span>
             <p class="entry-summary">国の「地域未来戦略」(令和8年7月とりまとめ)を構成する「地場産業成長プラン」の一環として、男鹿市が「酒づくりを起点とした男鹿の地場産業成長プラン」を策定。日本酒・クラフトサケを対象分野とし、稲とアガベ株式会社及びその関連会社を核となる事業者に位置付けた。日本酒特区の実現、酒づくりを目指す若者の公募、醸造技術の指導・企業経営の指南、醸造所等の施設整備など6つの政策手段を予定している。</p>
             
+            
           </div>
         </li>
 
@@ -1044,6 +1105,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000044.000127777.html" target="_blank" rel="noopener noreferrer">「ANAクラウンプラザホテル秋田」の秋フェアで「発酵マヨ」を使ったグリル料理を提供</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/ine_to_agave.html">稲アガ</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000044.000127777.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">「ANAクラウンプラザホテル秋田」の期間限定ブッフェ「発酵が織りなす秋の味覚ブッフェ」(9月1日〜11月30日)のディナー限定メニューで、稲とアガベの「発酵マヨ」を使った「国産牛もものグリル　発酵マヨ×ハーブソース」を提供。</p>
+            
             
           </div>
         </li>
@@ -1055,6 +1117,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/librom.html">LIBROM</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/17960428424553334/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@lib.rom)">Instagram ハイライト(@lib.rom)</a></span>
             <p class="entry-summary">9月の営業カレンダーを案内。営業時間は日によって異なり、「4pm-11pm」「4pm-12am」「12pm-12am」の3パターンで運用。</p>
             
+            
           </div>
         </li>
 
@@ -1064,6 +1127,7 @@
             <a class="entry-title" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer">佐渡の自社醸造所に直売所をオープン</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/sakenova.html">SAKENOVA</a><a class="entry-source-link" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer" title="新潟日報">新潟日報</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18429780604146550/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@sakenova_brewery)">Instagram ハイライト(@sakenova_brewery)</a></span>
             <p class="entry-summary">佐渡市加茂歌代の自社醸造所「SAKENOVA BREWERY」に併設の直売所をオープン。これまで新潟市・長岡市の酒店のみで扱っていたクラフトサケ(リンゴやミカン、トビシマカンゾウ等を使った8種)を島内で購入でき、試飲も楽しめる。営業時間10:00〜17:00、休みは不定休。</p>
+            
             
           </div>
         </li>
@@ -1075,6 +1139,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/linne.html">LINNÉ</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2092381249344332048" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@shoya_imai</a></span>
             <p class="entry-summary">LINNÉ公式ニュースレター「Letter from LINNÉ」にて、京都・清水五条坂の新醸造所建設に向けた「五条若宮陶器祭」出展や地鎮祭の実施を報告。蔵づくりが本格的に始動したことを伝えるエッセイを配信。</p>
             
+            
           </div>
         </li>
 
@@ -1084,6 +1149,7 @@
             <a class="entry-title" href="https://x.com/adachi_noujo/status/2089254972852453447" target="_blank" rel="noopener noreferrer">「冷凍麹スムージー」の賞味期限検査(300日間)にパス</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/adachi_noujo.html">足立</a><a class="entry-source-link" href="https://x.com/adachi_noujo/status/2089254972852453447" target="_blank" rel="noopener noreferrer" title="X(@adachi_noujo)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@adachi_noujo</a></span>
             <p class="entry-summary">「冷凍麹スムージー」が微生物検査センターによる300日間の賞味期限検査に問題なくパスし、約10カ月間の日持ちが確認された(最長記録を目指し検査継続中)。店頭でも好調に売れている。</p>
+            
             
           </div>
         </li>
@@ -1095,6 +1161,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/iyasaka.html">弥栄</a><a class="entry-source-link" href="https://x.com/sake_ikko/status/2089198702233801104" target="_blank" rel="noopener noreferrer" title="X(@sake_ikko)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sake_ikko</a><a class="entry-source-link" href="https://www.instagram.com/p/DcIDgaKohAT/" target="_blank" rel="noopener noreferrer" title="Instagram(@skmt153)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@skmt153</a></span>
             <p class="entry-summary">代表・坂本氏の地元である横浜の酒屋「三河屋かみや」(1914年創業)で、弥栄醸造のお酒の取り扱いが開始。本店(横浜市西区)・CIAL横浜ANNEX店(横浜市神奈川区)・ViNA GARDENS PERCH店(海老名市)・小田急百貨店町田店(町田市)の計4店舗で購入可能。</p>
             
+            
           </div>
         </li>
 
@@ -1104,6 +1171,7 @@
             <a class="entry-title" href="https://x.com/shoya_imai/status/2088842977388986445" target="_blank" rel="noopener noreferrer">「Voice of LINNÉ」#42で五条坂の醸造所計画と「800 薩摩芋」仕込み再開を発表</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/linne.html">LINNÉ</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2088842977388986445" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@shoya_imai</a></span>
             <p class="entry-summary">Podcast「Voice of LINNÉ」最新回(#42)を公開。京都・五条坂での醸造所建設(2027年春始動、9月より本格着工、醸造所・レストラン・陶芸体験が融合する空間を計画)や若手育成の「コンパニョナージュ構想」を語るとともに、人気商品「800 薩摩芋」の仕込み再開を発表。</p>
+            
             
           </div>
         </li>
@@ -1115,6 +1183,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/librom.html">LIBROM</a><a class="entry-source-link" href="https://x.com/yagyu_mitsuto/status/2086063395388682338" target="_blank" rel="noopener noreferrer" title="X(@yagyu_mitsuto)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@yagyu_mitsuto</a></span>
             <p class="entry-summary">代表・柳生光人氏が、イタリアでのSAKE製造ライセンスを取得したことを報告。今後醸造を開始する予定。</p>
             
+            
           </div>
         </li>
 
@@ -1124,6 +1193,7 @@
             <a class="entry-title" href="https://www.instagram.com/stories/highlights/18057049729916810/" target="_blank" rel="noopener noreferrer">「d&amp;BARREL PROJECT FUKUSHIMA ODAKA」にNAT. BREWとのコラボ蔵として参加</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/pukupuku.html">ぷくぷく</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18057049729916810/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@pukupukubrewing)">Instagram ハイライト(@pukupukubrewing)</a></span>
             <p class="entry-summary">D&amp;DEPARTMENT発案のプロジェクト「d&amp;BARREL PROJECT FUKUSHIMA ODAKA」に、NAT. BREW(井波)とのコラボ醸造家として参加。支援者からの支援により富山でつくられた木樽を全国の醸造家に貸し出し、木樽を使ったクラフトサケづくりに取り組む企画で、今回のコラボ醸造家にぷくぷく醸造が選ばれた。</p>
+            
             
           </div>
         </li>
@@ -1135,6 +1205,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DbQQM_xj-fB/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
             <p class="entry-summary">山形を代表する酒販店La Jomonを訪問。四合瓶の売り場は冷蔵庫ひとつ分(扉3枚)で、店主の熊谷太郎さんが本当に届けたい酒だけが並ぶと紹介。同店に取り扱ってもらえることを「造り手にとって名誉」として感謝を述べた。</p>
             
+            
           </div>
         </li>
 
@@ -1144,6 +1215,7 @@
             <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2078416143057105155" target="_blank" rel="noopener noreferrer">浅草橋の「SAKE Street」と取引開始</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078416143057105155" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2078476074619752583" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報</a></span>
             <p class="entry-summary">日本酒販売&amp;角打ちの「SAKE Street」(浅草橋)と取引を開始。ホップ・和紅茶・烏龍茶などの副原料を組み合わせたクラフトサケとして紹介された。</p>
+            
             
           </div>
         </li>
@@ -1155,6 +1227,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2076648765944131848" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">さぶん酒店で新規取扱が始まった。同店は「暑い夏でもカジュアルに楽しめる、甘くてポップなサケ」とし、オンザロックでミントを添えて飲むのがお気に入りと紹介している。</p>
             
+            
           </div>
         </li>
 
@@ -1164,6 +1237,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/Dam0qNHS2rU/" target="_blank" rel="noopener noreferrer">オーストラリア・香港への出荷準備が完了、海外輸出を拡大</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/Dam0qNHS2rU/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2075784293167890489" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">オーストラリア(初出荷)と香港への出荷準備が完了。すでに韓国・シンガポール・オランダにも取引先があり、今後はマレーシア・カナダ・台湾にも輸出予定。</p>
+            
             
           </div>
         </li>
@@ -1175,6 +1249,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/lagoon.html">LAGOON</a><a class="entry-source-link" href="https://x.com/sho_ku_tanaka/status/2074851168942190863" target="_blank" rel="noopener noreferrer" title="X(@sho_ku_tanaka)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@sho_ku_tanaka</a></span>
             <p class="entry-summary">2月決算のLAGOON BREWERYが、今期の決算を黒字で終えたことを報告。累積損失は残るものの、免許取得5周年となる今期も事業を継続。</p>
             
+            
           </div>
         </li>
 
@@ -1184,6 +1259,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/DaciSHPj9jR/" target="_blank" rel="noopener noreferrer">仙台三越のお中元で取扱開始</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DaciSHPj9jR/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
             <p class="entry-summary">磊眞/磊峡が仙台三越のお中元で取り扱われた。「磊眞クラフトギフト(和紅茶スパークリング&amp;ホップ)」6,050円(税込)と、「磊峡クラフトギフト(Japanese black tea/Hops)」4,400円(税込)の2種。</p>
+            
             
           </div>
         </li>
@@ -1195,6 +1271,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/pukupuku.html">ぷくぷく</a><a class="entry-source-link" href="https://x.com/pukupukubrewing/status/2072570733700776147" target="_blank" rel="noopener noreferrer" title="X(@pukupukubrewing)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@pukupukubrewing</a></span>
             <p class="entry-summary">7月2日(木)および7月9日(木)は酒蔵併設の角打ちを休業。7月は東京でのイベントが多いとのアナウンス。</p>
             
+            
           </div>
         </li>
 
@@ -1204,6 +1281,7 @@
             <a class="entry-title" href="https://www.instagram.com/p/DaPerFzSqi8/" target="_blank" rel="noopener noreferrer">鳳凰単欉烏龍茶の磊眞・磊峡が完売、Prototype 02を開発中</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DaPerFzSqi8/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
             <p class="entry-summary">樂茶軒の鳳凰単欉烏龍茶を使った「磊眞 鳳凰単欉烏龍茶」「磊峡 Phoenix Dancong Oolong Tea」が完売(酒販店取扱分)。このモデルとしては今回限りの限定リリースで、レシピや茶葉の使い方を変えたPrototype 02と、別のお茶を使った新しいクラフトサケを開発中。</p>
+            
             
           </div>
         </li>
@@ -1215,6 +1293,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DZzsvsPj2W8/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
             <p class="entry-summary">鳳凰単欉烏龍茶を提供した香港の樂茶軒より、会長のMr. Wing-chi Ipさんが5日間滞在。完成した酒の出来についての意見交換のほか、鳳凰単欉の香りを引き出す抽出方法や、今後使うお茶について話し合った。</p>
             
+            
           </div>
         </li>
 
@@ -1224,6 +1303,7 @@
             <a class="entry-title" href="https://jp.sake-times.com/special/press/p_202606_haccoba-uchikanda-brewery" target="_blank" rel="noopener noreferrer">「haccoba 内神田醸造所」を東京・大手町に開設、2026年9月開業へ</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://jp.sake-times.com/special/press/p_202606_haccoba-uchikanda-brewery" target="_blank" rel="noopener noreferrer" title="SAKETIMES">SAKETIMES</a></span>
             <p class="entry-summary">大手町ゲートビルディング内の「農と食の産業支援施設」に新醸造所を開設。フルーツやハーブを加えるクラフトサケを醸造し、地域と都市を結ぶ拠点として2026年9月に開業予定。</p>
+            
             
           </div>
         </li>
@@ -1235,6 +1315,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/haccoba.html">haccoba</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000094.000107076.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">仙台のスパークル株式会社が、東邦銀行・東邦リースと共同運営する「TOHOネクストステージファンド」の第4号案件としてhaccobaへ出資したことを発表。資金は2026年開業予定の「haccoba 内神田醸造所」(東京・大手町ゲートビルディング内)の設立費用に充てられる。</p>
             
+            
           </div>
         </li>
 
@@ -1244,6 +1325,7 @@
             <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2055227031533896008" target="_blank" rel="noopener noreferrer">SAKEKAMIYA(亀有)で取扱開始</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2055227031533896008" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">東京・亀有の「SAKEKAMIYA」で、磊眞シリーズの取扱が始まった(亀有に初上陸)。同店は「磊々峡のハート岩をモチーフにしたラベルが可愛い。ホップを使ったタイプや和紅茶のスパークリングなど、自由でワクワクする味わい」と紹介している。</p>
+            
             
           </div>
         </li>
@@ -1255,6 +1337,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DYUW08UPUMM/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2055159867149885503" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">JR仙台駅2Fの「おみやげ処せんだい9号店」(新幹線改札へ上がるエスカレーター乗り場すぐ、お店正面奥の冷蔵庫)で、磊眞シリーズの取扱が始まった。</p>
             
+            
           </div>
         </li>
 
@@ -1264,6 +1347,7 @@
             <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2053058815604756820" target="_blank" rel="noopener noreferrer">酒のまるけん(秋田)で取扱開始</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2053058815604756820" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">秋田の地酒とマニアックウイスキーの店「酒のまるけん」で、ホップや和紅茶を使ったクラフトサケの取扱が始まった。同店は「特に和紅茶のタイプが超絶オススメ」とし、すでに予約も入っているという。</p>
+            
             
           </div>
         </li>
@@ -1275,6 +1359,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2044763342225780767" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock</a></span>
             <p class="entry-summary">アルコール7%。蜜のような柔らかな甘味と、和紅茶由来の芳醇な香りが後を引く味わい。瓶内二次発酵によるきめ細やかな炭酸で、より爽やかに、軽やかに楽しめる。「秋保ハートロックサケの原点」として紹介された。</p>
             
+            
           </div>
         </li>
 
@@ -1284,6 +1369,7 @@
             <a class="entry-title" href="https://x.com/SakeBabySendai/status/2044410685493559572" target="_blank" rel="noopener noreferrer">ブランド初の公式動画を公開</a>
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/fermenteria.html">Fermenteria</a><a class="entry-source-link" href="https://x.com/SakeBabySendai/status/2044410685493559572" target="_blank" rel="noopener noreferrer" title="X(@SakeBabySendai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@SakeBabySendai</a><a class="entry-source-link" href="https://www.instagram.com/p/DXJ2fJLETcU/" target="_blank" rel="noopener noreferrer" title="Instagram(@sakebabysendai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@sakebabysendai</a></span>
             <p class="entry-summary">Fermenteria初の公式動画を公開。仙台駅構内のアーバン・マイクロブルワリーとしてのコンセプトを紹介した。</p>
+            
             
           </div>
         </li>
@@ -1295,6 +1381,7 @@
             <span class="entry-source"><a class="entry-brewery entry-brewery-other" href="../brewery/heartrock.html">秋保♡ロック</a><a class="entry-source-link" href="https://www.instagram.com/p/DW8tzjTSt3V/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111</a></span>
             <p class="entry-summary">古川の浅勘酒造店の協力のもと、紅茶やホップを取り入れた新ジャンルのクラフト酒「磊眞-RAIZIN-」「磊峡-RAIKYO-」を造っていると紹介。アルコール度数は一般的な日本酒の15〜16%に対して10%以下で、日本酒が苦手な人や初めての人にも飲みやすさを追求したと説明している。</p>
             
+            
           </div>
         </li>
 
@@ -1304,6 +1391,7 @@
             <a class="entry-title" href="https://x.com/HIRA6kiku/status/2039865426214347180" target="_blank" rel="noopener noreferrer">その他の醸造酒製造免許を2回目の期限延長</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/hiraroku.html">平六</a><a class="entry-source-link" href="https://x.com/HIRA6kiku/status/2039865426214347180" target="_blank" rel="noopener noreferrer" title="X(@HIRA6kiku)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@HIRA6kiku</a></span>
             <p class="entry-summary">「その他の醸造酒製造免許」の期限延長を2回目実施。来年、品質検査・経営要件・製造数量要件をクリアすれば「永久免許」への切り替えを目指す。</p>
+            
             
           </div>
         </li>
@@ -1315,6 +1403,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/happytaro.html">ハッピー太郎</a><a class="entry-source-link" href="https://x.com/happytaro2017/status/2039596326598643775" target="_blank" rel="noopener noreferrer" title="X(@happytaro2017)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@happytaro2017</a></span>
             <p class="entry-summary">醸造免許取得初年度の2022年からずっと決算黒字を継続し、2年目からは製造量6000リットルを超え、国税局の品質検査もすべて通過してきたことを背景に、永久免許を取得。</p>
             
+            
           </div>
         </li>
 
@@ -1324,6 +1413,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000049.000097044.html" target="_blank" rel="noopener noreferrer">醸造所拡張に向けた資金調達を実施</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/ine_to_agave.html">稲アガ</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000049.000097044.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">秋田銀行・あきぎんキャピタルパートナーズ・日本政策金融公庫による協調投融資で資金調達を実施。醸造所の改修・設備増強により製造能力を拡大する計画。</p>
+            
             
           </div>
         </li>

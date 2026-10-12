@@ -1,7 +1,24 @@
 <!doctype html>
+<html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>地域・コミュニティ活動 - くらそー</title>
+<meta name="description" content="クラフトサケ醸造所の「地域・コミュニティ活動」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
+<link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
+<link rel="canonical" href="https://cham28sake.github.io/kura-so/category/community.html">
+<meta property="og:url" content="https://cham28sake.github.io/kura-so/category/community.html">
+<meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="くらそー">
+<meta property="og:title" content="地域・コミュニティ活動 - くらそー">
+<meta property="og:description" content="クラフトサケ醸造所の「地域・コミュニティ活動」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="地域・コミュニティ活動 - くらそー">
+<meta name="twitter:description" content="クラフトサケ醸造所の「地域・コミュニティ活動」に関する情報のまとめ(非公式ファンサイト「くらそー」)。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -317,6 +334,45 @@
     border-color: var(--indigo);
     background: rgba(44, 74, 110, 0.08);
   }
+  .badge-archived {
+    /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    background: #e4e1d6;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .entry-archived-note {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  /* リンク切れ: クリックできない形(span)にして、取り消し線のグレー表示+小さな「リンク切れ」バッジ */
+  .link-dead,
+  .entry-source-link.link-dead,
+  .agenda-source-link.link-dead {
+    color: var(--muted);
+    text-decoration: line-through;
+    cursor: default;
+  }
+  .entry-title-dead {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .badge-dead {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
   .badge-draft {
     font-size: 0.65rem;
     font-weight: 700;
@@ -403,6 +459,10 @@
     gap: 0.6rem;
     margin-bottom: 1rem;
     font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-load-status {
+    font-size: 0.78rem;
     color: var(--muted);
   }
   .cal-brewery-select {
@@ -925,6 +985,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/ine_to_agave.html">稲アガ</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000063.000097044.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">稲とアガベとNEWLOCALの合弁会社「男鹿まち企画」が、地域共創型私募債「男鹿まち債」(満期10年・利率は固定1.0%+事業売上連動分)を発行し6,000万円を調達。資金は旧・進藤鉄工所をリノベーションした食の交流拠点「CADAR」の整備に充てる。保有者には男鹿での保有者総会への招待などの非金銭リターンも用意。</p>
             
+            
           </div>
         </li>
 
@@ -935,6 +996,7 @@
             <span class="entry-source"><a class="entry-brewery" href="../brewery/hiraroku.html">平六</a><a class="entry-source-link" href="https://www.hiraroku.com/hizumephotofestival" target="_blank" rel="noopener noreferrer" title="公式サイト(hiraroku.com)">公式サイト(hiraroku.com)</a><a class="entry-source-link" href="https://x.com/HIRA6kiku/status/2104814479276212393" target="_blank" rel="noopener noreferrer" title="X(@HIRA6kiku)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@HIRA6kiku</a></span>
             <p class="entry-summary">平六醸造の関連施設「日詰平井邸」と、地元の老舗写真館「畠山写真館」のコラボレーションによる、誰でも参加できる「ひづめ写真展2026」を11月9日(月)〜15日(日)に開催。テーマは「わたしの好きな紫波」。技術や出来栄えを競うものではなく、日々の暮らしの中で撮った紫波の好きな光景を募集し、プリント・展示する。写真エントリーの受付締切は9月30日(仕上げサイズにより1,200円〜3,000円)。</p>
             
+            
           </div>
         </li>
 
@@ -944,6 +1006,7 @@
             <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000059.000097044.html" target="_blank" rel="noopener noreferrer">稲とアガベとNEWLOCALの合弁会社「男鹿まち企画」が男鹿市複合交流施設整備の「基本構想」を策定</a>
             <span class="entry-source"><a class="entry-brewery" href="../brewery/ine_to_agave.html">稲アガ</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000059.000097044.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES)">プレスリリース(PR TIMES)</a></span>
             <p class="entry-summary">稲とアガベとNEWLOCALの合弁会社「男鹿まち企画」が、男鹿市が実施したプロポーザルを受託し、図書館機能と屋内こども広場を中核とする「男鹿市複合交流施設整備 基本構想」を策定。588件の市民アンケートと市民ワークショップをもとに、世代を超えて交流できる公共拠点の方向性を示した。</p>
+            
             
           </div>
         </li>

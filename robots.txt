@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cham28sake.github.io/kura-so/sitemap.xml
