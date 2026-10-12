@@ -259,6 +259,18 @@
     border-radius: 3px;
     white-space: nowrap;
   }
+  .badge-new-mark {
+    /* まとめ行で、新しく加わった蔵のタグにだけ付ける小さな+NEW。 */
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-left: 0.35rem;
+    white-space: nowrap;
+    color: var(--seal);
+    background: rgba(168, 52, 31, 0.12);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+  }
   .badge-updated {
     /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
     font-size: 0.66rem;
@@ -910,7 +922,7 @@
           <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年10月12日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LAGOON%E3%83%BB%E8%B6%B3%E7%AB%8B%E3%80%91%E3%80%8C%E7%AC%AC32%E5%9B%9E%E5%92%8C%E9%85%92%E3%83%95%E3%82%A7%E3%82%B9+in+%E4%B8%AD%E7%9B%AE%E9%BB%92%E3%80%8D%E3%81%AB%E5%87%BA%E5%BA%97%2811%2F7%E3%83%BB8%29&amp;dates=20261107%2F20261109&amp;details=%E4%B8%AD%E7%9B%AE%E9%BB%92GT%E3%82%BF%E3%83%AF%E3%83%BC%E5%89%8D%E5%BA%83%E5%A0%B4%28%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9B%AE%E9%BB%92%E5%8C%BA%29%E3%81%A7%E9%96%8B%E5%82%AC%E3%81%95%E3%82%8C%E3%82%8B%E3%80%8C%E7%AC%AC32%E5%9B%9E+%E5%92%8C%E9%85%92%E3%83%95%E3%82%A7%E3%82%B9+in+%E4%B8%AD%E7%9B%AE%E9%BB%92%E3%80%8D%E3%81%AB%E3%80%81%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%82%B5%E3%82%B1%E6%9E%A0%E3%81%A7%E3%80%8CMIYOI%E3%80%8D%E3%82%92%E5%87%BA%E5%93%81%E3%80%82%E5%85%A8%E5%9B%BD52%E8%94%B5%E3%83%BB260%E7%A8%AE%E9%A1%9E%E4%BB%A5%E4%B8%8A%E3%81%AE%E5%92%8C%E9%85%92%E3%82%92%E9%A3%B2%E3%81%BF%E6%AF%94%E3%81%B9%E3%82%8B%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%A7%E3%80%81%E5%90%84%E6%97%A52%E9%83%A8%E5%88%B6%2812%3A00%E3%80%9C14%3A10%2F15%3A00%E3%80%9C17%3A10%29%E3%80%81%E9%A3%B2%E3%81%BF%E6%AF%94%E3%81%B9%E3%83%91%E3%82%B9%E3%81%AF%E5%89%8D%E5%A3%B2%E3%81%AE%E3%81%BF3%2C600%E5%86%86%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28%E5%92%8C%E9%85%92%E3%83%95%E3%82%A7%E3%82%B9%29%3A+https%3A%2F%2Fsakefes.com%2Ftokyo32%2F%0ASAKETIMES%3A+https%3A%2F%2Fjp.sake-times.com%2Fspecial%2Fpress%2Fp_202610_washu-fes-nakameguro-32th%0AX%28%40sho_ku_tanaka%29%3A+https%3A%2F%2Fx.com%2Fsho_ku_tanaka%2Fstatus%2F2095718036368183749%0AX%28%40sakefes%29%3A+https%3A%2F%2Fx.com%2Fsakefes%2Fstatus%2F2108468759769809374" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年11月7日〜8日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://sakefes.com/tokyo32/" target="_blank" rel="noopener noreferrer">「第32回和酒フェス in 中目黒」に出店(11/7・8)</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/lagoon.html">LAGOON</a><a class="entry-brewery" href="brewery/adachi_noujo.html">足立</a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://sakefes.com/tokyo32/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト(和酒フェス)">イベント公式サイト(和酒フェス)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/lagoon.html">LAGOON</a><a class="entry-brewery" href="brewery/adachi_noujo.html">足立<span class="badge-new-mark" title="この蔵の情報が新しく追加されました">+NEW</span></a><a class="badge-category" href="category/event.html">イベント</a><a class="entry-source-link" href="https://sakefes.com/tokyo32/" target="_blank" rel="noopener noreferrer" title="イベント公式サイト(和酒フェス)">イベント公式サイト(和酒フェス)</a></span>
             <p class="entry-summary">中目黒GTタワー前広場(東京都目黒区)で開催される「第32回 和酒フェス in 中目黒」に、クラフトサケ枠で「MIYOI」を出品。全国52蔵・260種類以上の和酒を飲み比べるイベントで、各日2部制(12:00〜14:10/15:00〜17:10)、飲み比べパスは前売のみ3,600円。</p>
             
           </div>
@@ -1320,7 +1332,7 @@
           <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年10月1日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LIBROM%E3%83%BB%E3%81%B7%E3%81%8F%E3%81%B7%E3%81%8F%E3%80%91%E3%80%8Csakejump+takanawa%E3%80%8D%E3%81%A7%E3%81%B7%E3%81%8F%E3%81%B7%E3%81%8F%E9%86%B8%E9%80%A0%E3%81%A8LIBROM%E3%81%AE%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC&amp;dates=20261024%2F20261025&amp;details=%E3%80%8Csakejump+takanawa%E3%80%8D%E3%81%AB%E3%81%A6%E3%80%81%E3%81%B7%E3%81%8F%E3%81%B7%E3%81%8F%E9%86%B8%E9%80%A0%E3%81%A8LIBROM%E3%81%AE%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC%E3%80%82%E8%A9%B3%E7%B4%B0%E3%81%AF%E8%BF%BD%E3%81%A3%E3%81%A6%E7%99%BA%E8%A1%A8%E4%BA%88%E5%AE%9A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AInstagram+%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%28%40pukupukubrewing%29%3A+https%3A%2F%2Fwww.instagram.com%2Fstories%2Fhighlights%2F18096804497610850%2F%0AX%28%40tachikawa_tetsu%29%3A+https%3A%2F%2Fx.com%2Ftachikawa_tetsu%2Fstatus%2F2095868235338195415" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年10月24日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://www.instagram.com/stories/highlights/18096804497610850/" target="_blank" rel="noopener noreferrer">「sakejump takanawa」でぷくぷく醸造とLIBROMのコラボイベントを開催</a>
-            <span class="entry-source"><a class="entry-brewery" href="brewery/librom.html">LIBROM</a><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく</a><a class="badge-category" href="category/event.html">イベント</a><span class="badge-tentative">詳細未定</span><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18096804497610850/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@pukupukubrewing)">Instagram ハイライト(@pukupukubrewing)</a></span>
+            <span class="entry-source"><a class="entry-brewery" href="brewery/librom.html">LIBROM<span class="badge-new-mark" title="この蔵の情報が新しく追加されました">+NEW</span></a><a class="entry-brewery" href="brewery/pukupuku.html">ぷくぷく</a><a class="badge-category" href="category/event.html">イベント</a><span class="badge-tentative">詳細未定</span><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18096804497610850/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@pukupukubrewing)">Instagram ハイライト(@pukupukubrewing)</a></span>
             <p class="entry-summary">「sakejump takanawa」にて、ぷくぷく醸造とLIBROMのコラボイベントを開催。詳細は追って発表予定。</p>
             
           </div>
