@@ -1,0 +1,1530 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>検索 - くらそー</title>
+<meta name="description" content="キーワードで、クラフトサケ醸造所の新着情報・イベント・メディア掲載を探します(非公式ファンサイト「くらそー」)。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f1eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e22" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="くらそー">
+<meta property="og:title" content="検索 - くらそー">
+<meta property="og:description" content="キーワードで、クラフトサケ醸造所の新着情報・イベント・メディア掲載を探します(非公式ファンサイト「くらそー」)。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="検索 - くらそー">
+<meta name="twitter:description" content="キーワードで、クラフトサケ醸造所の新着情報・イベント・メディア掲載を探します(非公式ファンサイト「くらそー」)。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1eee3;
+    --surface: #faf8f1;
+    --ink: #23262b;
+    --indigo: #2c4a6e;
+    --indigo-deep: #1b3350;
+    --seal: #a8341f;
+    --mustard: #9c7a1f;
+    --cal-other: #3f6b4a;
+    --chip-org-bg: #eee9d9; /* 業界全般のチップ背景(通常チップ var(--surface) #faf8f1 より一段だけ濃い) */
+    --muted: #726c5e;
+    --line: #ded8c5;
+    --day-shade: #eaebef;
+    --shadow: 0 1px 2px rgba(35,38,43,0.06);
+    /* 藍・朱・芥子・緑の淡い塗り(バッジ・チップ・ホバー・カテゴリフィルタの選択中) */
+    --tint-indigo-8: rgba(44, 74, 110, 0.08);
+    --tint-indigo-10: rgba(44, 74, 110, 0.1);
+    --tint-indigo-12: rgba(44, 74, 110, 0.12);
+    --tint-indigo-20: rgba(44, 74, 110, 0.2);
+    --tint-indigo-32: rgba(44, 74, 110, 0.32);
+    --tint-seal-12: rgba(168, 52, 31, 0.12);
+    --tint-seal-20: rgba(168, 52, 31, 0.2);
+    --tint-mustard-20: rgba(156, 122, 31, 0.2);
+    --tint-other-20: rgba(63,107,74,0.2);
+    --badge-archived-bg: #e4e1d6;
+    /* 塗りつぶしのバッジ・バナー(--muted / --seal 地)の上に載せる文字色 */
+    --on-muted: #fff;
+    --on-seal: #fff;
+    color-scheme: light dark;
+  }
+  /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
+     コントラストはWCAG AA(通常文字 4.5:1)を目安にしている(_test_site_a11y_dark.py で検証)。 */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1e22;
+      --surface: #25282d;
+      --ink: #e8e5da;
+      --indigo: #8fb0d6;
+      --indigo-deep: #b4cdea;
+      --seal: #e0826e;
+      --mustard: #d9b45f;
+      --cal-other: #7fc197;
+      --chip-org-bg: #2c3036;
+      --muted: #a09a8a;
+      --line: #3a3d43;
+      --day-shade: #2b2e34;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --tint-indigo-8: rgba(143, 176, 214, 0.1);
+      --tint-indigo-10: rgba(143, 176, 214, 0.14);
+      --tint-indigo-12: rgba(143, 176, 214, 0.16);
+      --tint-indigo-20: rgba(143, 176, 214, 0.24);
+      --tint-indigo-32: rgba(143, 176, 214, 0.28);
+      --tint-seal-12: rgba(224, 130, 110, 0.1);
+      --tint-seal-20: rgba(224, 130, 110, 0.24);
+      --tint-mustard-20: rgba(217, 180, 95, 0.22);
+      --tint-other-20: rgba(127, 193, 151, 0.22);
+      --badge-archived-bg: #3a3d43;
+      --on-muted: #1c1e22;
+      --on-seal: #1c1e22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7;
+    font-variant-numeric: tabular-nums;
+  }
+  a { color: var(--indigo); }
+
+  .stripe {
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg, var(--indigo) 0 28px, var(--seal) 28px 32px, var(--indigo) 32px 60px, var(--paper) 60px 64px
+    );
+    opacity: 0.9;
+  }
+
+  header.hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 1.5rem;
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--seal);
+    font-weight: 700;
+  }
+  h1 {
+    font-family: "Hachi Maru Pop", cursive;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    margin: 0.4rem 0 0.75rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .hero-title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .hero-title-link:hover {
+    color: var(--indigo);
+  }
+  .page-breadcrumb {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
+  }
+  .page-breadcrumb a {
+    color: var(--indigo-deep);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .page-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .page-breadcrumb span {
+    color: var(--muted);
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin: 0;
+  }
+  .lede-quote {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin: 0 0 0.6rem;
+    padding-left: 0.5rem;
+  }
+  .lede-note {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 0.75rem;
+  }
+  .chips-label {
+    max-width: 760px;
+    margin: 0.25rem auto 0;
+    padding: 0 1.5rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  nav.chips {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--indigo-deep);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+  }
+  .chip:hover { border-color: var(--indigo); }
+  /* 業界全般(醸造所ではない枠)のチップ: 破線ボーダー+背景を少しだけ濃く */
+  .chip.chip-organization {
+    border-style: dashed;
+    background: var(--chip-org-bg);
+  }
+  .chip.chip-current {
+    background: var(--indigo);
+    color: var(--paper);
+    border-color: var(--indigo);
+    font-weight: 700;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .timeline-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .panel-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .updated-at {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: -0.25rem 0 1.25rem;
+  }
+
+  .badge-category {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-10);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
+  .badge-category:hover { text-decoration: underline; }
+  .entry-brewery {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 0.5rem;
+  }
+  .entry-brewery:hover { border-color: var(--indigo); }
+  .entry-brewery-other { border-style: dashed; }
+
+  .chips-archive {
+    padding-top: 0;
+  }
+  .chip-archive {
+    background: var(--tint-indigo-10);
+    border-color: transparent;
+  }
+  .chip-archive.chip-current {
+    background: var(--tint-indigo-32);
+    border-color: transparent;
+    color: var(--indigo-deep);
+    font-weight: 700;
+  }
+
+  .archive-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .archive-panel > h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  section.archive-category {
+    margin-bottom: 1.5rem;
+  }
+  section.archive-category h3 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .archive-count {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .badge-new {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    background: var(--seal);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .badge-new-mark {
+    /* まとめ行で、新しく加わった蔵のタグにだけ付ける小さな+NEW。 */
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-left: 0.35rem;
+    white-space: nowrap;
+    color: var(--seal);
+    background: var(--tint-seal-12);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+  }
+  .badge-updated {
+    /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+    background: var(--indigo);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .entry-badge-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-updated-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .badge-cal {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  a.badge-cal:hover {
+    border-color: var(--indigo);
+    background: var(--tint-indigo-8);
+  }
+  .badge-archived {
+    /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    background: var(--badge-archived-bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .entry-archived-note {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  /* リンク切れ: クリックできない形(span)にして、取り消し線のグレー表示+小さな「リンク切れ」バッジ */
+  .link-dead,
+  .entry-source-link.link-dead,
+  .agenda-source-link.link-dead {
+    color: var(--muted);
+    text-decoration: line-through;
+    cursor: default;
+  }
+  .entry-title-dead {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .badge-dead {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+  .badge-draft {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--on-muted);
+    background: var(--muted);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .badge-tentative {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  .draft-banner {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.25rem;
+    border-radius: 10px;
+    background: var(--seal);
+    color: var(--on-seal);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .draft-banner-link {
+    flex: none;
+    color: var(--on-seal);
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+  .draft-banner-text {
+    flex: 1;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .badge-unofficial {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px dashed var(--muted);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .calendar-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .calendar-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+  }
+  .cal-brewery-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-load-status {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .cal-brewery-select {
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+  }
+  .cal-category-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-category-label { white-space: nowrap; }
+  .cal-category-chips { display: flex; gap: 0.4rem; }
+  .cat-filter-chip {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .cat-filter-all { color: var(--indigo); border: 1.5px dashed var(--indigo); }
+  .cat-filter-all.is-active { background: var(--tint-indigo-20); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
+  .cat-filter-event.is-active { background: var(--tint-mustard-20); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
+  .cat-filter-release.is-active { background: var(--tint-seal-20); color: var(--seal); border: 1.5px solid var(--seal); }
+  .cat-filter-other { color: var(--cal-other); border: 1.5px dashed var(--cal-other); }
+  .cat-filter-other.is-active { background: var(--tint-other-20); color: var(--cal-other); border: 1.5px solid var(--cal-other); }
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cal-nav-btn {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+  }
+  .cal-nav-btn:hover:not(:disabled) { border-color: var(--indigo); }
+  .cal-nav-btn:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .cal-nav-label {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    min-width: 6em;
+    text-align: center;
+  }
+  .cal-months {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .cal-months[hidden] { display: none; }
+  .cal-grid {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cal-dow-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    background: var(--paper);
+  }
+  .cal-dow {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    min-width: 0;
+  }
+  .cal-week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: auto minmax(20px, auto);
+    grid-auto-rows: minmax(20px, auto);
+    border-bottom: 1px solid var(--line);
+  }
+  .cal-week:last-child { border-bottom: none; }
+  .cal-daynum-cell {
+    min-width: 0;
+    padding: 0.3rem 0.3rem 0.2rem;
+    border-right: 1px solid var(--line);
+  }
+  .cal-daynum-cell-last { border-right: none; }
+  .cal-day-bg {
+    background: var(--day-shade);
+    pointer-events: none;
+  }
+  .cal-vline {
+    width: 1px;
+    justify-self: end;
+    background: var(--line);
+    pointer-events: none;
+  }
+  .cal-vline[hidden] { display: none; }
+  .cal-vline-outside { opacity: 0.35; }
+  .cal-day-outside { opacity: 0.35; }
+  .cal-daynum {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .cal-day-today .cal-daynum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--indigo-deep);
+    color: var(--paper);
+  }
+  .cal-bar {
+    display: block;
+    min-width: 0;
+    margin: 0 2px 2px;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cal-bar[hidden] { display: none; }
+  .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
+  .cal-bar-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-continues-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    margin-left: 0;
+  }
+  .cal-bar-continues-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    margin-right: 0;
+  }
+  .cal-bar-overflow {
+    background: transparent;
+    border: 1px dashed var(--line);
+    color: var(--muted);
+    font-weight: 400;
+    text-align: center;
+  }
+  .cal-bar-overflow:hover { background: transparent; }
+
+  .agenda-heading {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  ul.agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .agenda-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .agenda-item[hidden] { display: none; }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-item-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-date {
+    flex: 0 0 9em;
+  }
+  .agenda-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .agenda-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .agenda-title:hover { color: var(--indigo); }
+  .agenda-breweries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .agenda-link {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .agenda-link:hover { border-color: var(--indigo); }
+  .agenda-source-link {
+    font-size: 0.74rem;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+  }
+  .agenda-summary {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .agenda-empty { color: var(--muted); }
+
+  section.brewery {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--indigo);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  .brewery-head {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .brewery-name-row {
+    margin: 0 0 0.4rem;
+  }
+  .brewery-name-row h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .brewery-location {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .brewery-official-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .brewery-official-link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .brewery-official-link:hover { text-decoration: underline; }
+
+  .link-icon {
+    display: block;
+  }
+  .brewery-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.6rem 0 0;
+  }
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    color: var(--indigo-deep);
+    background: var(--paper);
+  }
+  .social-icon:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .brewery-personal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.5rem 0 0;
+  }
+  .personal-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .personal-icon-link .link-icon {
+    color: var(--muted);
+  }
+  .personal-icon-link:hover,
+  .personal-icon-link:hover .link-icon {
+    color: var(--indigo);
+  }
+  .personal-label {
+    white-space: nowrap;
+  }
+
+  ul.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.entry {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px dashed var(--line);
+    scroll-margin-top: 3.5rem;
+  }
+  li.entry:last-child { border-bottom: none; }
+  .entries-more {
+    margin: 0.6rem 0 0.2rem;
+  }
+  .entries-more-link {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .entries-more-link:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .entry-date {
+    flex: 0 0 7.5em;
+    color: var(--muted);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .entry-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .entry-title:hover { color: var(--indigo); }
+  .entry-source {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--indigo-deep);
+    margin-top: 0.3rem;
+  }
+  .entry-source-link {
+    color: inherit;
+    text-decoration: underline;
+    margin-right: 0.5rem;
+  }
+  .icon-inline-source {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-right: 0.15em;
+  }
+  .entry-source-link:hover,
+  .agenda-source-link:hover,
+  .lede-quote a:hover,
+  .lede-note a:hover,
+  .entry-summary a:hover,
+  .agenda-summary a:hover,
+  .entry-update-note:hover {
+    background: var(--tint-indigo-12);
+    border-radius: 2px;
+  }
+  .entry-summary {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.6rem;
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note {
+    display: inline-block;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+    font-size: 0.85rem;
+  }
+  .no-entries {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
+  .site-search {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .site-search input[type="search"],
+  .search-form input[type="search"] {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    min-width: 0;
+  }
+  .site-search input[type="search"] { width: 12.5rem; }
+  .search-form input[type="search"] { flex: 1; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  .site-search input::placeholder,
+  .search-form input::placeholder { color: var(--muted); }
+  .site-search button,
+  .search-form button,
+  .search-more {
+    font-family: inherit;
+    font-size: 0.78rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+  }
+  .site-search button:hover,
+  .search-form button:hover,
+  .search-more:hover { border-color: var(--indigo); }
+  .search-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .search-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .search-form { display: flex; gap: 0.5rem; margin: 0.6rem 0 0.8rem; }
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .search-filters select {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+  .search-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.6rem; }
+  .search-tags[hidden] { display: none; }
+  .search-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.75rem;
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-12);
+    border: 1px solid var(--tint-indigo-32);
+    border-radius: 999px;
+    padding: 0.1rem 0.2rem 0.1rem 0.7rem;
+  }
+  .search-tag button {
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: inherit;
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+  }
+  .search-tag button:hover { background: var(--tint-indigo-20); }
+  .search-status { font-size: 0.85rem; margin: 0.4rem 0 0.8rem; }
+  .search-status:focus { outline: none; }
+  .search-hint { font-size: 0.8rem; color: var(--muted); }
+  .search-hint p { margin: 0.2rem 0; }
+  .search-event { font-size: 0.7rem; color: var(--muted); }
+  .search-brewery-link {
+    font-size: 0.68rem;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+  }
+  mark {
+    background: var(--tint-mustard-20);
+    color: inherit;
+    border-radius: 2px;
+  }
+  @media (max-width: 520px) {
+    .site-search { margin-left: 0; width: 100%; }
+    .site-search input[type="search"] { flex: 1; width: auto; }
+  }
+
+  /* 読み上げ専用のテキスト(画面には出さない)・スキップリンク・キーボード操作時のフォーカス表示 */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    color: var(--ink);
+    border: 2px solid var(--indigo);
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  .skip-link:focus {
+    top: 0.5rem;
+  }
+  main:focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--indigo);
+    outline-offset: 2px;
+  }
+</style>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+<div class="stripe" aria-hidden="true"></div>
+
+<nav class="page-breadcrumb" aria-label="パンくずリスト">
+  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span aria-current="page">検索</span>
+</nav>
+<header class="hero">
+  <div class="hero-top">
+    <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
+    <span class="badge-unofficial">非公式ファンサイト</span>
+    
+  </div>
+  <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
+  <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
+  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
+  <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
+  <p class="lede-note">
+    現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
+    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+  </p>
+</header>
+
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ上部)">
+<a class="chip" href="brewery/konohanano.html">木花之</a>
+<a class="chip" href="brewery/haccoba.html">haccoba</a>
+<a class="chip" href="brewery/librom.html">LIBROM</a>
+<a class="chip" href="brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="brewery/hiraroku.html">平六</a>
+<a class="chip" href="brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="brewery/hajimari.html">はじまり</a>
+<a class="chip" href="brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ上部)">
+<a class="chip" href="brewery/fermenteria.html">Fermenteria</a>
+<a class="chip" href="brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="brewery/industry.html">業界全般</a>
+</nav>
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ上部)">
+<a class="chip chip-archive" href="category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="category/event.html">イベント</a>
+<a class="chip chip-archive" href="category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive" href="category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="category/other.html">その他</a>
+</nav>
+
+<main id="main" tabindex="-1">
+
+  <section class="search-panel" aria-labelledby="search-heading">
+    <h2 id="search-heading">キーワード検索</h2>
+    <p class="panel-note">スペース区切りで絞り込みます(AND検索)。大文字小文字・全角半角・ひらがな/カタカナは区別しません。タイトル・概要・蔵名・カテゴリ・リンクの名前が対象です。</p>
+    <form id="search-form" class="search-form" role="search" action="search.html" method="get">
+      <label class="visually-hidden" for="search-q">キーワード</label>
+      <input id="search-q" type="search" name="q" placeholder="キーワードで探す" autocomplete="off">
+      <button type="submit">検索</button>
+    </form>
+    <div class="search-filters">
+      <label>カテゴリ <select id="search-cat"><option value="">すべて</option></select></label>
+      <label>蔵 <select id="search-brewery"><option value="">すべての蔵</option></select></label>
+      <label>並び <select id="search-sort"><option value="new">新しい順</option><option value="event">開催日順</option></select></label>
+    </div>
+    <div id="search-tags" class="search-tags" role="group" aria-label="現在の絞り込み条件" hidden></div>
+    <p id="search-loading" class="panel-note" role="status">検索用データを読み込んでいます…</p>
+    <p id="search-status" class="search-status" role="status" aria-live="polite" tabindex="-1"></p>
+    <div id="search-hint" class="search-hint" hidden>
+      <p>ヒント: 蔵名(例: haccoba)・カテゴリ名(例: イベント)・地名や商品名など、短い言葉で探してみてください。</p>
+      <p>複数の言葉はスペースで区切ると絞り込めます(例: 「LINNÉ 東大」)。「らーめん」と「ラーメン」、全角と半角は同じ扱いです。</p>
+    </div>
+    <ul class="entries search-results" id="search-results"></ul>
+    <p class="entries-more"><button type="button" id="search-more" class="search-more" hidden>もっと見る</button></p>
+    <noscript><p class="panel-note">検索にはJavaScriptが必要です。</p></noscript>
+  </section>
+  <script>
+  (function () {
+    "use strict";
+    var KS = {};
+
+    // ---------------------------------------------------------------- 正規化
+    // 大文字小文字・全角半角・アクセント・ひらがな/カタカナを同一視する。
+    // NFKD+結合記号(U+0300〜036F)の除去で、アクセント(É→e)も同一視する(濁点は結合文字U+3099のまま残る)。
+    KS.fold = function (s) {
+      return String(s).normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    };
+    KS.normChar = function (ch) {
+      var n = KS.fold(ch), out = "";
+      for (var i = 0; i < n.length; i++) {
+        var c = n.charCodeAt(i);
+        if (c >= 0x30A1 && c <= 0x30F6) { c -= 0x60; }
+        out += String.fromCharCode(c);
+      }
+      return out;
+    };
+    // 文字列全体の正規化(検索語・照合用。半角カナ+濁点の結合もNFKCで正しく扱う)
+    KS.normalize = function (s) {
+      var n = KS.fold(s), out = "";
+      for (var i = 0; i < n.length; i++) {
+        var c = n.charCodeAt(i);
+        if (c >= 0x30A1 && c <= 0x30F6) { c -= 0x60; }
+        out += String.fromCharCode(c);
+      }
+      return out;
+    };
+    // スペース(全角含む)区切りの検索語(AND)
+    KS.tokens = function (q) {
+      return KS.normalize(q).split(/[\s\u3000]+/).filter(function (t) { return t.length > 0; });
+    };
+    KS.escapeHtml = function (s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    };
+
+    // ---------------------------------------------------------------- 一致・絞り込み・並べ替え
+    KS.haystack = function (rec, catLabel) {
+      if (rec._h === undefined) {
+        var names = (rec.n || []).map(function (x) { return x.join(" "); }).join(" ");
+        rec._h = KS.normalize([rec.t, rec.m, names, catLabel(rec.c), rec.l].join(" "));
+      }
+      return rec._h;
+    };
+    KS.matches = function (rec, tokens, catLabel) {
+      var h = KS.haystack(rec, catLabel);
+      for (var i = 0; i < tokens.length; i++) { if (h.indexOf(tokens[i]) === -1) { return false; } }
+      return true;
+    };
+    KS.filter = function (records, tokens, cat, brewery, catLabel) {
+      return records.filter(function (r) {
+        if (cat && r.c !== cat) { return false; }
+        if (brewery && (r.s || []).indexOf(brewery) === -1) { return false; }
+        return KS.matches(r, tokens, catLabel);
+      });
+    };
+    // mode: "new"=公開日の新しい順 / "event"=実施日の古い順(実施日なしは最後)
+    KS.sort = function (list, mode) {
+      var idx = list.map(function (r, i) { return [r, i]; });
+      idx.sort(function (a, b) {
+        var x = a[0], y = b[0];
+        if (mode === "event") {
+          var ex = x.e || "9999-99-99", ey = y.e || "9999-99-99";
+          if (ex !== ey) { return ex < ey ? -1 : 1; }
+        }
+        var dx = x.d || "", dy = y.d || "";
+        if (dx !== dy) { return dx < dy ? 1 : -1; }
+        return a[1] - b[1];
+      });
+      return idx.map(function (p) { return p[0]; });
+    };
+
+    // ---------------------------------------------------------------- ハイライト(HTMLエスケープ込み)
+    // 原文の1文字ごとに正規化した文字列を作り、一致位置を原文の位置に対応づけて <mark> で囲む。
+    KS.highlight = function (text, tokens) {
+      var chars = Array.from(text), norm = "", map = [];
+      chars.forEach(function (ch, i) {
+        var n = KS.normChar(ch);
+        for (var k = 0; k < n.length; k++) { norm += n[k]; map.push(i); }
+      });
+      var mark = chars.map(function () { return false; });
+      tokens.forEach(function (tk) {
+        if (!tk) { return; }
+        var from = 0, pos;
+        while ((pos = norm.indexOf(tk, from)) !== -1) {
+          for (var k = pos; k < pos + tk.length; k++) { mark[map[k]] = true; }
+          from = pos + tk.length;
+        }
+      });
+      var out = "", open = false;
+      chars.forEach(function (ch, i) {
+        if (mark[i] && !open) { out += "<mark>"; open = true; }
+        if (!mark[i] && open) { out += "</mark>"; open = false; }
+        out += KS.escapeHtml(ch);
+      });
+      return out + (open ? "</mark>" : "");
+    };
+    // 概要の抜粋(最初のヒット語の前後)。ヒットが無ければ先頭から。
+    KS.excerpt = function (text, tokens, width) {
+      width = width || 110;
+      var chars = Array.from(text);
+      if (chars.length <= width) { return text; }
+      var norm = "", map = [];
+      chars.forEach(function (ch, i) { var n = KS.normChar(ch); for (var k = 0; k < n.length; k++) { norm += n[k]; map.push(i); } });
+      var first = -1;
+      tokens.forEach(function (tk) { var p = tk ? norm.indexOf(tk) : -1; if (p !== -1 && (first === -1 || p < first)) { first = p; } });
+      var start = first === -1 ? 0 : Math.max(0, map[first] - 30);
+      var end = Math.min(chars.length, start + width);
+      return (start > 0 ? "…" : "") + chars.slice(start, end).join("") + (end < chars.length ? "…" : "");
+    };
+
+    window.KuraSearch = KS;
+    if (/(^|[#&])selftest=1/.test(location.hash)) {
+      var out = document.createElement("pre"); out.id = "selftest-result"; out.hidden = true;
+      var label = function () { return "イベント"; };
+      var recs = [
+        { t: "ラーメンイベント", m: "ごはん", n: [["稲とアガベ", "稲アガ", "稲とアガベ株式会社"]], c: "event", l: "", s: ["a"], d: "2026-10-01" },
+        { t: "新商品", m: "らーめん屋とコラボ", n: [["haccoba", "haccoba", "株式会社haccoba"]], c: "new_release", l: "Instagram", s: ["b"], d: "2026-10-03", e: "2026-11-01" },
+        { t: "LINNÉ 東大", m: "和酒フェス", n: [["LINNÉ", "LINNÉ", "株式会社Linné"]], c: "event", l: "", s: ["c"], d: "2026-10-02", e: "2026-10-20" }
+      ];
+      var m = function (q) { return recs.filter(function (r) { return KS.matches(r, KS.tokens(q), label); }).map(function (r) { return r.t; }); };
+      out.textContent = JSON.stringify({
+        tokens: KS.tokens("  Ｈａｃｃｏｂａ　ラーメン  "),
+        hiraKata: [m("らーめん"), m("ラーメン")],
+        halfwidth: m("ｈａｃｃｏｂａ"),
+        caseInsens: m("HACCOBA"),
+        and: [m("ラーメン イベント"), m("ラーメン 稲アガ"), m("ラーメン 存在しない")],
+        nameFields: [m("稲とアガベ株式会社"), m("株式会社linne")],
+        accentFold: [m("linné"), m("linne")],
+        none: m("存在しない語"),
+        sortNew: KS.sort(recs, "new").map(function (r) { return r.t; }),
+        sortEvent: KS.sort(recs, "event").map(function (r) { return r.t; }),
+        escape: KS.escapeHtml('<img src=x onerror="alert(1)">&\''),
+        hlEscape: KS.highlight('<b>ラーメン</b> & "らーめん"', KS.tokens("らーめん")),
+        hlKana: KS.highlight("ラーメンとらーめん", KS.tokens("ラーメン")),
+        excerpt: KS.excerpt("あ".repeat(200) + "ラーメン" + "い".repeat(200), KS.tokens("らーめん"), 40)
+      });
+      document.body.appendChild(out);
+      return;
+    }
+
+    // ---------------------------------------------------------------- 画面
+    var META, DATA, shown = 0, results = [], PAGE = 50;
+    var $ = function (id) { return document.getElementById(id); };
+    var catLabel = function (key) { return (META.categories[key]) || key || ""; };
+    var jpDate = function (iso) {
+      var p = (iso || "").split("-"); return p.length === 3 ? (+p[0]) + "年" + (+p[1]) + "月" + (+p[2]) + "日" : iso || "";
+    };
+    var eventText = function (r) {
+      if (!r.e) { return ""; }
+      return jpDate(r.e) + (r.f && r.f !== r.e ? "〜" + jpDate(r.f) : "");
+    };
+    var safeUrl = function (u) { return /^https?:\/\//.test(u || "") ? u : ""; };
+
+    function readParams() {
+      var p = new URLSearchParams(location.search);
+      return { q: p.get("q") || "", cat: p.get("cat") || "", b: p.get("b") || "", sort: p.get("sort") === "event" ? "event" : "new" };
+    }
+    function currentState() {
+      return { q: $("search-q").value, cat: $("search-cat").value, b: $("search-brewery").value, sort: $("search-sort").value };
+    }
+    function writeUrl(st) {
+      var p = new URLSearchParams();
+      if (st.q) { p.set("q", st.q); }
+      if (st.cat) { p.set("cat", st.cat); }
+      if (st.b) { p.set("b", st.b); }
+      if (st.sort === "event") { p.set("sort", "event"); }
+      var qs = p.toString();
+      try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "")); } catch (e) { /* file:// 等では無視 */ }
+    }
+
+    function renderOne(r, tokens) {
+      var E = KS.escapeHtml, u = safeUrl(r.u);
+      var title = KS.highlight(r.t, tokens);
+      var titleHtml = u
+        ? '<a class="entry-title" href="' + E(u) + '" target="_blank" rel="noopener noreferrer">' + title + '<span class="visually-hidden">(新しいタブで開く)</span></a>'
+        : '<span class="entry-title entry-title-dead">' + title + '</span><span class="badge-dead">リンク切れ</span>';
+      var anchors = r.a || [];
+      var tags = (r.s || []).map(function (slug, i) {
+        var nm = (r.n && r.n[i]) ? r.n[i][1] : slug;
+        var anchor = (anchors[i] || [])[1];
+        return '<a class="entry-brewery" href="brewery/' + E(slug) + '.html' + (anchor ? '#' + E(anchor) : '') + '">' + KS.highlight(nm, tokens) + '</a>';
+      }).join("");
+      var cat = r.c ? '<a class="badge-category" href="category/' + E(r.c) + '.html">' + KS.highlight(catLabel(r.c), tokens) + '</a>' : "";
+      var draft = r.x ? '<span class="badge-draft">下書き</span>' : "";
+      var first = anchors[0] ? 'brewery/' + E(anchors[0][0]) + '.html#' + E(anchors[0][1]) : (r.s && r.s[0] ? 'brewery/' + E(r.s[0]) + '.html' : "");
+      var jump = first ? '<a class="search-brewery-link" href="' + first + '">蔵ページで見る</a>' : "";
+      var ev = eventText(r);
+      var summary = r.m ? '<p class="entry-summary">' + KS.highlight(KS.excerpt(r.m, tokens), tokens) + '</p>' : "";
+      return '<li class="entry">' +
+        '<div class="entry-date">' + draft + '<span class="entry-date-row">' + E(jpDate(r.d)) + '</span>' +
+        (ev ? '<span class="search-event" title="実施日・発売日等">📅 ' + E(ev) + '</span>' : "") + '</div>' +
+        '<div class="entry-body">' + titleHtml +
+        '<span class="entry-source" role="group" aria-label="' + E(r.t) + 'の関連情報">' + tags + cat + jump + '</span>' +
+        summary + '</li>';
+    }
+
+    function showMore(focusFirst) {
+      var tokens = KS.tokens($("search-q").value);
+      var chunk = results.slice(shown, shown + PAGE);
+      var html = chunk.map(function (r) { return renderOne(r, tokens); }).join("");
+      var list = $("search-results"), before = list.children.length;
+      list.insertAdjacentHTML("beforeend", html);
+      shown += chunk.length;
+      $("search-more").hidden = shown >= results.length;
+      if (focusFirst && list.children[before]) {
+        var a = list.children[before].querySelector("a.entry-title") || list.children[before].querySelector("a");
+        if (a) { a.focus(); }
+      }
+    }
+
+    // 現在の絞り込み条件(蔵・カテゴリ)を結果の上にタグで出す。✕で外すとセレクト・URLも更新して再検索。
+    function renderTags(st) {
+      var box = $("search-tags"), html = "";
+      var brName = function (slug) {
+        var hit = META.breweries.filter(function (b) { return b[0] === slug; })[0];
+        return hit ? hit[1] : slug;
+      };
+      var add = function (kind, label) {
+        html += '<span class="search-tag">' + KS.escapeHtml(label) +
+          '<button type="button" data-clear="' + kind + '" aria-label="' + KS.escapeHtml(label) + ' の絞り込みを外す">✕</button></span>';
+      };
+      if (st.b) { add("b", "蔵: " + brName(st.b)); }
+      if (st.cat) { add("cat", "カテゴリ: " + catLabel(st.cat)); }
+      box.innerHTML = html;
+      box.hidden = !html;
+    }
+
+    function run(moveFocus) {
+      var st = currentState(), tokens = KS.tokens(st.q);
+      writeUrl(st);
+      renderTags(st);
+      var status = $("search-status"), list = $("search-results");
+      list.innerHTML = ""; shown = 0;
+      var hasCondition = tokens.length > 0 || st.cat || st.b;
+      if (!hasCondition) {
+        results = [];
+        status.textContent = "キーワードを入力して検索してください。";
+        $("search-more").hidden = true; $("search-hint").hidden = false;
+        return;
+      }
+      results = KS.sort(KS.filter(DATA, tokens, st.cat, st.b, catLabel), st.sort);
+      if (!results.length) {
+        var msg = "見つかりませんでした。";
+        if ((st.cat || st.b) && tokens.length) {
+          var wider = KS.filter(DATA, tokens, "", "", catLabel).length;
+          if (wider) { msg += "絞り込み条件を外すと" + wider + "件見つかります。"; }
+        }
+        status.textContent = msg;
+        $("search-hint").hidden = false; $("search-more").hidden = true;
+      } else {
+        status.textContent = results.length + "件見つかりました" + (results.length > PAGE ? "(" + PAGE + "件ずつ表示)" : "") + "。";
+        $("search-hint").hidden = true;
+        showMore(false);
+      }
+      if (moveFocus) { status.focus(); }
+    }
+
+    function init() {
+      META = window.__KURA_SEARCH_META || { categories: {}, breweries: [] };
+      DATA = window.__KURA_SEARCH || [];
+      var st = readParams();
+      var catSel = $("search-cat"), brSel = $("search-brewery");
+      Object.keys(META.categories).forEach(function (k) { var o = document.createElement("option"); o.value = k; o.textContent = META.categories[k]; catSel.appendChild(o); });
+      META.breweries.forEach(function (b) { var o = document.createElement("option"); o.value = b[0]; o.textContent = b[1]; brSel.appendChild(o); });
+      $("search-q").value = st.q; catSel.value = st.cat; brSel.value = st.b; $("search-sort").value = st.sort;
+      $("search-form").addEventListener("submit", function (ev) { ev.preventDefault(); run(true); });
+      [catSel, brSel, $("search-sort")].forEach(function (el) { el.addEventListener("change", function () { run(false); }); });
+      $("search-more").addEventListener("click", function () { showMore(true); });
+      $("search-tags").addEventListener("click", function (ev) {
+        var btn = ev.target.closest ? ev.target.closest("button[data-clear]") : null;
+        if (!btn) { return; }
+        (btn.getAttribute("data-clear") === "b" ? brSel : catSel).value = "";
+        run(true);
+      });
+      $("search-loading").hidden = true;
+      run(false);
+    }
+
+    var s = document.createElement("script");
+    s.src = "assets/search_index.js";
+    s.onload = init;
+    s.onerror = function () { $("search-loading").textContent = "検索用データを読み込めませんでした。再読み込みしてください。"; };
+    document.head.appendChild(s);
+  })();
+  </script>
+
+</main>
+
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ下部)">
+<a class="chip" href="brewery/konohanano.html">木花之</a>
+<a class="chip" href="brewery/haccoba.html">haccoba</a>
+<a class="chip" href="brewery/librom.html">LIBROM</a>
+<a class="chip" href="brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="brewery/hiraroku.html">平六</a>
+<a class="chip" href="brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="brewery/hajimari.html">はじまり</a>
+<a class="chip" href="brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ下部)">
+<a class="chip" href="brewery/fermenteria.html">Fermenteria</a>
+<a class="chip" href="brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="brewery/industry.html">業界全般</a>
+</nav>
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ下部)">
+<a class="chip chip-archive" href="category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="category/event.html">イベント</a>
+<a class="chip chip-archive" href="category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive" href="category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="category/other.html">その他</a>
+</nav>
+
+<footer>
+  <p>
+    本ページは個人的に運営する非公式のファンページです。掲載中の醸造所・企業・団体
+    （株式会社モトックス、クラフトサケブリュワリー協会を含む）とは一切提携・関連しておらず、
+    公式の見解を示すものでもありません。「クラフトサケ」は株式会社モトックスの登録商標であり、
+    本ページではお酒のジャンルを指す一般的な呼び方として使用しています。
+  </p>
+  <p>
+    掲載情報は各蔵の公式サイト・プレスリリース・報道記事をもとに手作業で収集しており、
+    正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
+    ご確認ください。
+  </p>
+</footer>
+

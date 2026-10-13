@@ -4,6 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SAKENOVA BREWERY - くらそー</title>
 <meta name="description" content="SAKENOVA BREWERYの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f1eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e22" media="(prefers-color-scheme: dark)">
 <link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
 <link rel="canonical" href="https://cham28sake.github.io/kura-so/brewery/sakenova.html">
 <meta property="og:url" content="https://cham28sake.github.io/kura-so/brewery/sakenova.html">
@@ -38,6 +41,52 @@
     --line: #ded8c5;
     --day-shade: #eaebef;
     --shadow: 0 1px 2px rgba(35,38,43,0.06);
+    /* 藍・朱・芥子・緑の淡い塗り(バッジ・チップ・ホバー・カテゴリフィルタの選択中) */
+    --tint-indigo-8: rgba(44, 74, 110, 0.08);
+    --tint-indigo-10: rgba(44, 74, 110, 0.1);
+    --tint-indigo-12: rgba(44, 74, 110, 0.12);
+    --tint-indigo-20: rgba(44, 74, 110, 0.2);
+    --tint-indigo-32: rgba(44, 74, 110, 0.32);
+    --tint-seal-12: rgba(168, 52, 31, 0.12);
+    --tint-seal-20: rgba(168, 52, 31, 0.2);
+    --tint-mustard-20: rgba(156, 122, 31, 0.2);
+    --tint-other-20: rgba(63,107,74,0.2);
+    --badge-archived-bg: #e4e1d6;
+    /* 塗りつぶしのバッジ・バナー(--muted / --seal 地)の上に載せる文字色 */
+    --on-muted: #fff;
+    --on-seal: #fff;
+    color-scheme: light dark;
+  }
+  /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
+     コントラストはWCAG AA(通常文字 4.5:1)を目安にしている(_test_site_a11y_dark.py で検証)。 */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1e22;
+      --surface: #25282d;
+      --ink: #e8e5da;
+      --indigo: #8fb0d6;
+      --indigo-deep: #b4cdea;
+      --seal: #e0826e;
+      --mustard: #d9b45f;
+      --cal-other: #7fc197;
+      --chip-org-bg: #2c3036;
+      --muted: #a09a8a;
+      --line: #3a3d43;
+      --day-shade: #2b2e34;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --tint-indigo-8: rgba(143, 176, 214, 0.1);
+      --tint-indigo-10: rgba(143, 176, 214, 0.14);
+      --tint-indigo-12: rgba(143, 176, 214, 0.16);
+      --tint-indigo-20: rgba(143, 176, 214, 0.24);
+      --tint-indigo-32: rgba(143, 176, 214, 0.28);
+      --tint-seal-12: rgba(224, 130, 110, 0.1);
+      --tint-seal-20: rgba(224, 130, 110, 0.24);
+      --tint-mustard-20: rgba(217, 180, 95, 0.22);
+      --tint-other-20: rgba(127, 193, 151, 0.22);
+      --badge-archived-bg: #3a3d43;
+      --on-muted: #1c1e22;
+      --on-seal: #1c1e22;
+    }
   }
   * { box-sizing: border-box; }
   body {
@@ -199,7 +248,7 @@
     font-size: 0.68rem;
     font-weight: 400;
     color: var(--indigo-deep);
-    background: rgba(44, 74, 110, 0.1);
+    background: var(--tint-indigo-10);
     border: 1px solid transparent;
     padding: 0.05rem 0.5rem;
     border-radius: 4px;
@@ -226,11 +275,11 @@
     padding-top: 0;
   }
   .chip-archive {
-    background: rgba(44, 74, 110, 0.1);
+    background: var(--tint-indigo-10);
     border-color: transparent;
   }
   .chip-archive.chip-current {
-    background: rgba(44, 74, 110, 0.32);
+    background: var(--tint-indigo-32);
     border-color: transparent;
     color: var(--indigo-deep);
     font-weight: 700;
@@ -284,7 +333,7 @@
     margin-left: 0.35rem;
     white-space: nowrap;
     color: var(--seal);
-    background: rgba(168, 52, 31, 0.12);
+    background: var(--tint-seal-12);
     border-radius: 3px;
     padding: 0 0.3rem;
   }
@@ -332,7 +381,7 @@
   }
   a.badge-cal:hover {
     border-color: var(--indigo);
-    background: rgba(44, 74, 110, 0.08);
+    background: var(--tint-indigo-8);
   }
   .badge-archived {
     /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
@@ -340,7 +389,7 @@
     font-weight: 700;
     letter-spacing: 0.02em;
     color: var(--muted);
-    background: #e4e1d6;
+    background: var(--badge-archived-bg);
     padding: 0.1rem 0.5rem;
     border-radius: 999px;
     white-space: nowrap;
@@ -377,7 +426,7 @@
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: var(--on-muted);
     background: var(--muted);
     padding: 0.1rem 0.5rem;
     border-radius: 999px;
@@ -400,7 +449,7 @@
     padding: 0.9rem 1.25rem;
     border-radius: 10px;
     background: var(--seal);
-    color: #fff;
+    color: var(--on-seal);
     font-size: 0.85rem;
     font-weight: 700;
     text-align: center;
@@ -410,7 +459,7 @@
   }
   .draft-banner-link {
     flex: none;
-    color: #fff;
+    color: var(--on-seal);
     text-decoration: underline;
     white-space: nowrap;
   }
@@ -495,13 +544,13 @@
     background: transparent;
   }
   .cat-filter-all { color: var(--indigo); border: 1.5px dashed var(--indigo); }
-  .cat-filter-all.is-active { background: rgba(44, 74, 110, 0.2); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-all.is-active { background: var(--tint-indigo-20); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
   .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
-  .cat-filter-event.is-active { background: rgba(156, 122, 31, 0.2); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-event.is-active { background: var(--tint-mustard-20); color: var(--mustard); border: 1.5px solid var(--mustard); }
   .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
-  .cat-filter-release.is-active { background: rgba(168, 52, 31, 0.2); color: var(--seal); border: 1.5px solid var(--seal); }
+  .cat-filter-release.is-active { background: var(--tint-seal-20); color: var(--seal); border: 1.5px solid var(--seal); }
   .cat-filter-other { color: var(--cal-other); border: 1.5px dashed var(--cal-other); }
-  .cat-filter-other.is-active { background: rgba(63,107,74,0.2); color: var(--cal-other); border: 1.5px solid var(--cal-other); }
+  .cat-filter-other.is-active { background: var(--tint-other-20); color: var(--cal-other); border: 1.5px solid var(--cal-other); }
   .cal-nav {
     display: flex;
     align-items: center;
@@ -886,7 +935,7 @@
   .entry-summary a:hover,
   .agenda-summary a:hover,
   .entry-update-note:hover {
-    background: rgba(44, 74, 110, 0.12);
+    background: var(--tint-indigo-12);
     border-radius: 2px;
   }
   .entry-summary {
@@ -918,30 +967,182 @@
     color: var(--muted);
     font-size: 0.78rem;
   }
+
+  /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
+  .site-search {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .site-search input[type="search"],
+  .search-form input[type="search"] {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    min-width: 0;
+  }
+  .site-search input[type="search"] { width: 12.5rem; }
+  .search-form input[type="search"] { flex: 1; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  .site-search input::placeholder,
+  .search-form input::placeholder { color: var(--muted); }
+  .site-search button,
+  .search-form button,
+  .search-more {
+    font-family: inherit;
+    font-size: 0.78rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+  }
+  .site-search button:hover,
+  .search-form button:hover,
+  .search-more:hover { border-color: var(--indigo); }
+  .search-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .search-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .search-form { display: flex; gap: 0.5rem; margin: 0.6rem 0 0.8rem; }
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .search-filters select {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+  .search-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.6rem; }
+  .search-tags[hidden] { display: none; }
+  .search-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.75rem;
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-12);
+    border: 1px solid var(--tint-indigo-32);
+    border-radius: 999px;
+    padding: 0.1rem 0.2rem 0.1rem 0.7rem;
+  }
+  .search-tag button {
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: inherit;
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+  }
+  .search-tag button:hover { background: var(--tint-indigo-20); }
+  .search-status { font-size: 0.85rem; margin: 0.4rem 0 0.8rem; }
+  .search-status:focus { outline: none; }
+  .search-hint { font-size: 0.8rem; color: var(--muted); }
+  .search-hint p { margin: 0.2rem 0; }
+  .search-event { font-size: 0.7rem; color: var(--muted); }
+  .search-brewery-link {
+    font-size: 0.68rem;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+  }
+  mark {
+    background: var(--tint-mustard-20);
+    color: inherit;
+    border-radius: 2px;
+  }
+  @media (max-width: 520px) {
+    .site-search { margin-left: 0; width: 100%; }
+    .site-search input[type="search"] { flex: 1; width: auto; }
+  }
+
+  /* 読み上げ専用のテキスト(画面には出さない)・スキップリンク・キーボード操作時のフォーカス表示 */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    color: var(--ink);
+    border: 2px solid var(--indigo);
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  .skip-link:focus {
+    top: 0.5rem;
+  }
+  main:focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--indigo);
+    outline-offset: 2px;
+  }
 </style>
 
-<div class="stripe"></div>
+<a class="skip-link" href="#main">本文へスキップ</a>
+<div class="stripe" aria-hidden="true"></div>
 
-<div class="page-breadcrumb">
-  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span>SAKENOVA BREWERY</span>
-</div>
+<nav class="page-breadcrumb" aria-label="パンくずリスト">
+  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span aria-current="page">SAKENOVA BREWERY</span>
+</nav>
 <header class="hero">
   <div class="hero-top">
     <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
     <span class="badge-unofficial">非公式ファンサイト</span>
+    <form class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
+      <label class="visually-hidden" for="site-search-q">SAKENOVA内を検索</label>
+      <input id="site-search-q" type="search" name="q" placeholder="SAKENOVA内を検索" autocomplete="off"><input type="hidden" name="b" value="sakenova">
+      <button type="submit">検索</button>
+    </form>
   </div>
   <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
   <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
-  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ</a>（以下、協会ページ）</p>
+  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
   <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
   <p class="lede-note">
     現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
-    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake</a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
   </p>
 </header>
 
-<div class="chips-label">協会加盟醸造所（協会ページ表示順）</div>
-<nav class="chips">
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ上部)">
 <a class="chip" href="../brewery/konohanano.html">木花之</a>
 <a class="chip" href="../brewery/haccoba.html">haccoba</a>
 <a class="chip" href="../brewery/librom.html">LIBROM</a>
@@ -952,18 +1153,18 @@
 <a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
 <a class="chip" href="../brewery/adachi_noujo.html">足立</a>
 <a class="chip" href="../brewery/hajimari.html">はじまり</a>
-<a class="chip chip-current" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip chip-current" href="../brewery/sakenova.html" aria-current="page">SAKENOVA</a>
 <a class="chip" href="../brewery/iyasaka.html">弥栄</a>
 <a class="chip" href="../brewery/linne.html">LINNÉ</a>
 </nav>
-<div class="chips-label">気になる醸造所・業界全般</div>
-<nav class="chips">
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ上部)">
 <a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
 <a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
 <a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
 </nav>
-<div class="chips-label">カテゴリ</div>
-<nav class="chips chips-archive">
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ上部)">
 <a class="chip chip-archive" href="../category/new_release.html">新商品</a>
 <a class="chip chip-archive" href="../category/event.html">イベント</a>
 <a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
@@ -972,7 +1173,7 @@
 <a class="chip chip-archive" href="../category/other.html">その他</a>
 </nav>
 
-<main>
+<main id="main" tabindex="-1">
 
       <section class="brewery" id="sakenova">
         <div class="brewery-head">
@@ -980,16 +1181,16 @@
             <h2>SAKENOVA BREWERY</h2>
           </div>
           <p class="brewery-location">新潟県佐渡市</p>
-          <div class="brewery-official-links"><a class="brewery-official-link" href="https://sakenovabrewery.jp/" target="_blank" rel="noopener noreferrer">公式サイト ↗</a><a class="brewery-official-link" href="https://sakenovabrewery.jp/pages/partners" target="_blank" rel="noopener noreferrer">買える店 ↗</a></div>
-          <div class="brewery-social"><a class="social-icon" href="https://x.com/sakenovajp" target="_blank" rel="noopener noreferrer" title="X"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a><a class="social-icon" href="https://www.instagram.com/sakenova_brewery" target="_blank" rel="noopener noreferrer" title="Instagram"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a class="social-icon" href="https://www.facebook.com/sakenovajp" target="_blank" rel="noopener noreferrer" title="Facebook"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a class="social-icon" href="https://lin.ee/mZFmvpN" target="_blank" rel="noopener noreferrer" title="LINE"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a></div>
-          <div class="brewery-personal"><a class="personal-icon-link" href="https://x.com/dacci_n" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg><span class="personal-label">(代表)</span></a><a class="personal-icon-link" href="https://note.com/dacci_n" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/></svg><span class="personal-label">(代表)</span></a></div>
+          <div class="brewery-official-links"><a class="brewery-official-link" href="https://sakenovabrewery.jp/" target="_blank" rel="noopener noreferrer">公式サイト<span aria-hidden="true"> ↗</span><span class="visually-hidden">(新しいタブで開く)</span></a><a class="brewery-official-link" href="https://sakenovabrewery.jp/pages/partners" target="_blank" rel="noopener noreferrer">買える店<span aria-hidden="true"> ↗</span><span class="visually-hidden">(新しいタブで開く)</span></a></div>
+          <div class="brewery-social"><a class="social-icon" href="https://x.com/sakenovajp" target="_blank" rel="noopener noreferrer" title="X" aria-label="X(新しいタブで開く)"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a><a class="social-icon" href="https://www.instagram.com/sakenova_brewery" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram(新しいタブで開く)"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a class="social-icon" href="https://www.facebook.com/sakenovajp" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook(新しいタブで開く)"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a class="social-icon" href="https://lin.ee/mZFmvpN" target="_blank" rel="noopener noreferrer" title="LINE" aria-label="LINE(新しいタブで開く)"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a></div>
+          <div class="brewery-personal"><a class="personal-icon-link" href="https://x.com/dacci_n" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg><span class="personal-label">(代表)</span><span class="visually-hidden">(新しいタブで開く)</span></a><a class="personal-icon-link" href="https://note.com/dacci_n" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M0 .279c4.623 0 10.953-.235 15.498-.117 6.099.156 8.39 2.813 8.468 9.374.077 3.71 0 14.335 0 14.335h-6.598c0-9.296.04-10.83 0-13.759-.078-2.578-.814-3.807-2.795-4.041-2.097-.235-7.975-.04-7.975-.04v17.84H0Z"/></svg><span class="personal-label">(代表)</span><span class="visually-hidden">(新しいタブで開く)</span></a></div>
         </div>
         <ul class="entries">
         <li class="entry" id="sakenova-260909-01">
           <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月9日</span></span></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer">佐渡の自社醸造所に直売所をオープン</a>
-            <span class="entry-source"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer" title="新潟日報">新潟日報</a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18429780604146550/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@sakenova_brewery)">Instagram ハイライト(@sakenova_brewery)</a></span>
+            <a class="entry-title" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer">佐渡の自社醸造所に直売所をオープン<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="佐渡の自社醸造所に直売所をオープンの関連情報"><a class="badge-category" href="../category/brewery_news.html">醸造所ニュース</a><a class="entry-source-link" href="https://www.niigata-nippo.co.jp/articles/-/903380" target="_blank" rel="noopener noreferrer" title="新潟日報">新潟日報<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/stories/highlights/18429780604146550/" target="_blank" rel="noopener noreferrer" title="Instagram ハイライト(@sakenova_brewery)">Instagram ハイライト(@sakenova_brewery)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">佐渡市加茂歌代の自社醸造所「SAKENOVA BREWERY」に併設の直売所をオープン。これまで新潟市・長岡市の酒店のみで扱っていたクラフトサケ(リンゴやミカン、トビシマカンゾウ等を使った8種)を島内で購入でき、試飲も楽しめる。営業時間10:00〜17:00、休みは不定休。</p>
             
             
@@ -997,10 +1198,10 @@
         </li>
 
         <li class="entry" id="sakenova-260805-01">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月5日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC8%E5%BC%BE%E3%80%8CBrew+Note+008+WATERMELON%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260805%2F20260806&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC8%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%81%AE%E5%B0%8F%E7%8E%89%E3%82%B9%E3%82%A4%E3%82%AB%E3%80%8C%E5%A7%AB%E7%94%98%E6%B3%89%E3%80%8D%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+008+WATERMELON%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E3%82%82%E3%82%8D%E3%81%BF%E3%81%AE%E4%B8%80%E9%83%A8%EF%BC%88%E3%81%AB%E3%81%94%E3%82%8A%E6%88%90%E5%88%86%EF%BC%89%E3%81%A8%E4%B8%8A%E6%A7%BD%E5%BE%8C%E3%81%AE%E6%BE%84%E3%82%93%E3%81%A0%E9%85%92%E3%82%92%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%82%8B2%E6%AE%B5%E9%9A%8E%E3%81%AE%E8%A3%BD%E6%B3%95%E3%81%A7%E3%80%81%E3%82%B9%E3%82%A4%E3%82%AB%E3%81%AE%E6%9E%9C%E5%AE%9F%E6%84%9F%E3%82%92%E6%9C%80%E5%A4%A7%E9%99%90%E3%81%AB%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%99%E3%81%93%E3%81%A8%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%97%E3%81%9F%E4%B8%80%E6%9C%AC%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn008" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年8月5日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年8月5日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC8%E5%BC%BE%E3%80%8CBrew+Note+008+WATERMELON%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260805%2F20260806&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC8%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%81%AE%E5%B0%8F%E7%8E%89%E3%82%B9%E3%82%A4%E3%82%AB%E3%80%8C%E5%A7%AB%E7%94%98%E6%B3%89%E3%80%8D%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+008+WATERMELON%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E3%82%82%E3%82%8D%E3%81%BF%E3%81%AE%E4%B8%80%E9%83%A8%EF%BC%88%E3%81%AB%E3%81%94%E3%82%8A%E6%88%90%E5%88%86%EF%BC%89%E3%81%A8%E4%B8%8A%E6%A7%BD%E5%BE%8C%E3%81%AE%E6%BE%84%E3%82%93%E3%81%A0%E9%85%92%E3%82%92%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E3%82%8B2%E6%AE%B5%E9%9A%8E%E3%81%AE%E8%A3%BD%E6%B3%95%E3%81%A7%E3%80%81%E3%82%B9%E3%82%A4%E3%82%AB%E3%81%AE%E6%9E%9C%E5%AE%9F%E6%84%9F%E3%82%92%E6%9C%80%E5%A4%A7%E9%99%90%E3%81%AB%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%99%E3%81%93%E3%81%A8%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%97%E3%81%9F%E4%B8%80%E6%9C%AC%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn008" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: Crafted Series第8弾「Brew Note 008 WATERMELON」を発売(2026年8月5日)(新しいタブで開く)">📅 2026年8月5日</a></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn008" target="_blank" rel="noopener noreferrer">Crafted Series第8弾「Brew Note 008 WATERMELON」を発売</a>
-            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn008" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)</a></span>
+            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn008" target="_blank" rel="noopener noreferrer">Crafted Series第8弾「Brew Note 008 WATERMELON」を発売<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="Crafted Series第8弾「Brew Note 008 WATERMELON」を発売の関連情報"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn008" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">Crafted Seriesの第8弾として、佐渡産の小玉スイカ「姫甘泉」を副原料にした「Brew Note 008 WATERMELON」を発売。もろみの一部（にごり成分）と上槽後の澄んだ酒を組み合わせる2段階の製法で、スイカの果実感を最大限に引き出すことを目指した一本。</p>
             
             
@@ -1008,10 +1209,10 @@
         </li>
 
         <li class="entry" id="sakenova-260701-01">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月1日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC7%E5%BC%BE%E3%80%8CBrew+Note+007+Tobishima+kanzo+%26+HONEY%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260701%2F20260702&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC7%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%8F%E3%83%81%E3%83%9F%E3%83%84%E3%81%A8%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%88%E3%83%93%E3%82%B7%E3%83%9E%E3%82%AB%E3%83%B3%E3%82%BE%E3%82%A6%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+007+Tobishima+kanzo+%26+HONEY%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E9%A6%99%E3%82%8A%E3%81%AF%E7%94%98%E3%81%8F%E5%91%B3%E3%82%8F%E3%81%84%E3%81%AF%E3%82%AD%E3%83%AC%E3%82%8B%E3%82%B3%E3%83%B3%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88%E3%82%92%E7%8B%99%E3%81%84%E3%80%81%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E4%B8%AD%E6%9C%80%E3%82%82%E8%BE%9B%E5%8F%A3%E3%81%AB%E4%BB%95%E4%B8%8A%E3%81%92%E3%81%9F%E4%B8%80%E6%9C%AC%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn007" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年7月1日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年7月1日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC7%E5%BC%BE%E3%80%8CBrew+Note+007+Tobishima+kanzo+%26+HONEY%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260701%2F20260702&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC7%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%8F%E3%83%81%E3%83%9F%E3%83%84%E3%81%A8%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%88%E3%83%93%E3%82%B7%E3%83%9E%E3%82%AB%E3%83%B3%E3%82%BE%E3%82%A6%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+007+Tobishima+kanzo+%26+HONEY%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E9%A6%99%E3%82%8A%E3%81%AF%E7%94%98%E3%81%8F%E5%91%B3%E3%82%8F%E3%81%84%E3%81%AF%E3%82%AD%E3%83%AC%E3%82%8B%E3%82%B3%E3%83%B3%E3%83%88%E3%83%A9%E3%82%B9%E3%83%88%E3%82%92%E7%8B%99%E3%81%84%E3%80%81%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E4%B8%AD%E6%9C%80%E3%82%82%E8%BE%9B%E5%8F%A3%E3%81%AB%E4%BB%95%E4%B8%8A%E3%81%92%E3%81%9F%E4%B8%80%E6%9C%AC%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn007" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: Crafted Series第7弾「Brew Note 007 Tobishima kanzo &amp; HONEY」を発売(2026年7月1日)(新しいタブで開く)">📅 2026年7月1日</a></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn007" target="_blank" rel="noopener noreferrer">Crafted Series第7弾「Brew Note 007 Tobishima kanzo &amp; HONEY」を発売</a>
-            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn007" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)</a></span>
+            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn007" target="_blank" rel="noopener noreferrer">Crafted Series第7弾「Brew Note 007 Tobishima kanzo &amp; HONEY」を発売<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="Crafted Series第7弾「Brew Note 007 Tobishima kanzo &amp; HONEY」を発売の関連情報"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn007" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">Crafted Seriesの第7弾として、佐渡産ハチミツと佐渡産トビシマカンゾウを副原料にした「Brew Note 007 Tobishima kanzo &amp; HONEY」を発売。香りは甘く味わいはキレるコントラストを狙い、シリーズ中最も辛口に仕上げた一本。</p>
             
             
@@ -1019,10 +1220,10 @@
         </li>
 
         <li class="entry" id="sakenova-260603-01">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年6月3日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91%E3%80%8C%E6%B7%B7%E7%A5%AD2026%E3%80%8D%E3%81%AB%E5%87%BA%E5%BA%97&amp;dates=20260610%2F20260615&amp;details=%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%82%B5%E3%82%B1%E3%83%96%E3%83%AA%E3%83%A5%E3%83%AF%E3%83%AA%E3%83%BC%E5%8D%94%E4%BC%9A%E5%8A%A0%E7%9B%9F%E8%94%B5%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E6%9D%B1%E4%BA%AC%E3%83%BB%E9%AB%98%E8%BC%AA%E3%81%AE%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%80%8C%E6%B7%B7%E7%A5%AD2026%E3%80%8D%28TAKANAWA+GATEWAY+CITY%29%E3%81%AB%E5%87%BA%E5%BA%97%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%81%8A%E3%81%84%E3%81%97%E3%81%84SAKE%3A+https%3A%2F%2Foishiisake.jp%2Fevent%2F2026gateway%2F" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年6月10日〜14日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年6月3日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91%E3%80%8C%E6%B7%B7%E7%A5%AD2026%E3%80%8D%E3%81%AB%E5%87%BA%E5%BA%97&amp;dates=20260610%2F20260615&amp;details=%E3%82%AF%E3%83%A9%E3%83%95%E3%83%88%E3%82%B5%E3%82%B1%E3%83%96%E3%83%AA%E3%83%A5%E3%83%AF%E3%83%AA%E3%83%BC%E5%8D%94%E4%BC%9A%E5%8A%A0%E7%9B%9F%E8%94%B5%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E6%9D%B1%E4%BA%AC%E3%83%BB%E9%AB%98%E8%BC%AA%E3%81%AE%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%80%8C%E6%B7%B7%E7%A5%AD2026%E3%80%8D%28TAKANAWA+GATEWAY+CITY%29%E3%81%AB%E5%87%BA%E5%BA%97%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%81%8A%E3%81%84%E3%81%97%E3%81%84SAKE%3A+https%3A%2F%2Foishiisake.jp%2Fevent%2F2026gateway%2F" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「混祭2026」に出店(2026年6月10日〜14日)(新しいタブで開く)">📅 2026年6月10日〜14日</a></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer">「混祭2026」に出店</a>
-            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer" title="おいしいSAKE">おいしいSAKE</a></span>
+            <a class="entry-title" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer">「混祭2026」に出店<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="「混祭2026」に出店の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://oishiisake.jp/event/2026gateway/" target="_blank" rel="noopener noreferrer" title="おいしいSAKE">おいしいSAKE<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">クラフトサケブリュワリー協会加盟蔵として、東京・高輪のイベント「混祭2026」(TAKANAWA GATEWAY CITY)に出店。</p>
             
             
@@ -1030,10 +1231,10 @@
         </li>
 
         <li class="entry" id="sakenova-260528-01">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月28日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC6%E5%BC%BE%E3%80%8CBrew+Note+006+Strawberry%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260528%2F20260529&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC6%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%81%84%E3%81%A1%E3%81%94%E3%80%8C%E8%B6%8A%E5%BE%8C%E5%A7%AB%E3%80%8D%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+006+Strawberry%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E3%81%84%E3%81%A1%E3%81%94%E3%81%AE%E7%94%98%E3%81%95%E3%82%92%E5%89%8D%E9%9D%A2%E3%81%AB%E5%87%BA%E3%81%95%E3%81%9A%E3%80%81%E9%A3%B2%E3%82%93%E3%81%A0%E5%BE%8C%E3%81%AB%E3%81%BB%E3%81%AE%E3%81%8B%E3%81%AB%E9%A6%99%E3%82%8B%E6%8E%A7%E3%81%88%E3%82%81%E3%81%AA%E8%A1%A8%E7%8F%BE%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%97%E3%80%81%E9%86%AA%E6%97%A5%E6%95%B0%E3%81%AF%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E6%9C%80%E9%95%B7%E3%81%AE30%E6%97%A5%E3%80%82%E4%BD%8E%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%81%A7%E9%A3%B2%E3%81%BF%E3%82%84%E3%81%99%E3%81%84%E4%BB%95%E4%B8%8A%E3%81%8C%E3%82%8A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn006" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年5月28日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月28日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91Crafted+Series%E7%AC%AC6%E5%BC%BE%E3%80%8CBrew+Note+006+Strawberry%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2&amp;dates=20260528%2F20260529&amp;details=Crafted+Series%E3%81%AE%E7%AC%AC6%E5%BC%BE%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E4%BD%90%E6%B8%A1%E7%94%A3%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%81%84%E3%81%A1%E3%81%94%E3%80%8C%E8%B6%8A%E5%BE%8C%E5%A7%AB%E3%80%8D%E3%82%92%E5%89%AF%E5%8E%9F%E6%96%99%E3%81%AB%E3%81%97%E3%81%9F%E3%80%8CBrew+Note+006+Strawberry%E3%80%8D%E3%82%92%E7%99%BA%E5%A3%B2%E3%80%82%E3%81%84%E3%81%A1%E3%81%94%E3%81%AE%E7%94%98%E3%81%95%E3%82%92%E5%89%8D%E9%9D%A2%E3%81%AB%E5%87%BA%E3%81%95%E3%81%9A%E3%80%81%E9%A3%B2%E3%82%93%E3%81%A0%E5%BE%8C%E3%81%AB%E3%81%BB%E3%81%AE%E3%81%8B%E3%81%AB%E9%A6%99%E3%82%8B%E6%8E%A7%E3%81%88%E3%82%81%E3%81%AA%E8%A1%A8%E7%8F%BE%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%97%E3%80%81%E9%86%AA%E6%97%A5%E6%95%B0%E3%81%AF%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E6%9C%80%E9%95%B7%E3%81%AE30%E6%97%A5%E3%80%82%E4%BD%8E%E3%82%A2%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%AB%E3%81%A7%E9%A3%B2%E3%81%BF%E3%82%84%E3%81%99%E3%81%84%E4%BB%95%E4%B8%8A%E3%81%8C%E3%82%8A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%28sakenovabrewery.jp%29%3A+https%3A%2F%2Fsakenovabrewery.jp%2Fproducts%2Fbn006" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: Crafted Series第6弾「Brew Note 006 Strawberry」を発売(2026年5月28日)(新しいタブで開く)">📅 2026年5月28日</a></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn006" target="_blank" rel="noopener noreferrer">Crafted Series第6弾「Brew Note 006 Strawberry」を発売</a>
-            <span class="entry-source"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn006" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)</a></span>
+            <a class="entry-title" href="https://sakenovabrewery.jp/products/bn006" target="_blank" rel="noopener noreferrer">Crafted Series第6弾「Brew Note 006 Strawberry」を発売<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="Crafted Series第6弾「Brew Note 006 Strawberry」を発売の関連情報"><a class="badge-category" href="../category/new_release.html">新商品</a><a class="entry-source-link" href="https://sakenovabrewery.jp/products/bn006" target="_blank" rel="noopener noreferrer" title="公式サイト(sakenovabrewery.jp)">公式サイト(sakenovabrewery.jp)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">Crafted Seriesの第6弾として、佐渡産ブランドいちご「越後姫」を副原料にした「Brew Note 006 Strawberry」を発売。いちごの甘さを前面に出さず、飲んだ後にほのかに香る控えめな表現を目指し、醪日数はシリーズ最長の30日。低アルコールで飲みやすい仕上がり。</p>
             
             
@@ -1043,8 +1244,8 @@
         <li class="entry" id="sakenova-260513-01">
           <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年5月13日</span></span></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://www.creators-station.jp/interview/legends/294613?larea=hokushinetsu&amp;lpref=niigata" target="_blank" rel="noopener noreferrer">新山大地氏インタビュー「飲むから造るへ」</a>
-            <span class="entry-source"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.creators-station.jp/interview/legends/294613?larea=hokushinetsu&amp;lpref=niigata" target="_blank" rel="noopener noreferrer" title="media(クリエイターズステーション)">media(クリエイターズステーション)</a></span>
+            <a class="entry-title" href="https://www.creators-station.jp/interview/legends/294613?larea=hokushinetsu&amp;lpref=niigata" target="_blank" rel="noopener noreferrer">新山大地氏インタビュー「飲むから造るへ」<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="新山大地氏インタビュー「飲むから造るへ」の関連情報"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.creators-station.jp/interview/legends/294613?larea=hokushinetsu&amp;lpref=niigata" target="_blank" rel="noopener noreferrer" title="media(クリエイターズステーション)">media(クリエイターズステーション)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">サケアイ創業からSAKENOVA BREWERY設立に至る経緯を、代表・新山大地氏が語るインタビュー記事。佐渡の地元産果実(リンゴ・レモン・ミカン等)を生かした「共創型ブリュワリー」というコンセプトを紹介。</p>
             
             
@@ -1052,10 +1253,10 @@
         </li>
 
         <li class="entry" id="sakenova-260414-01">
-          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月14日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91%E3%80%8C%E6%96%B0%E6%BD%9FSAKE+SAKURA%E7%A5%AD%E3%80%8D%E3%81%AB%E5%87%BA%E5%B1%95&amp;dates=20260414%2F20260415&amp;details=%E6%96%B0%E6%BD%9F%E5%B8%82%E3%80%8C%E6%96%B0%E6%BD%9F%E6%97%A5%E5%A0%B1%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%B7%E3%83%83%E3%83%97%E3%80%8D%E3%81%A7%E5%88%9D%E9%96%8B%E5%82%AC%E3%81%95%E3%82%8C%E3%81%9F%E3%80%81%E6%B5%B7%E5%A4%96%E8%BC%B8%E5%87%BA%E3%81%AB%E5%8F%96%E3%82%8A%E7%B5%84%E3%82%80%E7%9C%8C%E5%86%8510%E8%94%B5%E3%81%8C%E5%8F%82%E5%8A%A0%E3%81%99%E3%82%8B%E3%80%8C%E6%96%B0%E6%BD%9FSAKE+SAKURA%E7%A5%AD%E3%80%8D%E3%81%AB%E5%87%BA%E5%B1%95%E3%80%82%E6%B5%B7%E5%A4%96%E3%83%90%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%BB%E4%B8%80%E8%88%AC%E6%9D%A5%E5%A0%B4%E8%80%85%E5%90%91%E3%81%91%E3%81%AE%E8%A9%A6%E9%A3%B2%E4%BC%9A%E3%81%A7%E3%80%81%E6%B5%B7%E5%A4%96%E3%81%AE%E6%9D%A5%E5%A0%B4%E8%80%85%E3%82%82%E5%A4%9A%E6%95%B0%E8%A8%AA%E3%82%8C%E3%81%9F%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%28Sake+World%29%3A+https%3A%2F%2Fsakeworld.jp%2Fspecial%2F2604niigata_sakesakura%2F" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加">📅 2026年4月14日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年4月14日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90SAKENOVA%E3%80%91%E3%80%8C%E6%96%B0%E6%BD%9FSAKE+SAKURA%E7%A5%AD%E3%80%8D%E3%81%AB%E5%87%BA%E5%B1%95&amp;dates=20260414%2F20260415&amp;details=%E6%96%B0%E6%BD%9F%E5%B8%82%E3%80%8C%E6%96%B0%E6%BD%9F%E6%97%A5%E5%A0%B1%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%B7%E3%83%83%E3%83%97%E3%80%8D%E3%81%A7%E5%88%9D%E9%96%8B%E5%82%AC%E3%81%95%E3%82%8C%E3%81%9F%E3%80%81%E6%B5%B7%E5%A4%96%E8%BC%B8%E5%87%BA%E3%81%AB%E5%8F%96%E3%82%8A%E7%B5%84%E3%82%80%E7%9C%8C%E5%86%8510%E8%94%B5%E3%81%8C%E5%8F%82%E5%8A%A0%E3%81%99%E3%82%8B%E3%80%8C%E6%96%B0%E6%BD%9FSAKE+SAKURA%E7%A5%AD%E3%80%8D%E3%81%AB%E5%87%BA%E5%B1%95%E3%80%82%E6%B5%B7%E5%A4%96%E3%83%90%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%BB%E4%B8%80%E8%88%AC%E6%9D%A5%E5%A0%B4%E8%80%85%E5%90%91%E3%81%91%E3%81%AE%E8%A9%A6%E9%A3%B2%E4%BC%9A%E3%81%A7%E3%80%81%E6%B5%B7%E5%A4%96%E3%81%AE%E6%9D%A5%E5%A0%B4%E8%80%85%E3%82%82%E5%A4%9A%E6%95%B0%E8%A8%AA%E3%82%8C%E3%81%9F%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%28Sake+World%29%3A+https%3A%2F%2Fsakeworld.jp%2Fspecial%2F2604niigata_sakesakura%2F" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「新潟SAKE SAKURA祭」に出展(2026年4月14日)(新しいタブで開く)">📅 2026年4月14日</a></div>
           <div class="entry-body">
-            <a class="entry-title" href="https://sakeworld.jp/special/2604niigata_sakesakura/" target="_blank" rel="noopener noreferrer">「新潟SAKE SAKURA祭」に出展</a>
-            <span class="entry-source"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sakeworld.jp/special/2604niigata_sakesakura/" target="_blank" rel="noopener noreferrer" title="メディア(Sake World)">メディア(Sake World)</a></span>
+            <a class="entry-title" href="https://sakeworld.jp/special/2604niigata_sakesakura/" target="_blank" rel="noopener noreferrer">「新潟SAKE SAKURA祭」に出展<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="「新潟SAKE SAKURA祭」に出展の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://sakeworld.jp/special/2604niigata_sakesakura/" target="_blank" rel="noopener noreferrer" title="メディア(Sake World)">メディア(Sake World)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">新潟市「新潟日報メディアシップ」で初開催された、海外輸出に取り組む県内10蔵が参加する「新潟SAKE SAKURA祭」に出展。海外バイヤー・一般来場者向けの試飲会で、海外の来場者も多数訪れた。</p>
             
             
@@ -1065,8 +1266,8 @@
       </section>
 </main>
 
-<div class="chips-label">協会加盟醸造所（協会ページ表示順）</div>
-<nav class="chips">
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ下部)">
 <a class="chip" href="../brewery/konohanano.html">木花之</a>
 <a class="chip" href="../brewery/haccoba.html">haccoba</a>
 <a class="chip" href="../brewery/librom.html">LIBROM</a>
@@ -1077,18 +1278,18 @@
 <a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
 <a class="chip" href="../brewery/adachi_noujo.html">足立</a>
 <a class="chip" href="../brewery/hajimari.html">はじまり</a>
-<a class="chip chip-current" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip chip-current" href="../brewery/sakenova.html" aria-current="page">SAKENOVA</a>
 <a class="chip" href="../brewery/iyasaka.html">弥栄</a>
 <a class="chip" href="../brewery/linne.html">LINNÉ</a>
 </nav>
-<div class="chips-label">気になる醸造所・業界全般</div>
-<nav class="chips">
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ下部)">
 <a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
 <a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
 <a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
 </nav>
-<div class="chips-label">カテゴリ</div>
-<nav class="chips chips-archive">
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ下部)">
 <a class="chip chip-archive" href="../category/new_release.html">新商品</a>
 <a class="chip chip-archive" href="../category/event.html">イベント</a>
 <a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
@@ -1110,3 +1311,16 @@
     ご確認ください。
   </p>
 </footer>
+<script>
+(function () {
+  var done = false;
+  document.addEventListener("focusin", function (e) {
+    var t = e.target;
+    if (done || !t || !t.closest || !t.closest(".site-search")) { return; }
+    done = true;
+    var l = document.createElement("link"); l.rel = "prefetch"; l.as = "script";
+    l.href = t.closest(".site-search").getAttribute("data-index");
+    document.head.appendChild(l);
+  });
+})();
+</script>
