@@ -60,7 +60,7 @@
   /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
      コントラストはWCAG AA(通常文字 4.5:1)を目安にしている(_test_site_a11y_dark.py で検証)。 */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
       --paper: #1c1e22;
       --surface: #25282d;
       --ink: #e8e5da;
@@ -88,6 +88,35 @@
       --on-seal: #1c1e22;
     }
   }
+  :root[data-theme="dark"] {
+      --paper: #1c1e22;
+      --surface: #25282d;
+      --ink: #e8e5da;
+      --indigo: #8fb0d6;
+      --indigo-deep: #b4cdea;
+      --seal: #e0826e;
+      --mustard: #d9b45f;
+      --cal-other: #7fc197;
+      --chip-org-bg: #2c3036;
+      --muted: #a09a8a;
+      --line: #3a3d43;
+      --day-shade: #2b2e34;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --tint-indigo-8: rgba(143, 176, 214, 0.1);
+      --tint-indigo-10: rgba(143, 176, 214, 0.14);
+      --tint-indigo-12: rgba(143, 176, 214, 0.16);
+      --tint-indigo-20: rgba(143, 176, 214, 0.24);
+      --tint-indigo-32: rgba(143, 176, 214, 0.28);
+      --tint-seal-12: rgba(224, 130, 110, 0.1);
+      --tint-seal-20: rgba(224, 130, 110, 0.24);
+      --tint-mustard-20: rgba(217, 180, 95, 0.22);
+      --tint-other-20: rgba(127, 193, 151, 0.22);
+      --badge-archived-bg: #3a3d43;
+      --on-muted: #1c1e22;
+      --on-seal: #1c1e22;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] { color-scheme: light; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
@@ -969,6 +998,32 @@
   }
 
   /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
+  .theme-toggle {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .theme-toggle[hidden] { display: none; }
+  .theme-toggle-solo { margin-left: auto; }
+  .theme-toggle button {
+    font-family: inherit;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+  }
+  .theme-toggle button + button { border-left: 1px solid var(--line); }
+  .theme-toggle button:hover { color: var(--indigo-deep); }
+  .theme-toggle button[aria-pressed="true"] {
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-12);
+    font-weight: 700;
+  }
   .site-search {
     display: flex;
     align-items: center;
@@ -1114,6 +1169,14 @@
     outline-offset: 2px;
   }
 </style>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("kura-theme");
+    if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); }
+  } catch (e) { /* 保存値なし=自動 */ }
+})();
+</script>
 
 <a class="skip-link" href="#main">本文へスキップ</a>
 <div class="stripe" aria-hidden="true"></div>
@@ -1130,6 +1193,7 @@
       <input id="site-search-q" type="search" name="q" placeholder="木花之内を検索" autocomplete="off"><input type="hidden" name="b" value="konohanano">
       <button type="submit">検索</button>
     </form>
+    <div id="theme-toggle" class="theme-toggle" role="group" aria-label="表示テーマ" hidden><button type="button" data-theme-choice="auto" aria-pressed="true">自動</button><button type="button" data-theme-choice="light" aria-pressed="false">ライト</button><button type="button" data-theme-choice="dark" aria-pressed="false">ダーク</button></div>
   </div>
   <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
   <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
@@ -1322,5 +1386,43 @@
     l.href = t.closest(".site-search").getAttribute("data-index");
     document.head.appendChild(l);
   });
+})();
+</script>
+<script>
+(function () {
+  var box = document.getElementById("theme-toggle");
+  if (!box) { return; }
+  var root = document.documentElement;
+  var COLORS = { light: "#f1eee3", dark: "#1c1e22" };
+  function current() {
+    var t = root.getAttribute("data-theme");
+    return t === "light" || t === "dark" ? t : "auto";
+  }
+  function themeColors(mode) {
+    // 手動指定のときは、ブラウザのUI色(theme-color)も合わせる。自動は元の(メディアクエリ付き)指定に戻す
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    metas.forEach(function (m) {
+      var scheme = /dark/.test(m.getAttribute("data-media") || m.getAttribute("media") || "") ? "dark" : "light";
+      if (!m.hasAttribute("data-media")) { m.setAttribute("data-media", m.getAttribute("media")); }
+      if (mode === "auto") { m.setAttribute("media", m.getAttribute("data-media")); m.setAttribute("content", COLORS[scheme]); }
+      else { m.setAttribute("media", "all"); m.setAttribute("content", COLORS[mode]); }
+    });
+  }
+  function apply(mode, save) {
+    if (mode === "auto") { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", mode); }
+    if (save) {
+      try { if (mode === "auto") { localStorage.removeItem("kura-theme"); } else { localStorage.setItem("kura-theme", mode); } } catch (e) { /* 保存できなくても切り替えは有効 */ }
+    }
+    themeColors(mode);
+    box.querySelectorAll("button[data-theme-choice]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === mode ? "true" : "false");
+    });
+  }
+  box.addEventListener("click", function (ev) {
+    var b = ev.target.closest ? ev.target.closest("button[data-theme-choice]") : null;
+    if (b) { apply(b.getAttribute("data-theme-choice"), true); }
+  });
+  apply(current(), false);
+  box.hidden = false;
 })();
 </script>
