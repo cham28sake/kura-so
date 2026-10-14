@@ -2,12 +2,12 @@
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>業界全般 - くらそー</title>
-<meta name="description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<title>業界全般 - クラフトサケ情報倉庫</title>
+<meta name="description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f1eee3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1e22" media="(prefers-color-scheme: dark)">
-<link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
+<link rel="alternate" type="application/atom+xml" title="クラフトサケ情報倉庫 新着" href="../feed.xml">
 <link rel="canonical" href="https://cham28sake.github.io/kura-so/brewery/industry.html">
 <meta property="og:url" content="https://cham28sake.github.io/kura-so/brewery/industry.html">
 <meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
@@ -15,13 +15,13 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="くらそー">
-<meta property="og:title" content="業界全般 - くらそー">
-<meta property="og:description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta property="og:site_name" content="クラフトサケ情報倉庫">
+<meta property="og:title" content="業界全般 - クラフトサケ情報倉庫">
+<meta property="og:description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="業界全般 - くらそー">
-<meta name="twitter:description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta name="twitter:title" content="業界全般 - クラフトサケ情報倉庫">
+<meta name="twitter:description" content="クラフトサケ業界全般に関する新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,13 +139,7 @@
   header.hero {
     max-width: 760px;
     margin: 0 auto;
-    padding: 2.75rem 1.5rem 1.5rem;
-  }
-  .eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    color: var(--seal);
-    font-weight: 700;
+    padding: 1.1rem 1.5rem 1rem;
   }
   h1 {
     font-family: "Hachi Maru Pop", cursive;
@@ -496,12 +490,6 @@
     flex: 1;
   }
 
-  .hero-top {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
   .badge-unofficial {
     font-size: 0.72rem;
     font-weight: 700;
@@ -551,6 +539,7 @@
     border: 1px solid var(--line);
     border-radius: 999px;
     padding: 0.3rem 0.8rem;
+    max-width: 100%;
   }
   .cal-category-row {
     display: flex;
@@ -767,6 +756,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .agenda-title {
     display: block;
@@ -933,6 +924,11 @@
     align-items: flex-start;
     gap: 0.3rem;
   }
+  .entry-body {
+    /* flexの子は既定でmin-width:auto=内容幅より縮まないため、長い情報源リンク等でスマホ幅の横はみ出しになる */
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   .entry-title {
     display: block;
     color: var(--ink);
@@ -961,6 +957,7 @@
   .agenda-source-link:hover,
   .lede-quote a:hover,
   .lede-note a:hover,
+  .footer-contact a:hover,
   .entry-summary a:hover,
   .agenda-summary a:hover,
   .entry-update-note:hover {
@@ -998,31 +995,73 @@
   }
 
   /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
-  .theme-toggle {
+  /* ページ上部の1本のバー: ロゴ(h1)・非公式バッジ・検索・テーマ切替アイコン */
+  .site-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-bar .site-brand {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .site-bar-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .icon-btn {
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
     display: inline-flex;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    overflow: hidden;
-    background: var(--surface);
-  }
-  .theme-toggle[hidden] { display: none; }
-  .theme-toggle-solo { margin-left: auto; }
-  .theme-toggle button {
-    font-family: inherit;
-    font-size: 0.72rem;
-    line-height: 1.2;
-    color: var(--muted);
-    background: none;
-    border: 0;
-    padding: 0.4rem 0.8rem;
-    cursor: pointer;
-  }
-  .theme-toggle button + button { border-left: 1px solid var(--line); }
-  .theme-toggle button:hover { color: var(--indigo-deep); }
-  .theme-toggle button[aria-pressed="true"] {
+    align-items: center;
+    justify-content: center;
     color: var(--indigo-deep);
-    background: var(--tint-indigo-12);
-    font-weight: 700;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    flex: none;
+  }
+  .icon-btn:hover { border-color: var(--indigo); }
+  .icon-btn[hidden] { display: none; }
+  .theme-btn .ic-theme { display: none; }
+  .theme-btn[data-state="auto"] .ic-auto,
+  .theme-btn[data-state="light"] .ic-light,
+  .theme-btn[data-state="dark"] .ic-dark { display: block; }
+  .search-toggle { display: none; }
+  .badge-unofficial .badge-long {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  details.about { margin-top: 0.45rem; font-size: 0.82rem; }
+  details.about summary {
+    cursor: pointer;
+    color: var(--indigo-deep);
+    font-size: 0.8rem;
+    width: fit-content;
+  }
+  details.about[open] summary { margin-bottom: 0.5rem; }
+  @media (max-width: 600px) {
+    .site-bar-tools { display: contents; }
+    .site-bar { column-gap: 0.45rem; }
+    .site-bar .site-brand { font-size: 1rem; }
+    .search-toggle:not([hidden]) { display: inline-flex; margin-left: auto; }
+    .site-search { order: 10; flex-basis: 100%; margin-left: 0; }
+    .site-search.is-collapsible:not(.is-open) { display: none; }
+    .site-search input[type="search"] { flex: 1; width: auto; }
+    .site-bar-tools > .theme-btn:first-child { margin-left: auto; }
   }
   .site-search {
     display: flex;
@@ -1131,10 +1170,6 @@
     color: inherit;
     border-radius: 2px;
   }
-  @media (max-width: 520px) {
-    .site-search { margin-left: 0; width: 100%; }
-    .site-search input[type="search"] { flex: 1; width: auto; }
-  }
 
   /* 読み上げ専用のテキスト(画面には出さない)・スキップリンク・キーボード操作時のフォーカス表示 */
   .visually-hidden {
@@ -1182,27 +1217,32 @@
 <div class="stripe" aria-hidden="true"></div>
 
 <nav class="page-breadcrumb" aria-label="パンくずリスト">
-  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span aria-current="page">業界全般</span>
+  <a href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a> ＞ <span aria-current="page">業界全般</span>
 </nav>
 <header class="hero">
-  <div class="hero-top">
-    <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
-    <span class="badge-unofficial">非公式ファンサイト</span>
-    <form class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
-      <label class="visually-hidden" for="site-search-q">業界全般内を検索</label>
-      <input id="site-search-q" type="search" name="q" placeholder="業界全般内を検索" autocomplete="off"><input type="hidden" name="b" value="industry">
-      <button type="submit">検索</button>
-    </form>
-    <div id="theme-toggle" class="theme-toggle" role="group" aria-label="表示テーマ" hidden><button type="button" data-theme-choice="auto" aria-pressed="true">自動</button><button type="button" data-theme-choice="light" aria-pressed="false">ライト</button><button type="button" data-theme-choice="dark" aria-pressed="false">ダーク</button></div>
+  <div class="site-bar">
+    <h1 class="site-brand"><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a></h1>
+    <span class="badge-unofficial">非公式<span class="badge-long">ファンサイト</span></span>
+    <div class="site-bar-tools">
+      <form id="site-search-form" class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
+        <label class="visually-hidden" for="site-search-q">業界全般内を検索</label>
+        <input id="site-search-q" type="search" name="q" placeholder="業界全般内を検索" autocomplete="off"><input type="hidden" name="b" value="industry">
+        <button type="submit">検索</button>
+      </form>
+      <button type="button" id="search-toggle" class="icon-btn search-toggle" aria-label="検索を開く" aria-expanded="false" aria-controls="site-search-form" hidden><svg class="ic-search" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button type="button" id="theme-toggle" class="icon-btn theme-btn" data-state="auto" aria-label="表示テーマ: 自動(押すとライトに切り替え)" title="表示テーマ: 自動(押すとライトに切り替え)" hidden><svg class="ic-theme ic-auto" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg><svg class="ic-theme ic-light" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ic-theme ic-dark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></svg></button>
+    </div>
   </div>
-  <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
-  <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
-  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
-  <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
-  <p class="lede-note">
-    現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
-    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
-  </p>
+  <details class="about">
+    <summary>このサイトについて</summary>
+    <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
+    <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
+    <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
+    <p class="lede-note">
+      現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
+      内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+    </p>
+  </details>
 </header>
 
 <div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
@@ -1319,9 +1359,14 @@
     正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
     ご確認ください。
   </p>
+  <p class="footer-contact">
+    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+  </p>
 </footer>
 <script>
 (function () {
+  var form = document.getElementById("site-search-form");
+  var btn = document.getElementById("search-toggle");
   var done = false;
   document.addEventListener("focusin", function (e) {
     var t = e.target;
@@ -1331,14 +1376,34 @@
     l.href = t.closest(".site-search").getAttribute("data-index");
     document.head.appendChild(l);
   });
+  // スマホ幅(CSSの600px以下)では検索ボックスをアイコンで開閉する。JSが無ければ検索ボックスは常に表示。
+  if (!form || !btn) { return; }
+  var input = form.querySelector('input[type="search"]');
+  function setOpen(open, focusInput) {
+    form.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && focusInput) { input.focus(); }
+  }
+  form.classList.add("is-collapsible");
+  btn.hidden = false;
+  btn.addEventListener("click", function () {
+    var open = !form.classList.contains("is-open");
+    setOpen(open, true);
+  });
+  form.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && form.classList.contains("is-open")) { setOpen(false); btn.focus(); }
+  });
+  form.addEventListener("submit", function () { setOpen(false); });
 })();
 </script>
 <script>
 (function () {
-  var box = document.getElementById("theme-toggle");
-  if (!box) { return; }
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) { return; }
   var root = document.documentElement;
   var COLORS = { light: "#f1eee3", dark: "#1c1e22" };
+  var ORDER = ["auto", "light", "dark"];
+  var NAME = { auto: "自動", light: "ライト", dark: "ダーク" };
   function current() {
     var t = root.getAttribute("data-theme");
     return t === "light" || t === "dark" ? t : "auto";
@@ -1347,8 +1412,8 @@
     // 手動指定のときは、ブラウザのUI色(theme-color)も合わせる。自動は元の(メディアクエリ付き)指定に戻す
     var metas = document.querySelectorAll('meta[name="theme-color"]');
     metas.forEach(function (m) {
-      var scheme = /dark/.test(m.getAttribute("data-media") || m.getAttribute("media") || "") ? "dark" : "light";
       if (!m.hasAttribute("data-media")) { m.setAttribute("data-media", m.getAttribute("media")); }
+      var scheme = /dark/.test(m.getAttribute("data-media")) ? "dark" : "light";
       if (mode === "auto") { m.setAttribute("media", m.getAttribute("data-media")); m.setAttribute("content", COLORS[scheme]); }
       else { m.setAttribute("media", "all"); m.setAttribute("content", COLORS[mode]); }
     });
@@ -1359,15 +1424,16 @@
       try { if (mode === "auto") { localStorage.removeItem("kura-theme"); } else { localStorage.setItem("kura-theme", mode); } } catch (e) { /* 保存できなくても切り替えは有効 */ }
     }
     themeColors(mode);
-    box.querySelectorAll("button[data-theme-choice]").forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === mode ? "true" : "false");
-    });
+    var next = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length];
+    var label = "表示テーマ: " + NAME[mode] + "(押すと" + NAME[next] + "に切り替え)";
+    btn.setAttribute("data-state", mode);
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
   }
-  box.addEventListener("click", function (ev) {
-    var b = ev.target.closest ? ev.target.closest("button[data-theme-choice]") : null;
-    if (b) { apply(b.getAttribute("data-theme-choice"), true); }
+  btn.addEventListener("click", function () {
+    apply(ORDER[(ORDER.indexOf(current()) + 1) % ORDER.length], true);
   });
   apply(current(), false);
-  box.hidden = false;
+  btn.hidden = false;
 })();
 </script>

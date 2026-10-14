@@ -2,12 +2,12 @@
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>秋保ハートロックサケ - くらそー</title>
-<meta name="description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<title>秋保ハートロックサケ - クラフトサケ情報倉庫</title>
+<meta name="description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f1eee3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1e22" media="(prefers-color-scheme: dark)">
-<link rel="alternate" type="application/atom+xml" title="くらそー 新着" href="../feed.xml">
+<link rel="alternate" type="application/atom+xml" title="クラフトサケ情報倉庫 新着" href="../feed.xml">
 <link rel="canonical" href="https://cham28sake.github.io/kura-so/brewery/heartrock.html">
 <meta property="og:url" content="https://cham28sake.github.io/kura-so/brewery/heartrock.html">
 <meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
@@ -15,13 +15,13 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="くらそー">
-<meta property="og:title" content="秋保ハートロックサケ - くらそー">
-<meta property="og:description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta property="og:site_name" content="クラフトサケ情報倉庫">
+<meta property="og:title" content="秋保ハートロックサケ - クラフトサケ情報倉庫">
+<meta property="og:description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="秋保ハートロックサケ - くらそー">
-<meta name="twitter:description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「くらそー」)。">
+<meta name="twitter:title" content="秋保ハートロックサケ - クラフトサケ情報倉庫">
+<meta name="twitter:description" content="秋保ハートロックサケの新着情報・イベント・メディア掲載のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,13 +139,7 @@
   header.hero {
     max-width: 760px;
     margin: 0 auto;
-    padding: 2.75rem 1.5rem 1.5rem;
-  }
-  .eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    color: var(--seal);
-    font-weight: 700;
+    padding: 1.1rem 1.5rem 1rem;
   }
   h1 {
     font-family: "Hachi Maru Pop", cursive;
@@ -496,12 +490,6 @@
     flex: 1;
   }
 
-  .hero-top {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
   .badge-unofficial {
     font-size: 0.72rem;
     font-weight: 700;
@@ -551,6 +539,7 @@
     border: 1px solid var(--line);
     border-radius: 999px;
     padding: 0.3rem 0.8rem;
+    max-width: 100%;
   }
   .cal-category-row {
     display: flex;
@@ -767,6 +756,8 @@
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .agenda-title {
     display: block;
@@ -933,6 +924,11 @@
     align-items: flex-start;
     gap: 0.3rem;
   }
+  .entry-body {
+    /* flexの子は既定でmin-width:auto=内容幅より縮まないため、長い情報源リンク等でスマホ幅の横はみ出しになる */
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   .entry-title {
     display: block;
     color: var(--ink);
@@ -961,6 +957,7 @@
   .agenda-source-link:hover,
   .lede-quote a:hover,
   .lede-note a:hover,
+  .footer-contact a:hover,
   .entry-summary a:hover,
   .agenda-summary a:hover,
   .entry-update-note:hover {
@@ -998,31 +995,73 @@
   }
 
   /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
-  .theme-toggle {
+  /* ページ上部の1本のバー: ロゴ(h1)・非公式バッジ・検索・テーマ切替アイコン */
+  .site-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-bar .site-brand {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .site-bar-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .icon-btn {
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
     display: inline-flex;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    overflow: hidden;
-    background: var(--surface);
-  }
-  .theme-toggle[hidden] { display: none; }
-  .theme-toggle-solo { margin-left: auto; }
-  .theme-toggle button {
-    font-family: inherit;
-    font-size: 0.72rem;
-    line-height: 1.2;
-    color: var(--muted);
-    background: none;
-    border: 0;
-    padding: 0.4rem 0.8rem;
-    cursor: pointer;
-  }
-  .theme-toggle button + button { border-left: 1px solid var(--line); }
-  .theme-toggle button:hover { color: var(--indigo-deep); }
-  .theme-toggle button[aria-pressed="true"] {
+    align-items: center;
+    justify-content: center;
     color: var(--indigo-deep);
-    background: var(--tint-indigo-12);
-    font-weight: 700;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    flex: none;
+  }
+  .icon-btn:hover { border-color: var(--indigo); }
+  .icon-btn[hidden] { display: none; }
+  .theme-btn .ic-theme { display: none; }
+  .theme-btn[data-state="auto"] .ic-auto,
+  .theme-btn[data-state="light"] .ic-light,
+  .theme-btn[data-state="dark"] .ic-dark { display: block; }
+  .search-toggle { display: none; }
+  .badge-unofficial .badge-long {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  details.about { margin-top: 0.45rem; font-size: 0.82rem; }
+  details.about summary {
+    cursor: pointer;
+    color: var(--indigo-deep);
+    font-size: 0.8rem;
+    width: fit-content;
+  }
+  details.about[open] summary { margin-bottom: 0.5rem; }
+  @media (max-width: 600px) {
+    .site-bar-tools { display: contents; }
+    .site-bar { column-gap: 0.45rem; }
+    .site-bar .site-brand { font-size: 1rem; }
+    .search-toggle:not([hidden]) { display: inline-flex; margin-left: auto; }
+    .site-search { order: 10; flex-basis: 100%; margin-left: 0; }
+    .site-search.is-collapsible:not(.is-open) { display: none; }
+    .site-search input[type="search"] { flex: 1; width: auto; }
+    .site-bar-tools > .theme-btn:first-child { margin-left: auto; }
   }
   .site-search {
     display: flex;
@@ -1131,10 +1170,6 @@
     color: inherit;
     border-radius: 2px;
   }
-  @media (max-width: 520px) {
-    .site-search { margin-left: 0; width: 100%; }
-    .site-search input[type="search"] { flex: 1; width: auto; }
-  }
 
   /* 読み上げ専用のテキスト(画面には出さない)・スキップリンク・キーボード操作時のフォーカス表示 */
   .visually-hidden {
@@ -1182,27 +1217,32 @@
 <div class="stripe" aria-hidden="true"></div>
 
 <nav class="page-breadcrumb" aria-label="パンくずリスト">
-  <a href="https://cham28sake.github.io/kura-so/">くらそー</a> ＞ <span aria-current="page">秋保ハートロックサケ</span>
+  <a href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a> ＞ <span aria-current="page">秋保ハートロックサケ</span>
 </nav>
 <header class="hero">
-  <div class="hero-top">
-    <div class="eyebrow">UNOFFICIAL CRAFT SAKE LOG</div>
-    <span class="badge-unofficial">非公式ファンサイト</span><span class="badge-unofficial">協会外</span>
-    <form class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
-      <label class="visually-hidden" for="site-search-q">秋保♡ロック内を検索</label>
-      <input id="site-search-q" type="search" name="q" placeholder="秋保♡ロック内を検索" autocomplete="off"><input type="hidden" name="b" value="heartrock">
-      <button type="submit">検索</button>
-    </form>
-    <div id="theme-toggle" class="theme-toggle" role="group" aria-label="表示テーマ" hidden><button type="button" data-theme-choice="auto" aria-pressed="true">自動</button><button type="button" data-theme-choice="light" aria-pressed="false">ライト</button><button type="button" data-theme-choice="dark" aria-pressed="false">ダーク</button></div>
+  <div class="site-bar">
+    <h1 class="site-brand"><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a></h1>
+    <span class="badge-unofficial">非公式<span class="badge-long">ファンサイト</span></span><span class="badge-unofficial">協会外</span>
+    <div class="site-bar-tools">
+      <form id="site-search-form" class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
+        <label class="visually-hidden" for="site-search-q">秋保♡ロック内を検索</label>
+        <input id="site-search-q" type="search" name="q" placeholder="秋保♡ロック内を検索" autocomplete="off"><input type="hidden" name="b" value="heartrock">
+        <button type="submit">検索</button>
+      </form>
+      <button type="button" id="search-toggle" class="icon-btn search-toggle" aria-label="検索を開く" aria-expanded="false" aria-controls="site-search-form" hidden><svg class="ic-search" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button type="button" id="theme-toggle" class="icon-btn theme-btn" data-state="auto" aria-label="表示テーマ: 自動(押すとライトに切り替え)" title="表示テーマ: 自動(押すとライトに切り替え)" hidden><svg class="ic-theme ic-auto" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg><svg class="ic-theme ic-light" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ic-theme ic-dark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></svg></button>
+    </div>
   </div>
-  <h1><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">くらそー</a></h1>
-  <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
-  <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
-  <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
-  <p class="lede-note">
-    現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
-    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
-  </p>
+  <details class="about">
+    <summary>このサイトについて</summary>
+    <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
+    <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
+    <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
+    <p class="lede-note">
+      現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
+      内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+    </p>
+  </details>
 </header>
 
 <div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
@@ -1250,6 +1290,17 @@
           <div class="brewery-personal"><a class="personal-icon-link" href="https://www.instagram.com/heikiisawa03/" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="personal-label">(社長)</span><span class="visually-hidden">(新しいタブで開く)</span></a><a class="personal-icon-link" href="https://www.threads.com/@heizo_isawa" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg><span class="personal-label">(会長)</span><span class="visually-hidden">(新しいタブで開く)</span></a><a class="personal-icon-link" href="https://www.instagram.com/heizo_isawa/" target="_blank" rel="noopener noreferrer"><svg class="link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span class="personal-label">(会長)</span><span class="visually-hidden">(新しいタブで開く)</span></a></div>
         </div>
         <ul class="entries">
+        <li class="entry" id="heartrock-261013-01">
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年10月13日</span></span></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://x.com/AkiuHeartRock/status/2109924147480740308" target="_blank" rel="noopener noreferrer">台湾初上陸を記念したブランド発表会を来週開催予定<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="台湾初上陸を記念したブランド発表会を来週開催予定の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2109924147480740308" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock<span class="visually-hidden">(新しいタブで開く)</span></a></span>
+            <p class="entry-summary">来週、台湾初上陸を記念してブランド発表会を行う予定(日時・場所・参加方法などの詳細は投稿では未発表)。その事前準備として、伊台貿株式会社の菅社長が来日し、打ち合わせを行っているとのこと。</p>
+            
+            
+          </div>
+        </li>
+
         <li class="entry" id="heartrock-261010-01">
           <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年10月10日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90%E7%A7%8B%E4%BF%9D%E2%99%A1%E3%83%AD%E3%83%83%E3%82%AF%E3%80%91%E4%BB%99%E5%8F%B0%E3%81%AE%E8%97%A4%E5%B4%8E%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%BC%9A%2810%2F16%E3%80%9C18%29&amp;dates=20261016%2F20261019&amp;details=%E6%9D%A5%E9%80%B1%E6%9C%AB%E3%81%AE%E9%87%91%E6%9B%9C%E3%80%9C%E6%97%A5%E6%9B%9C%2810%2F16%E3%80%9C18%29%E3%81%AB%E3%80%81%E4%BB%99%E5%8F%B0%E3%81%AE%E8%97%A4%E5%B4%8E%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%BC%9A%E3%82%92%E9%96%8B%E3%81%8F%E3%80%82%E6%9C%80%E8%BF%91%E3%81%AF%E6%9D%B1%E4%BA%AC%E3%81%A7%E3%81%AE%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%8C%E5%A4%9A%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A8%E3%81%97%E3%81%A6%E3%80%81%E3%81%BE%E3%81%A0%E9%A3%B2%E3%82%93%E3%81%A0%E3%81%93%E3%81%A8%E3%81%AE%E3%81%AA%E3%81%84%E4%BA%BA%E3%82%82%E3%80%81%E3%81%84%E3%81%A4%E3%82%82%E8%B2%B7%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E4%BA%BA%E3%82%82%E6%9D%A5%E3%81%A6%E3%81%BB%E3%81%97%E3%81%84%E3%81%A8%E5%91%BC%E3%81%B3%E3%81%8B%E3%81%91%E3%81%A6%E3%81%84%E3%82%8B%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40AkiuHeartRock%29%3A+https%3A%2F%2Fx.com%2FAkiuHeartRock%2Fstatus%2F2108860224061018192" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 仙台の藤崎で販売会(10/16〜18)(2026年10月16日〜18日)(新しいタブで開く)">📅 2026年10月16日〜18日</a></div>
           <div class="entry-body">
@@ -1273,7 +1324,7 @@
         </li>
 
         <li class="entry" id="heartrock-260909-01">
-          <div class="entry-date"><span class="entry-badge-row"><span class="badge-updated">UPDATE</span></span><span class="entry-date-group"><span class="entry-date-row">2026年9月9日</span><span class="entry-updated-row">2026年9月29日更新</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90%E7%A7%8B%E4%BF%9D%E2%99%A1%E3%83%AD%E3%83%83%E3%82%AF%E3%80%91%E3%81%A4%E3%81%8D%E3%82%84%E9%85%92%E5%BA%97%28%E7%B5%8C%E5%A0%82%29%E3%81%A7%E8%94%B5%E5%85%83%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC&amp;dates=20260927%2F20260928&amp;details=9%E6%9C%8827%E6%97%A5%28%E6%97%A5%2913%3A00%E3%80%9C15%3A00%E3%80%81%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E7%B5%8C%E5%A0%82%E3%81%AE%E3%81%A4%E3%81%8D%E3%82%84%E9%85%92%E5%BA%97%E3%81%A7%E3%83%9A%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC%E3%80%82%E3%81%8A%E3%81%A4%E3%81%BE%E3%81%BF%E3%83%9A%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E4%BB%98%E3%81%8D%E3%81%A76%E7%A8%AE%E9%A1%9E%2B%CE%B1%E3%81%AE%E3%81%8A%E9%85%92%E3%82%92%E6%A5%BD%E3%81%97%E3%81%BF%E3%80%81%E8%94%B5%E5%85%83%E3%83%BB%E4%BC%8A%E6%BE%A4%E5%B9%B3%E8%BC%9D%E6%B0%8F%E3%81%8B%E3%82%89%E9%80%A0%E3%82%8A%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%91%E3%82%8B%28%E4%BC%9A%E8%B2%BB6%2C600%E5%86%86%29%E3%80%82%E7%B5%82%E4%BA%86%E5%BE%8C%E3%82%82%E5%90%8C%E6%97%A516%3A00%E3%80%9C21%3A00%E3%81%AB%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%A0%E5%96%B6%E6%A5%AD%E3%82%92%E5%AE%9F%E6%96%BD%E3%81%97%E3%80%81%E8%94%B5%E5%85%83%E3%81%AF%E3%80%8C%E5%A4%9A%E3%81%8F%E3%81%AE%E6%96%B9%E3%81%AB%E6%9D%A5%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A0%E3%81%84%E3%81%9F%E3%80%8D%E3%81%A8%E5%A0%B1%E5%91%8A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2097563418366734519%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2103311994153803800%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2104035483617787938%0A%E5%AE%9F%E6%96%BD%E5%BE%8C%E3%81%AE%E5%8F%8D%E5%BF%9C%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%3A+https%3A%2F%2Fx.com%2FAkiuHeartRock%2Fstatus%2F2104840041147380147" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: つきや酒店(経堂)で蔵元イベントを開催(2026年9月27日)(新しいタブで開く)">📅 2026年9月27日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月9日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90%E7%A7%8B%E4%BF%9D%E2%99%A1%E3%83%AD%E3%83%83%E3%82%AF%E3%80%91%E3%81%A4%E3%81%8D%E3%82%84%E9%85%92%E5%BA%97%28%E7%B5%8C%E5%A0%82%29%E3%81%A7%E8%94%B5%E5%85%83%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC&amp;dates=20260927%2F20260928&amp;details=9%E6%9C%8827%E6%97%A5%28%E6%97%A5%2913%3A00%E3%80%9C15%3A00%E3%80%81%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E7%B5%8C%E5%A0%82%E3%81%AE%E3%81%A4%E3%81%8D%E3%82%84%E9%85%92%E5%BA%97%E3%81%A7%E3%83%9A%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%82%92%E9%96%8B%E5%82%AC%E3%80%82%E3%81%8A%E3%81%A4%E3%81%BE%E3%81%BF%E3%83%9A%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E4%BB%98%E3%81%8D%E3%81%A76%E7%A8%AE%E9%A1%9E%2B%CE%B1%E3%81%AE%E3%81%8A%E9%85%92%E3%82%92%E6%A5%BD%E3%81%97%E3%81%BF%E3%80%81%E8%94%B5%E5%85%83%E3%83%BB%E4%BC%8A%E6%BE%A4%E5%B9%B3%E8%BC%9D%E6%B0%8F%E3%81%8B%E3%82%89%E9%80%A0%E3%82%8A%E3%81%AE%E8%A9%B1%E3%82%92%E8%81%9E%E3%81%91%E3%82%8B%28%E4%BC%9A%E8%B2%BB6%2C600%E5%86%86%29%E3%80%82%E7%B5%82%E4%BA%86%E5%BE%8C%E3%82%82%E5%90%8C%E6%97%A516%3A00%E3%80%9C21%3A00%E3%81%AB%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%A0%E5%96%B6%E6%A5%AD%E3%82%92%E5%AE%9F%E6%96%BD%E3%81%97%E3%80%81%E8%94%B5%E5%85%83%E3%81%AF%E3%80%8C%E5%A4%9A%E3%81%8F%E3%81%AE%E6%96%B9%E3%81%AB%E6%9D%A5%E3%81%A6%E3%81%84%E3%81%9F%E3%81%A0%E3%81%84%E3%81%9F%E3%80%8D%E3%81%A8%E5%A0%B1%E5%91%8A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2097563418366734519%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2103311994153803800%0AX%28%40tsukiya_ankh%29%3A+https%3A%2F%2Fx.com%2Ftsukiya_ankh%2Fstatus%2F2104035483617787938%0A%E5%AE%9F%E6%96%BD%E5%BE%8C%E3%81%AE%E5%8F%8D%E5%BF%9C%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89%3A+https%3A%2F%2Fx.com%2FAkiuHeartRock%2Fstatus%2F2104840041147380147" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: つきや酒店(経堂)で蔵元イベントを開催(2026年9月27日)(新しいタブで開く)">📅 2026年9月27日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/tsukiya_ankh/status/2097563418366734519" target="_blank" rel="noopener noreferrer">つきや酒店(経堂)で蔵元イベントを開催<span class="visually-hidden">(新しいタブで開く)</span></a>
             <span class="entry-source" role="group" aria-label="つきや酒店(経堂)で蔵元イベントを開催の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2097563418366734519" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@tsukiya_ankh<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2103311994153803800" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)">続報1<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/tsukiya_ankh/status/2104035483617787938" target="_blank" rel="noopener noreferrer" title="X(@tsukiya_ankh)">続報2<span class="visually-hidden">(新しいタブで開く)</span></a></span>
@@ -1507,7 +1558,7 @@
           <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年6月2日</span></span></div>
           <div class="entry-body">
             <a class="entry-title" href="https://www.khb-tv.co.jp/news/16611323" target="_blank" rel="noopener noreferrer">khb東日本放送で代表・伊澤平輝さんと磊眞の醸造現場が紹介される<span class="visually-hidden">(新しいタブで開く)</span></a>
-            <span class="entry-source" role="group" aria-label="khb東日本放送で代表・伊澤平輝さんと磊眞の醸造現場が紹介されるの関連情報"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.khb-tv.co.jp/news/16611323" target="_blank" rel="noopener noreferrer" title="khb東日本放送">khb東日本放送<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/p/DY_njb_j4mS/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/p/DZFQWdzPOeW/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2060986513794662892" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061594235133219227" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061769401511338043" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.threads.com/@heizo_isawa/post/DZEQnJYmG3e" target="_blank" rel="noopener noreferrer" title="Threads(@heizo_isawa)">Threads(@heizo_isawa)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
+            <span class="entry-source" role="group" aria-label="khb東日本放送で代表・伊澤平輝さんと磊眞の醸造現場が紹介されるの関連情報"><a class="badge-category" href="../category/media.html">メディア掲載・受賞</a><a class="entry-source-link" href="https://www.khb-tv.co.jp/news/16611323" target="_blank" rel="noopener noreferrer" title="khb東日本放送">khb東日本放送<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/p/DY_njb_j4mS/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@heartrocksake1111<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/p/DZFQWdzPOeW/" target="_blank" rel="noopener noreferrer" title="Instagram(@heartrocksake1111)">続報<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2060986513794662892" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@AkiuHeartRock<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061594235133219227" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報1<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/AkiuHeartRock/status/2061769401511338043" target="_blank" rel="noopener noreferrer" title="X(@AkiuHeartRock)">続報2<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.threads.com/@heizo_isawa/post/DZEQnJYmG3e" target="_blank" rel="noopener noreferrer" title="Threads(@heizo_isawa)"><span class="visually-hidden">Threads </span><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.263 11.097c-.03-3.486-1.92-5.586-5.111-5.586-2.13 0-3.922.963-4.863 2.499l2.062 1.438c.535-.843 1.272-1.543 2.628-1.543 1.528 0 2.318.85 2.544 2.431a15 15 0 0 0-2.236-.173c-4.125 0-6.068 1.867-6.068 4.336s1.943 3.99 4.804 3.99c3.139 0 5.013-2.115 5.781-4.735.798.361 1.348 1.204 1.348 2.47 0 3.387-3.907 5.232-7.22 5.232-4.885 0-8.077-3.207-8.077-8.424 0-6.392 4.223-10.487 9.9-10.487 3.808 0 5.69 1.671 6.97 3.914l2.108-1.475C21.44 2.078 18.331 0 13.663 0 6.227 0 1.168 5.277 1.168 12.934c0 7 4.953 11.066 10.856 11.066 4.878 0 9.809-2.846 9.809-7.716 0-2.545-1.46-4.231-3.569-5.187m-6.33 4.855c-1.077 0-2.026-.512-2.026-1.453 0-1.483 1.822-1.934 3.606-1.934.678 0 1.34.045 1.927.173-.422 1.927-1.671 3.215-3.508 3.214Z"/></svg>@heizo_isawa<span class="visually-hidden">(新しいタブで開く)</span></a></span>
             <p class="entry-summary">6/2のニュースで、日本酒ベースのクラフト酒で起業した若手社長として紹介。浅勘酒造店(大崎市)での醸造現場を取材し、3月の香港の日本酒販売イベントで磊眞の2種が販売本数1位・2位を独占したことや、将来は秋保に自社蔵を構える構想を紹介。</p>
             
             
@@ -1693,9 +1744,14 @@
     正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
     ご確認ください。
   </p>
+  <p class="footer-contact">
+    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+  </p>
 </footer>
 <script>
 (function () {
+  var form = document.getElementById("site-search-form");
+  var btn = document.getElementById("search-toggle");
   var done = false;
   document.addEventListener("focusin", function (e) {
     var t = e.target;
@@ -1705,14 +1761,34 @@
     l.href = t.closest(".site-search").getAttribute("data-index");
     document.head.appendChild(l);
   });
+  // スマホ幅(CSSの600px以下)では検索ボックスをアイコンで開閉する。JSが無ければ検索ボックスは常に表示。
+  if (!form || !btn) { return; }
+  var input = form.querySelector('input[type="search"]');
+  function setOpen(open, focusInput) {
+    form.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && focusInput) { input.focus(); }
+  }
+  form.classList.add("is-collapsible");
+  btn.hidden = false;
+  btn.addEventListener("click", function () {
+    var open = !form.classList.contains("is-open");
+    setOpen(open, true);
+  });
+  form.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && form.classList.contains("is-open")) { setOpen(false); btn.focus(); }
+  });
+  form.addEventListener("submit", function () { setOpen(false); });
 })();
 </script>
 <script>
 (function () {
-  var box = document.getElementById("theme-toggle");
-  if (!box) { return; }
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) { return; }
   var root = document.documentElement;
   var COLORS = { light: "#f1eee3", dark: "#1c1e22" };
+  var ORDER = ["auto", "light", "dark"];
+  var NAME = { auto: "自動", light: "ライト", dark: "ダーク" };
   function current() {
     var t = root.getAttribute("data-theme");
     return t === "light" || t === "dark" ? t : "auto";
@@ -1721,8 +1797,8 @@
     // 手動指定のときは、ブラウザのUI色(theme-color)も合わせる。自動は元の(メディアクエリ付き)指定に戻す
     var metas = document.querySelectorAll('meta[name="theme-color"]');
     metas.forEach(function (m) {
-      var scheme = /dark/.test(m.getAttribute("data-media") || m.getAttribute("media") || "") ? "dark" : "light";
       if (!m.hasAttribute("data-media")) { m.setAttribute("data-media", m.getAttribute("media")); }
+      var scheme = /dark/.test(m.getAttribute("data-media")) ? "dark" : "light";
       if (mode === "auto") { m.setAttribute("media", m.getAttribute("data-media")); m.setAttribute("content", COLORS[scheme]); }
       else { m.setAttribute("media", "all"); m.setAttribute("content", COLORS[mode]); }
     });
@@ -1733,15 +1809,16 @@
       try { if (mode === "auto") { localStorage.removeItem("kura-theme"); } else { localStorage.setItem("kura-theme", mode); } } catch (e) { /* 保存できなくても切り替えは有効 */ }
     }
     themeColors(mode);
-    box.querySelectorAll("button[data-theme-choice]").forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === mode ? "true" : "false");
-    });
+    var next = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length];
+    var label = "表示テーマ: " + NAME[mode] + "(押すと" + NAME[next] + "に切り替え)";
+    btn.setAttribute("data-state", mode);
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
   }
-  box.addEventListener("click", function (ev) {
-    var b = ev.target.closest ? ev.target.closest("button[data-theme-choice]") : null;
-    if (b) { apply(b.getAttribute("data-theme-choice"), true); }
+  btn.addEventListener("click", function () {
+    apply(ORDER[(ORDER.indexOf(current()) + 1) % ORDER.length], true);
   });
   apply(current(), false);
-  box.hidden = false;
+  btn.hidden = false;
 })();
 </script>
