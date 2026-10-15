@@ -55,6 +55,7 @@
     /* 塗りつぶしのバッジ・バナー(--muted / --seal 地)の上に載せる文字色 */
     --on-muted: #fff;
     --on-seal: #fff;
+    --radius-input: 10px; /* テキスト入力枠の角丸(ボタン・セレクト・チップのカプセル形と見分けるため、少し小さく) */
     color-scheme: light dark;
   }
   /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
@@ -1060,7 +1061,8 @@
     .search-toggle:not([hidden]) { display: inline-flex; margin-left: auto; }
     .site-search { order: 10; flex-basis: 100%; margin-left: 0; }
     .site-search.is-collapsible:not(.is-open) { display: none; }
-    .site-search input[type="search"] { flex: 1; width: auto; }
+    .site-search .search-field { flex: 1; }
+    .site-search input[type="search"] { flex: 1; width: 100%; }
     .site-bar-tools > .theme-btn:first-child { margin-left: auto; }
   }
   .site-search {
@@ -1076,12 +1078,38 @@
     color: var(--ink);
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: var(--radius-input);
     padding: 0.3rem 0.85rem;
     min-width: 0;
   }
   .site-search input[type="search"] { width: 12.5rem; }
-  .search-form input[type="search"] { flex: 1; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  .search-form input[type="search"] { flex: 1; width: 100%; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  /* 入力欄の中の虫眼鏡(装飾。クリックは入力欄へ通す)。「テキストを入力する欄」と「押すボタン」を見分けやすくする */
+  .search-field {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+  .search-form .search-field { flex: 1; }
+  .search-field .field-icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .site-search .search-field input[type="search"] { padding-left: 2rem; }
+  .search-form .search-field input[type="search"] { padding-left: 2.2rem; }
+  @media (max-width: 380px) {
+    /* 320px級の狭い画面でも、検索ページのプレースホルダー「キーワードで探す」が切れないように余白と文字を少し詰める */
+    .search-panel { padding-left: 1rem; padding-right: 1rem; }
+    .search-form { gap: 0.4rem; }
+    .search-form .search-field input[type="search"] { font-size: 0.85rem; padding-left: 2rem; padding-right: 0.5rem; }
+  }
   .site-search input::placeholder,
   .search-form input::placeholder { color: var(--muted); }
   .site-search button,
@@ -1159,12 +1187,6 @@
   .search-status:focus { outline: none; }
   .search-hint { font-size: 0.8rem; color: var(--muted); }
   .search-hint p { margin: 0.2rem 0; }
-  .search-event { font-size: 0.7rem; color: var(--muted); }
-  .search-brewery-link {
-    font-size: 0.68rem;
-    color: var(--indigo-deep);
-    text-decoration: underline;
-  }
   mark {
     background: var(--tint-mustard-20);
     color: inherit;
@@ -1226,7 +1248,7 @@
     <div class="site-bar-tools">
       <form id="site-search-form" class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
         <label class="visually-hidden" for="site-search-q">LINNÉ内を検索</label>
-        <input id="site-search-q" type="search" name="q" placeholder="LINNÉ内を検索" autocomplete="off"><input type="hidden" name="b" value="linne">
+        <span class="search-field"><svg class="field-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="site-search-q" type="search" name="q" placeholder="LINNÉ内を検索" autocomplete="off"></span><input type="hidden" name="b" value="linne">
         <button type="submit">検索</button>
       </form>
       <button type="button" id="search-toggle" class="icon-btn search-toggle" aria-label="検索を開く" aria-expanded="false" aria-controls="site-search-form" hidden><svg class="ic-search" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
@@ -1346,7 +1368,7 @@
         </li>
 
         <li class="entry" id="linne-260930-01">
-          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E9%96%A2%E8%A5%BF%E9%86%B8%E5%8F%8B%E4%BC%9A%E3%80%8D%E3%81%A7%E8%AC%9B%E6%BC%94%E3%80%8C%E9%86%B8%E9%80%A0%E3%81%AE%E5%8D%9A%E7%89%A9%E5%AD%A6%E3%80%8D%E3%81%AB%E7%99%BB%E5%A3%87&amp;dates=20260930%2F20261001&amp;details=%E5%A4%A7%E9%98%AA%E5%9B%BD%E7%A8%8E%E5%B1%80%E7%AE%A1%E5%86%85%E3%81%AE%E9%85%92%E9%80%A0%E6%8A%80%E8%A1%93%E8%80%85120%E5%90%8D%E8%B6%85%E3%81%8C%E9%9B%86%E3%81%86%E3%80%8C%E9%96%A2%E8%A5%BF%E9%86%B8%E5%8F%8B%E4%BC%9A%E3%80%8D%E3%81%AB%E3%80%81%E4%BA%AC%E9%83%BD%E5%B8%82%E7%94%A3%E6%A5%AD%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E6%89%80%E3%81%AE%E5%A3%B0%E3%81%8C%E3%81%91%E3%81%A7%E7%99%BB%E5%A3%87%E3%80%82%E8%AC%9B%E6%BC%94%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AF%E3%80%8C%E9%86%B8%E9%80%A0%E3%81%AE%E5%8D%9A%E7%89%A9%E5%AD%A6%E3%80%8D%E3%80%82%E6%9C%88%E6%A1%82%E5%86%A0%E3%81%AE%E6%8A%80%E8%A1%93%E8%80%85%E3%81%A8%E3%82%82%E4%BA%A4%E6%B5%81%E3%81%97%E3%81%9F%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105076446817649055" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「関西醸友会」で講演「醸造の博物学」に登壇(2026年9月30日)(新しいタブで開く)">📅 2026年9月30日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E9%96%A2%E8%A5%BF%E9%86%B8%E5%8F%8B%E4%BC%9A%E3%80%8D%E3%81%A7%E8%AC%9B%E6%BC%94%E3%80%8C%E9%86%B8%E9%80%A0%E3%81%AE%E5%8D%9A%E7%89%A9%E5%AD%A6%E3%80%8D%E3%81%AB%E7%99%BB%E5%A3%87&amp;dates=20260930%2F20261001&amp;details=%E5%A4%A7%E9%98%AA%E5%9B%BD%E7%A8%8E%E5%B1%80%E7%AE%A1%E5%86%85%E3%81%AE%E9%85%92%E9%80%A0%E6%8A%80%E8%A1%93%E8%80%85120%E5%90%8D%E8%B6%85%E3%81%8C%E9%9B%86%E3%81%86%E3%80%8C%E9%96%A2%E8%A5%BF%E9%86%B8%E5%8F%8B%E4%BC%9A%E3%80%8D%E3%81%AB%E3%80%81%E4%BA%AC%E9%83%BD%E5%B8%82%E7%94%A3%E6%A5%AD%E6%8A%80%E8%A1%93%E7%A0%94%E7%A9%B6%E6%89%80%E3%81%AE%E5%A3%B0%E3%81%8C%E3%81%91%E3%81%A7%E7%99%BB%E5%A3%87%E3%80%82%E8%AC%9B%E6%BC%94%E3%83%86%E3%83%BC%E3%83%9E%E3%81%AF%E3%80%8C%E9%86%B8%E9%80%A0%E3%81%AE%E5%8D%9A%E7%89%A9%E5%AD%A6%E3%80%8D%E3%80%82%E6%9C%88%E6%A1%82%E5%86%A0%E3%81%AE%E6%8A%80%E8%A1%93%E8%80%85%E3%81%A8%E3%82%82%E4%BA%A4%E6%B5%81%E3%81%97%E3%81%9F%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105076446817649055" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「関西醸友会」で講演「醸造の博物学」に登壇(2026年9月30日)(新しいタブで開く)">📅 2026年9月30日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/shoya_imai/status/2105076446817649055" target="_blank" rel="noopener noreferrer">「関西醸友会」で講演「醸造の博物学」に登壇<span class="visually-hidden">(新しいタブで開く)</span></a>
             <span class="entry-source" role="group" aria-label="「関西醸友会」で講演「醸造の博物学」に登壇の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2105076446817649055" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@shoya_imai<span class="visually-hidden">(新しいタブで開く)</span></a></span>
@@ -1357,7 +1379,7 @@
         </li>
 
         <li class="entry" id="linne-260930-02">
-          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E8%8B%A5%E6%89%8B%E3%81%AE%E5%A4%9C%E6%98%8E%E3%81%912026%E3%80%8D%E3%81%A7%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%80%8CLINN%C3%89+SHUWAN%E3%80%8D%E3%80%8C800+Magnum+Label%E3%80%8D%E3%82%92%E9%99%90%E5%AE%9A%E8%B2%A9%E5%A3%B2&amp;dates=20260930%2F20261002&amp;details=%E3%80%8C%E8%8B%A5%E6%89%8B%E3%81%AE%E5%A4%9C%E6%98%8E%E3%81%912026%E3%80%8D%28%E5%A4%A7%E6%89%8B%E7%94%BA%E4%BB%B2%E9%80%9A%E3%82%8A%E3%80%81LINN%C3%89%E3%81%AF%E5%89%8D%E5%8D%8A%E6%97%A5%E7%A8%8B%E3%81%AE9%2F30%E3%83%BB10%2F1%E3%81%AB%E5%87%BA%E5%BA%97%29%E3%81%AE%E3%83%96%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%A6%E3%80%81%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%82%92%E9%99%90%E5%AE%9A%E8%B2%A9%E5%A3%B2%E3%80%82%E3%80%8CLINN%C3%89+SHUWAN%E3%80%8D%28%E9%85%92%E6%A4%80%E3%80%814%E7%A2%97%E9%99%90%E5%AE%9A%29%E3%81%A8%E3%80%8CLINN%C3%89+800+Magnum+Label%E3%80%8D%28800+%E8%95%8E%E9%BA%A6%E3%83%BB800+%E7%B1%B3%E3%80%88%E5%BF%83%E6%8B%8D%E3%80%89%E3%81%AE%E3%83%A9%E3%83%99%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%80%81%E5%90%841%2C000%E5%86%86%E3%83%BB%E3%81%BB%E3%81%BC%E5%8E%9F%E4%BE%A1%29%E3%81%AE2%E7%A8%AE%E3%80%82%E3%81%84%E3%81%9A%E3%82%8C%E3%82%82%E9%80%9A%E5%B8%B8%E8%B2%A9%E5%A3%B2%E3%81%AF%E3%81%AA%E3%81%8F%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E9%99%90%E5%AE%9A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105172913397927973%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105525181930418202" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「若手の夜明け2026」でオリジナルグッズ「LINNÉ SHUWAN」「800 Magnum Label」を限定販売(2026年9月30日〜10月1日)(新しいタブで開く)">📅 2026年9月30日〜10月1日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E8%8B%A5%E6%89%8B%E3%81%AE%E5%A4%9C%E6%98%8E%E3%81%912026%E3%80%8D%E3%81%A7%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%80%8CLINN%C3%89+SHUWAN%E3%80%8D%E3%80%8C800+Magnum+Label%E3%80%8D%E3%82%92%E9%99%90%E5%AE%9A%E8%B2%A9%E5%A3%B2&amp;dates=20260930%2F20261002&amp;details=%E3%80%8C%E8%8B%A5%E6%89%8B%E3%81%AE%E5%A4%9C%E6%98%8E%E3%81%912026%E3%80%8D%28%E5%A4%A7%E6%89%8B%E7%94%BA%E4%BB%B2%E9%80%9A%E3%82%8A%E3%80%81LINN%C3%89%E3%81%AF%E5%89%8D%E5%8D%8A%E6%97%A5%E7%A8%8B%E3%81%AE9%2F30%E3%83%BB10%2F1%E3%81%AB%E5%87%BA%E5%BA%97%29%E3%81%AE%E3%83%96%E3%83%BC%E3%82%B9%E3%81%AB%E3%81%A6%E3%80%81%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%82%92%E9%99%90%E5%AE%9A%E8%B2%A9%E5%A3%B2%E3%80%82%E3%80%8CLINN%C3%89+SHUWAN%E3%80%8D%28%E9%85%92%E6%A4%80%E3%80%814%E7%A2%97%E9%99%90%E5%AE%9A%29%E3%81%A8%E3%80%8CLINN%C3%89+800+Magnum+Label%E3%80%8D%28800+%E8%95%8E%E9%BA%A6%E3%83%BB800+%E7%B1%B3%E3%80%88%E5%BF%83%E6%8B%8D%E3%80%89%E3%81%AE%E3%83%A9%E3%83%99%E3%83%AB%E3%82%B0%E3%83%83%E3%82%BA%E3%80%81%E5%90%841%2C000%E5%86%86%E3%83%BB%E3%81%BB%E3%81%BC%E5%8E%9F%E4%BE%A1%29%E3%81%AE2%E7%A8%AE%E3%80%82%E3%81%84%E3%81%9A%E3%82%8C%E3%82%82%E9%80%9A%E5%B8%B8%E8%B2%A9%E5%A3%B2%E3%81%AF%E3%81%AA%E3%81%8F%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E9%99%90%E5%AE%9A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105172913397927973%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2105525181930418202" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「若手の夜明け2026」でオリジナルグッズ「LINNÉ SHUWAN」「800 Magnum Label」を限定販売(2026年9月30日〜10月1日)(新しいタブで開く)">📅 2026年9月30日〜10月1日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://x.com/shoya_imai/status/2105172913397927973" target="_blank" rel="noopener noreferrer">「若手の夜明け2026」でオリジナルグッズ「LINNÉ SHUWAN」「800 Magnum Label」を限定販売<span class="visually-hidden">(新しいタブで開く)</span></a>
             <span class="entry-source" role="group" aria-label="「若手の夜明け2026」でオリジナルグッズ「LINNÉ SHUWAN」「800 Magnum Label」を限定販売の関連情報"><a class="badge-category" href="../category/other.html">その他</a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2105172913397927973" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@shoya_imai<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2105525181930418202" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)">続報<span class="visually-hidden">(新しいタブで開く)</span></a></span>
@@ -1368,7 +1390,7 @@
         </li>
 
         <li class="entry" id="linne-260930-03">
-          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E6%9D%B1%E5%A4%A7%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%AE%E6%97%A5%E6%9C%AC%E9%85%92%E3%82%92%E6%A5%BD%E3%81%97%E3%81%BF%E4%BA%A4%E6%B5%81%E3%82%92%E6%B7%B1%E3%82%81%E3%82%88%E3%81%86%E3%80%8D%E3%81%AB%E5%87%BA%E5%BA%97%28%E6%9D%B1%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%E3%80%8110%2F17%29&amp;dates=20261017%2F20261018&amp;details=%E7%AC%AC25%E5%9B%9E%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%2810%2F17%29%E3%81%AE%E9%8A%80%E6%9D%8F%E4%B8%A6%E6%9C%A8%E9%80%9A%E3%82%8A%28%E6%9C%AC%E9%83%B7%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%29%E3%81%A7%E3%80%81%E6%9D%B1%E5%A4%A7%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%8C11%3A00%E3%80%9C16%3A00%E3%81%AB%E9%96%8B%E5%82%AC%E3%81%99%E3%82%8B%E5%88%A9%E3%81%8D%E9%85%92%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%28%E9%BA%B4%E8%8F%8C%E3%83%BB%E5%9B%BD%E8%8F%8C%E8%AA%8D%E5%AE%9A20%E5%91%A8%E5%B9%B4%29%E3%80%82%E6%9D%B1%E5%A4%A7%E3%81%AB%E7%B8%81%E3%81%AE%E3%81%82%E3%82%8B18%E8%94%B5%E5%85%83%E3%81%8C%E5%8F%82%E5%8A%A0%E3%81%97%E3%80%81%E5%88%A9%E3%81%8D%E9%85%92%E3%81%AF%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E5%88%B6%286%E6%9E%9A%E3%81%A4%E3%81%A5%E3%82%8A1%2C000%E5%86%86%E3%80%811%E6%9D%AF%E3%81%AB%E3%81%A4%E3%81%8D1%E3%80%9C3%E6%9E%9A%29%E3%80%82%E4%B8%80%E9%83%A8%E3%81%AF%E8%B3%BC%E5%85%A5%E3%82%82%E5%8F%AF%E8%83%BD%E3%80%82%E5%86%AC%E3%81%AB%E4%BA%88%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%AE%E3%81%8A%E9%85%92%E3%81%AE%E9%A0%92%E5%B8%83%E4%BC%9A%E3%81%AE%E5%85%88%E8%A1%8C%E5%8B%9F%E9%9B%86%E3%82%82%E8%A1%8C%E3%81%86%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%3A+https%3A%2F%2Fu-tokyo-hcd.com%2Fprogram%2F2026G016" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「東大蔵元会の日本酒を楽しみ交流を深めよう」に出店(東大ホームカミングデイ、10/17)(2026年10月17日)(新しいタブで開く)">📅 2026年10月17日</a></div>
+          <div class="entry-date"><span class="entry-date-group"><span class="entry-date-row">2026年9月30日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%80%8C%E6%9D%B1%E5%A4%A7%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%AE%E6%97%A5%E6%9C%AC%E9%85%92%E3%82%92%E6%A5%BD%E3%81%97%E3%81%BF%E4%BA%A4%E6%B5%81%E3%82%92%E6%B7%B1%E3%82%81%E3%82%88%E3%81%86%E3%80%8D%E3%81%AB%E5%87%BA%E5%BA%97%28%E6%9D%B1%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%E3%80%8110%2F17%29&amp;dates=20261017%2F20261018&amp;details=%E7%AC%AC25%E5%9B%9E%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%2810%2F17%29%E3%81%AE%E9%8A%80%E6%9D%8F%E4%B8%A6%E6%9C%A8%E9%80%9A%E3%82%8A%28%E6%9C%AC%E9%83%B7%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%91%E3%82%B9%29%E3%81%A7%E3%80%81%E6%9D%B1%E5%A4%A7%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%8C11%3A00%E3%80%9C16%3A00%E3%81%AB%E9%96%8B%E5%82%AC%E3%81%99%E3%82%8B%E5%88%A9%E3%81%8D%E9%85%92%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%28%E9%BA%B4%E8%8F%8C%E3%83%BB%E5%9B%BD%E8%8F%8C%E8%AA%8D%E5%AE%9A20%E5%91%A8%E5%B9%B4%29%E3%80%82%E6%9D%B1%E5%A4%A7%E3%81%AB%E7%B8%81%E3%81%AE%E3%81%82%E3%82%8B18%E8%94%B5%E5%85%83%E3%81%8C%E5%8F%82%E5%8A%A0%E3%81%97%E3%80%81%E5%88%A9%E3%81%8D%E9%85%92%E3%81%AF%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E5%88%B6%286%E6%9E%9A%E3%81%A4%E3%81%A5%E3%82%8A1%2C000%E5%86%86%E3%80%811%E6%9D%AF%E3%81%AB%E3%81%A4%E3%81%8D1%E3%80%9C3%E6%9E%9A%29%E3%80%82%E4%B8%80%E9%83%A8%E3%81%AF%E8%B3%BC%E5%85%A5%E3%82%82%E5%8F%AF%E8%83%BD%E3%80%82%E5%86%AC%E3%81%AB%E4%BA%88%E5%AE%9A%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E8%94%B5%E5%85%83%E4%BC%9A%E3%81%AE%E3%81%8A%E9%85%92%E3%81%AE%E9%A0%92%E5%B8%83%E4%BC%9A%E3%81%AE%E5%85%88%E8%A1%8C%E5%8B%9F%E9%9B%86%E3%82%82%E8%A1%8C%E3%81%86%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%AD%A6%E3%83%9B%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%87%E3%82%A4%E5%85%AC%E5%BC%8F%E3%82%B5%E3%82%A4%E3%83%88%3A+https%3A%2F%2Fu-tokyo-hcd.com%2Fprogram%2F2026G016" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: 「東大蔵元会の日本酒を楽しみ交流を深めよう」に出店(東大ホームカミングデイ、10/17)(2026年10月17日)(新しいタブで開く)">📅 2026年10月17日</a></div>
           <div class="entry-body">
             <a class="entry-title" href="https://u-tokyo-hcd.com/program/2026G016" target="_blank" rel="noopener noreferrer">「東大蔵元会の日本酒を楽しみ交流を深めよう」に出店(東大ホームカミングデイ、10/17)<span class="visually-hidden">(新しいタブで開く)</span></a>
             <span class="entry-source" role="group" aria-label="「東大蔵元会の日本酒を楽しみ交流を深めよう」に出店(東大ホームカミングデイ、10/17)の関連情報"><a class="badge-category" href="../category/event.html">イベント</a><a class="entry-source-link" href="https://u-tokyo-hcd.com/program/2026G016" target="_blank" rel="noopener noreferrer" title="東京大学ホームカミングデイ公式サイト">東京大学ホームカミングデイ公式サイト<span class="visually-hidden">(新しいタブで開く)</span></a></span>

@@ -49,6 +49,7 @@
     /* 塗りつぶしのバッジ・バナー(--muted / --seal 地)の上に載せる文字色 */
     --on-muted: #fff;
     --on-seal: #fff;
+    --radius-input: 10px; /* テキスト入力枠の角丸(ボタン・セレクト・チップのカプセル形と見分けるため、少し小さく) */
     color-scheme: light dark;
   }
   /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
@@ -1054,7 +1055,8 @@
     .search-toggle:not([hidden]) { display: inline-flex; margin-left: auto; }
     .site-search { order: 10; flex-basis: 100%; margin-left: 0; }
     .site-search.is-collapsible:not(.is-open) { display: none; }
-    .site-search input[type="search"] { flex: 1; width: auto; }
+    .site-search .search-field { flex: 1; }
+    .site-search input[type="search"] { flex: 1; width: 100%; }
     .site-bar-tools > .theme-btn:first-child { margin-left: auto; }
   }
   .site-search {
@@ -1070,12 +1072,38 @@
     color: var(--ink);
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: var(--radius-input);
     padding: 0.3rem 0.85rem;
     min-width: 0;
   }
   .site-search input[type="search"] { width: 12.5rem; }
-  .search-form input[type="search"] { flex: 1; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  .search-form input[type="search"] { flex: 1; width: 100%; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  /* 入力欄の中の虫眼鏡(装飾。クリックは入力欄へ通す)。「テキストを入力する欄」と「押すボタン」を見分けやすくする */
+  .search-field {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+  .search-form .search-field { flex: 1; }
+  .search-field .field-icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .site-search .search-field input[type="search"] { padding-left: 2rem; }
+  .search-form .search-field input[type="search"] { padding-left: 2.2rem; }
+  @media (max-width: 380px) {
+    /* 320px級の狭い画面でも、検索ページのプレースホルダー「キーワードで探す」が切れないように余白と文字を少し詰める */
+    .search-panel { padding-left: 1rem; padding-right: 1rem; }
+    .search-form { gap: 0.4rem; }
+    .search-form .search-field input[type="search"] { font-size: 0.85rem; padding-left: 2rem; padding-right: 0.5rem; }
+  }
   .site-search input::placeholder,
   .search-form input::placeholder { color: var(--muted); }
   .site-search button,
@@ -1153,12 +1181,6 @@
   .search-status:focus { outline: none; }
   .search-hint { font-size: 0.8rem; color: var(--muted); }
   .search-hint p { margin: 0.2rem 0; }
-  .search-event { font-size: 0.7rem; color: var(--muted); }
-  .search-brewery-link {
-    font-size: 0.68rem;
-    color: var(--indigo-deep);
-    text-decoration: underline;
-  }
   mark {
     background: var(--tint-mustard-20);
     color: inherit;
@@ -1270,22 +1292,22 @@
 
   <section class="search-panel" aria-labelledby="search-heading">
     <h2 id="search-heading">キーワード検索</h2>
-    <p class="panel-note">スペース区切りで絞り込みます(AND検索)。大文字小文字・全角半角・ひらがな/カタカナは区別しません。タイトル・概要・蔵名・カテゴリ・リンクの名前が対象です。</p>
+    <p class="panel-note">スペース区切りで絞り込みます(AND検索)。大文字小文字・全角半角・ひらがな/カタカナは区別しません。タイトル・概要・醸造所名・カテゴリ・リンクの名前が対象です。</p>
     <form id="search-form" class="search-form" role="search" action="search.html" method="get">
       <label class="visually-hidden" for="search-q">キーワード</label>
-      <input id="search-q" type="search" name="q" placeholder="キーワードで探す" autocomplete="off">
+      <span class="search-field"><svg class="field-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="search-q" type="search" name="q" placeholder="キーワードで探す" autocomplete="off"></span>
       <button type="submit">検索</button>
     </form>
     <div class="search-filters">
+      <label>醸造所 <select id="search-brewery"><option value="">すべての醸造所</option></select></label>
       <label>カテゴリ <select id="search-cat"><option value="">すべて</option></select></label>
-      <label>蔵 <select id="search-brewery"><option value="">すべての蔵</option></select></label>
       <label>並び <select id="search-sort"><option value="new">新しい順</option><option value="event">開催日順</option></select></label>
     </div>
     <div id="search-tags" class="search-tags" role="group" aria-label="現在の絞り込み条件" hidden></div>
     <p id="search-loading" class="panel-note" role="status">検索用データを読み込んでいます…</p>
     <p id="search-status" class="search-status" role="status" aria-live="polite" tabindex="-1"></p>
     <div id="search-hint" class="search-hint" hidden>
-      <p>ヒント: 蔵名(例: haccoba)・カテゴリ名(例: イベント)・地名や商品名など、短い言葉で探してみてください。</p>
+      <p>ヒント: 醸造所名(例: haccoba)・カテゴリ名(例: イベント)・地名や商品名など、短い言葉で探してみてください。</p>
       <p>複数の言葉はスペースで区切ると絞り込めます(例: 「LINNÉ 東大」)。「らーめん」と「ラーメン」、全角と半角は同じ扱いです。</p>
     </div>
     <ul class="entries search-results" id="search-results"></ul>
@@ -1336,7 +1358,8 @@
     KS.haystack = function (rec, catLabel) {
       if (rec._h === undefined) {
         var names = (rec.n || []).map(function (x) { return x.join(" "); }).join(" ");
-        rec._h = KS.normalize([rec.t, rec.m, names, catLabel(rec.c), rec.l].join(" "));
+        var cats = (rec.g || [rec.c]).map(catLabel).join(" ");
+        rec._h = KS.normalize([rec.t, rec.m, names, cats, rec.l].join(" "));
       }
       return rec._h;
     };
@@ -1347,7 +1370,7 @@
     };
     KS.filter = function (records, tokens, cat, brewery, catLabel) {
       return records.filter(function (r) {
-        if (cat && r.c !== cat) { return false; }
+        if (cat && (r.g || [r.c]).indexOf(cat) === -1) { return false; }
         if (brewery && (r.s || []).indexOf(brewery) === -1) { return false; }
         return KS.matches(r, tokens, catLabel);
       });
@@ -1368,43 +1391,45 @@
       return idx.map(function (p) { return p[0]; });
     };
 
-    // ---------------------------------------------------------------- ハイライト(HTMLエスケープ込み)
-    // 原文の1文字ごとに正規化した文字列を作り、一致位置を原文の位置に対応づけて <mark> で囲む。
-    KS.highlight = function (text, tokens) {
-      var chars = Array.from(text), norm = "", map = [];
-      chars.forEach(function (ch, i) {
-        var n = KS.normChar(ch);
-        for (var k = 0; k < n.length; k++) { norm += n[k]; map.push(i); }
-      });
-      var mark = chars.map(function () { return false; });
-      tokens.forEach(function (tk) {
-        if (!tk) { return; }
-        var from = 0, pos;
-        while ((pos = norm.indexOf(tk, from)) !== -1) {
-          for (var k = pos; k < pos + tk.length; k++) { mark[map[k]] = true; }
-          from = pos + tk.length;
+    // 挿入済みのHTML(サイトと同じ表示)の中の、タイトル・概要・蔵タグ・カテゴリのテキストノードだけを走査し、
+    // 一致箇所を <mark> で包む。タグ・属性には触れず、テキストは createTextNode で作るのでXSSの余地がない。
+    KS.HL_SELECTOR = ".entry-title, .entry-summary, .entry-brewery, .badge-category";
+    KS.highlightNode = function (root, tokens) {
+      if (!tokens.length) { return; }
+      root.querySelectorAll(KS.HL_SELECTOR).forEach(function (host) {
+        var walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT), nodes = [], n;
+        while ((n = walker.nextNode())) {
+          if (n.parentNode.closest && n.parentNode.closest(".visually-hidden")) { continue; }
+          nodes.push(n);
         }
+        nodes.forEach(function (node) {
+          var chars = Array.from(node.nodeValue), norm = "", map = [];
+          chars.forEach(function (ch, i) { var x = KS.normChar(ch); for (var k = 0; k < x.length; k++) { norm += x[k]; map.push(i); } });
+          var mark = chars.map(function () { return false; }), any = false;
+          tokens.forEach(function (tk) {
+            if (!tk) { return; }
+            var from = 0, pos;
+            while ((pos = norm.indexOf(tk, from)) !== -1) {
+              for (var k = pos; k < pos + tk.length; k++) { mark[map[k]] = true; }
+              any = true; from = pos + tk.length;
+            }
+          });
+          if (!any) { return; }
+          var frag = document.createDocumentFragment(), buf = "", open = null;
+          var flush = function () {
+            if (!buf) { return; }
+            if (open) { var m = document.createElement("mark"); m.textContent = buf; frag.appendChild(m); }
+            else { frag.appendChild(document.createTextNode(buf)); }
+            buf = "";
+          };
+          chars.forEach(function (ch, i) {
+            if (open !== mark[i]) { flush(); open = mark[i]; }
+            buf += ch;
+          });
+          flush();
+          node.parentNode.replaceChild(frag, node);
+        });
       });
-      var out = "", open = false;
-      chars.forEach(function (ch, i) {
-        if (mark[i] && !open) { out += "<mark>"; open = true; }
-        if (!mark[i] && open) { out += "</mark>"; open = false; }
-        out += KS.escapeHtml(ch);
-      });
-      return out + (open ? "</mark>" : "");
-    };
-    // 概要の抜粋(最初のヒット語の前後)。ヒットが無ければ先頭から。
-    KS.excerpt = function (text, tokens, width) {
-      width = width || 110;
-      var chars = Array.from(text);
-      if (chars.length <= width) { return text; }
-      var norm = "", map = [];
-      chars.forEach(function (ch, i) { var n = KS.normChar(ch); for (var k = 0; k < n.length; k++) { norm += n[k]; map.push(i); } });
-      var first = -1;
-      tokens.forEach(function (tk) { var p = tk ? norm.indexOf(tk) : -1; if (p !== -1 && (first === -1 || p < first)) { first = p; } });
-      var start = first === -1 ? 0 : Math.max(0, map[first] - 30);
-      var end = Math.min(chars.length, start + width);
-      return (start > 0 ? "…" : "") + chars.slice(start, end).join("") + (end < chars.length ? "…" : "");
     };
 
     window.KuraSearch = KS;
@@ -1429,9 +1454,18 @@
         sortNew: KS.sort(recs, "new").map(function (r) { return r.t; }),
         sortEvent: KS.sort(recs, "event").map(function (r) { return r.t; }),
         escape: KS.escapeHtml('<img src=x onerror="alert(1)">&\''),
-        hlEscape: KS.highlight('<b>ラーメン</b> & "らーめん"', KS.tokens("らーめん")),
-        hlKana: KS.highlight("ラーメンとらーめん", KS.tokens("ラーメン")),
-        excerpt: KS.excerpt("あ".repeat(200) + "ラーメン" + "い".repeat(200), KS.tokens("らーめん"), 40)
+        hlNode: (function () {
+          var d = document.createElement("div");
+          d.innerHTML = '<li class="entry"><a class="entry-title" href="https://example.com/?q=ラーメン" title="ラーメン">LA ラーメン&amp;らーめん<span class="visually-hidden">(新しいタブ)</span></a>' +
+            '<a class="entry-brewery" href="brewery/x.html">ラーメン蔵</a><p class="entry-summary">&lt;img src=x onerror=alert(1)&gt;ラーメンとらーめん<a href="u">ラーメン</a></p>' +
+            '<a class="entry-source-link" href="u">ラーメン</a></li>';
+          KS.highlightNode(d, KS.tokens("らーめん"));
+          return d.innerHTML;
+        })(),
+        hlNodeNoTokens: (function () {
+          var d = document.createElement("div"); d.innerHTML = '<p class="entry-summary">ラーメン</p>';
+          KS.highlightNode(d, []); return d.innerHTML;
+        })()
       });
       document.body.appendChild(out);
       return;
@@ -1441,15 +1475,6 @@
     var META, DATA, shown = 0, results = [], PAGE = 50;
     var $ = function (id) { return document.getElementById(id); };
     var catLabel = function (key) { return (META.categories[key]) || key || ""; };
-    var jpDate = function (iso) {
-      var p = (iso || "").split("-"); return p.length === 3 ? (+p[0]) + "年" + (+p[1]) + "月" + (+p[2]) + "日" : iso || "";
-    };
-    var eventText = function (r) {
-      if (!r.e) { return ""; }
-      return jpDate(r.e) + (r.f && r.f !== r.e ? "〜" + jpDate(r.f) : "");
-    };
-    var safeUrl = function (u) { return /^https?:\/\//.test(u || "") ? u : ""; };
-
     function readParams() {
       var p = new URLSearchParams(location.search);
       return { q: p.get("q") || "", cat: p.get("cat") || "", b: p.get("b") || "", sort: p.get("sort") === "event" ? "event" : "new" };
@@ -1460,45 +1485,21 @@
     function writeUrl(st) {
       var p = new URLSearchParams();
       if (st.q) { p.set("q", st.q); }
-      if (st.cat) { p.set("cat", st.cat); }
       if (st.b) { p.set("b", st.b); }
+      if (st.cat) { p.set("cat", st.cat); }
       if (st.sort === "event") { p.set("sort", "event"); }
       var qs = p.toString();
       try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "")); } catch (e) { /* file:// 等では無視 */ }
     }
 
-    function renderOne(r, tokens) {
-      var E = KS.escapeHtml, u = safeUrl(r.u);
-      var title = KS.highlight(r.t, tokens);
-      var titleHtml = u
-        ? '<a class="entry-title" href="' + E(u) + '" target="_blank" rel="noopener noreferrer">' + title + '<span class="visually-hidden">(新しいタブで開く)</span></a>'
-        : '<span class="entry-title entry-title-dead">' + title + '</span><span class="badge-dead">リンク切れ</span>';
-      var anchors = r.a || [];
-      var tags = (r.s || []).map(function (slug, i) {
-        var nm = (r.n && r.n[i]) ? r.n[i][1] : slug;
-        var anchor = (anchors[i] || [])[1];
-        return '<a class="entry-brewery" href="brewery/' + E(slug) + '.html' + (anchor ? '#' + E(anchor) : '') + '">' + KS.highlight(nm, tokens) + '</a>';
-      }).join("");
-      var cat = r.c ? '<a class="badge-category" href="category/' + E(r.c) + '.html">' + KS.highlight(catLabel(r.c), tokens) + '</a>' : "";
-      var draft = r.x ? '<span class="badge-draft">下書き</span>' : "";
-      var first = anchors[0] ? 'brewery/' + E(anchors[0][0]) + '.html#' + E(anchors[0][1]) : (r.s && r.s[0] ? 'brewery/' + E(r.s[0]) + '.html' : "");
-      var jump = first ? '<a class="search-brewery-link" href="' + first + '">蔵ページで見る</a>' : "";
-      var ev = eventText(r);
-      var summary = r.m ? '<p class="entry-summary">' + KS.highlight(KS.excerpt(r.m, tokens), tokens) + '</p>' : "";
-      return '<li class="entry">' +
-        '<div class="entry-date">' + draft + '<span class="entry-date-row">' + E(jpDate(r.d)) + '</span>' +
-        (ev ? '<span class="search-event" title="実施日・発売日等">📅 ' + E(ev) + '</span>' : "") + '</div>' +
-        '<div class="entry-body">' + titleHtml +
-        '<span class="entry-source" role="group" aria-label="' + E(r.t) + 'の関連情報">' + tags + cat + jump + '</span>' +
-        summary + '</li>';
-    }
-
+    // 結果1件ぶんの表示は、生成時にサイトの他ページと同じ render_entry() で作ったHTML(r.h)をそのまま挿入する。
+    // 検索語の強調だけを、挿入後にテキストノードに対して行う。
     function showMore(focusFirst) {
       var tokens = KS.tokens($("search-q").value);
       var chunk = results.slice(shown, shown + PAGE);
-      var html = chunk.map(function (r) { return renderOne(r, tokens); }).join("");
       var list = $("search-results"), before = list.children.length;
-      list.insertAdjacentHTML("beforeend", html);
+      list.insertAdjacentHTML("beforeend", chunk.map(function (r) { return r.h; }).join(""));
+      for (var i = before; i < list.children.length; i++) { KS.highlightNode(list.children[i], tokens); }
       shown += chunk.length;
       $("search-more").hidden = shown >= results.length;
       if (focusFirst && list.children[before]) {
@@ -1507,7 +1508,7 @@
       }
     }
 
-    // 現在の絞り込み条件(蔵・カテゴリ)を結果の上にタグで出す。✕で外すとセレクト・URLも更新して再検索。
+    // 現在の絞り込み条件(醸造所・カテゴリ)を結果の上にタグで出す。✕で外すとセレクト・URLも更新して再検索。
     function renderTags(st) {
       var box = $("search-tags"), html = "";
       var brName = function (slug) {
@@ -1518,7 +1519,7 @@
         html += '<span class="search-tag">' + KS.escapeHtml(label) +
           '<button type="button" data-clear="' + kind + '" aria-label="' + KS.escapeHtml(label) + ' の絞り込みを外す">✕</button></span>';
       };
-      if (st.b) { add("b", "蔵: " + brName(st.b)); }
+      if (st.b) { add("b", "醸造所: " + brName(st.b)); }
       if (st.cat) { add("cat", "カテゴリ: " + catLabel(st.cat)); }
       box.innerHTML = html;
       box.hidden = !html;
