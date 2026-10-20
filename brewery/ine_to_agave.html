@@ -403,6 +403,13 @@
     white-space: nowrap;
     width: fit-content;
   }
+  /* 実施期間が複数ある情報(event_periods): 期間ごとに1つずつ📅バッジを、日付の列に縦に並べる(各バッジは1期間のバッジと同じ見た目) */
+  .badge-cal-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
   a.badge-cal:hover {
     border-color: var(--indigo);
     background: var(--tint-indigo-8);
@@ -753,6 +760,13 @@
   .agenda-date {
     flex: 0 0 9em;
   }
+  /* 実施期間が複数ある情報の予定一覧: 日付の列に期間ごとのバッジを縦に並べる(列は少し広げる。狭い画面では日付を本文の上に積み、バッジは横に並べる) */
+  .agenda-item.agenda-item-multi .agenda-date { flex: 0 0 11.5em; }
+  @media (max-width: 600px) {
+    .agenda-item.agenda-item-multi { flex-direction: column; gap: 0.3rem; }
+    .agenda-item.agenda-item-multi .agenda-date { flex: 0 0 auto; }
+    .agenda-item.agenda-item-multi .badge-cal-list { flex-direction: row; flex-wrap: wrap; }
+  }
   .agenda-body {
     display: flex;
     flex-direction: column;
@@ -899,6 +913,14 @@
     scroll-margin-top: 3.5rem;
   }
   li.entry:last-child { border-bottom: none; }
+  /* 実施期間が複数ある情報のカード: 日付の列(公開日の下)に期間ごとのバッジを縦に並べる。日付の列は少し広げる(最長のバッジが収まる幅)。
+     狭い画面では日付の列が本文の上に積まれ、バッジは横に並んで折り返す */
+  li.entry.entry-multi-period .entry-date { flex: 0 0 11.5em; }
+  @media (max-width: 600px) {
+    li.entry.entry-multi-period { flex-direction: column; gap: 0.35rem; }
+    li.entry.entry-multi-period .entry-date { flex: 0 0 auto; }
+    li.entry.entry-multi-period .badge-cal-list { flex-direction: row; flex-wrap: wrap; }
+  }
   .entries-more {
     margin: 0.6rem 0 0.2rem;
   }
