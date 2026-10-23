@@ -850,6 +850,15 @@
     white-space: nowrap;
   }
   .brewery-official-link:hover { text-decoration: underline; }
+  .brewery-rss {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .brewery-rss:hover { color: var(--indigo-deep); }
+  .icon-rss { flex: none; }
 
   .link-icon {
     display: block;
@@ -1076,6 +1085,25 @@
     width: fit-content;
   }
   details.about[open] summary { margin-bottom: 0.5rem; }
+  .about-feeds { margin-top: 0.4rem; }
+  details.feed-list { margin-top: 0.3rem; }
+  details.feed-list summary { cursor: pointer; color: var(--indigo-deep); font-size: 0.78rem; width: fit-content; }
+  details.feed-list ul {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.25rem;
+  }
+  details.feed-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.6rem;
+    align-items: baseline;
+    font-size: 0.76rem;
+  }
+  details.feed-list .feed-name { min-width: 9em; color: var(--ink); }
+  details.feed-list .feed-url { color: var(--muted); overflow-wrap: anywhere; }
   @media (max-width: 600px) {
     .site-bar-tools { display: contents; }
     .site-bar { column-gap: 0.45rem; }
@@ -1283,6 +1311,16 @@
       現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
       内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
     </p>
+    <div class="about-feeds">
+      <p class="lede-note">
+        新着情報はRSS(Atomフィード)でも購読できます。
+        <a href="feed.xml">全体の新着フィード</a>(直近14日分・最大50件)のほか、醸造所ごとのフィード(最新30件)があります。
+      </p>
+      <details class="feed-list">
+        <summary>醸造所ごとのフィード一覧</summary>
+        <ul><li><span class="feed-name">木花之醸造所</span><a class="feed-url" href="feed/konohanano.xml">https://cham28sake.github.io/kura-so/feed/konohanano.xml</a></li><li><span class="feed-name">haccoba</span><a class="feed-url" href="feed/haccoba.xml">https://cham28sake.github.io/kura-so/feed/haccoba.xml</a></li><li><span class="feed-name">LIBROM</span><a class="feed-url" href="feed/librom.xml">https://cham28sake.github.io/kura-so/feed/librom.xml</a></li><li><span class="feed-name">稲とアガベ</span><a class="feed-url" href="feed/ine_to_agave.xml">https://cham28sake.github.io/kura-so/feed/ine_to_agave.xml</a></li><li><span class="feed-name">LAGOON BREWERY</span><a class="feed-url" href="feed/lagoon.xml">https://cham28sake.github.io/kura-so/feed/lagoon.xml</a></li><li><span class="feed-name">ハッピー太郎醸造所</span><a class="feed-url" href="feed/happytaro.xml">https://cham28sake.github.io/kura-so/feed/happytaro.xml</a></li><li><span class="feed-name">平六醸造</span><a class="feed-url" href="feed/hiraroku.xml">https://cham28sake.github.io/kura-so/feed/hiraroku.xml</a></li><li><span class="feed-name">ぷくぷく醸造</span><a class="feed-url" href="feed/pukupuku.xml">https://cham28sake.github.io/kura-so/feed/pukupuku.xml</a></li><li><span class="feed-name">足立農醸</span><a class="feed-url" href="feed/adachi_noujo.xml">https://cham28sake.github.io/kura-so/feed/adachi_noujo.xml</a></li><li><span class="feed-name">はじまりの学校</span><a class="feed-url" href="feed/hajimari.xml">https://cham28sake.github.io/kura-so/feed/hajimari.xml</a></li><li><span class="feed-name">SAKENOVA BREWERY</span><a class="feed-url" href="feed/sakenova.xml">https://cham28sake.github.io/kura-so/feed/sakenova.xml</a></li><li><span class="feed-name">弥栄醸造</span><a class="feed-url" href="feed/iyasaka.xml">https://cham28sake.github.io/kura-so/feed/iyasaka.xml</a></li><li><span class="feed-name">LINNÉ</span><a class="feed-url" href="feed/linne.xml">https://cham28sake.github.io/kura-so/feed/linne.xml</a></li><li><span class="feed-name">SENDAI STATION BREWERY Fermenteria</span><a class="feed-url" href="feed/fermenteria.xml">https://cham28sake.github.io/kura-so/feed/fermenteria.xml</a></li><li><span class="feed-name">秋保ハートロックサケ</span><a class="feed-url" href="feed/heartrock.xml">https://cham28sake.github.io/kura-so/feed/heartrock.xml</a></li><li><span class="feed-name">業界全般</span><a class="feed-url" href="feed/industry.xml">https://cham28sake.github.io/kura-so/feed/industry.xml</a></li></ul>
+      </details>
+    </div>
   </details>
 </header>
 
