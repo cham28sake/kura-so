@@ -734,14 +734,13 @@
     font-weight: 400;
     text-align: center;
   }
-  /* 週の「+N件」と「この週をすべて見る(全M件)」ボタン(帯に出しきれない週だけ)。
-     帯とは別物の「週のまとめ行」に見せるため、薄い青灰の塗りと上下の破線にする */
+  /* 週のまとめ行: 「+N件」(溢れがあるときだけ)と「この週をすべて見る(全M件)」ボタン。
+     帯とは別物に見せるため、薄い青灰の塗りと上下の破線にする。
+     3列グリッド: 「+N件」は中央列、ボタンは右列(右寄せ)。「+N件」が無い週はボタンだけが右に出る */
   .cal-more {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0 0.9rem;
     min-height: 1.5rem;
     margin: 2px 0 2px;
     border: none;
@@ -756,6 +755,7 @@
   }
   .cal-more:hover { border-color: var(--indigo); }
   .cal-more-count {
+    grid-column: 2;
     font-size: 0.72rem;
     font-weight: 700;
     color: var(--indigo-deep);
@@ -776,7 +776,15 @@
     text-decoration: underline;
     text-underline-offset: 3px;
     cursor: pointer;
-    text-align: center;
+    grid-column: 3;
+    justify-self: end;
+    text-align: right;
+  }
+  /* 幅が狭くて「+N件」とボタンが重なるときは2行に折り返す(1行目=「+N件」中央、2行目=ボタン右寄せ) */
+  @media (max-width: 520px) {
+    .cal-more { grid-template-columns: minmax(0, 1fr); }
+    .cal-more-count { grid-column: 1; justify-self: center; padding-top: 0.1rem; }
+    .cal-more-btn { grid-column: 1; }
   }
   .cal-more-btn:hover, .cal-more-btn:focus-visible { color: var(--indigo-deep); }
   .cal-more-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
