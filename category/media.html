@@ -42,6 +42,9 @@
     --line: #ded8c5;
     --day-shade: #eaebef;
     --shadow: 0 1px 2px rgba(35,38,43,0.06);
+    --cal-dim: rgba(35, 38, 43, 0.07); /* 長期イベントの終了カードの沈んだ背景 */
+    --cal-dim-text: #6c675a; /* 終了カードの文字(沈めるのは背景・枠・影で行い、文字は沈めた背景の上で4.5:1以上) */
+    --cal-card-shadow: 0 1px 3px rgba(35, 38, 43, 0.14);
     /* 藍・朱・芥子・緑の淡い塗り(バッジ・チップ・ホバー・カテゴリフィルタの選択中) */
     --tint-indigo-8: rgba(44, 74, 110, 0.08);
     --tint-indigo-10: rgba(44, 74, 110, 0.1);
@@ -77,6 +80,9 @@
       --line: #3a3d43;
       --day-shade: #2b2e34;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --cal-dim: rgba(0, 0, 0, 0.28); /* 長期イベントの終了カードの沈んだ背景 */
+      --cal-dim-text: #8d897e;
+      --cal-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       --tint-indigo-8: rgba(143, 176, 214, 0.1);
       --tint-indigo-10: rgba(143, 176, 214, 0.14);
       --tint-indigo-12: rgba(143, 176, 214, 0.16);
@@ -106,6 +112,9 @@
       --line: #3a3d43;
       --day-shade: #2b2e34;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --cal-dim: rgba(0, 0, 0, 0.28); /* 長期イベントの終了カードの沈んだ背景 */
+      --cal-dim-text: #8d897e;
+      --cal-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       --tint-indigo-8: rgba(143, 176, 214, 0.1);
       --tint-indigo-10: rgba(143, 176, 214, 0.14);
       --tint-indigo-12: rgba(143, 176, 214, 0.16);
@@ -724,39 +733,52 @@
     font-weight: 400;
     text-align: center;
   }
-  .cal-bar-overflow:hover { background: transparent; }
-  /* 週の「+N件」と「この週をすべて見る(全M件)」ボタン(帯に出しきれない週だけ) */
+  /* 週の「+N件」と「この週をすべて見る(全M件)」ボタン(帯に出しきれない週だけ)。
+     帯とは別物の「週のまとめ行」に見せるため、薄い青灰の塗りと上下の破線にする */
   .cal-more {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.15rem 0.7rem;
+    gap: 0 0.9rem;
+    min-height: 1.5rem;
+    margin: 2px 0 2px;
     border: none;
+    border-top: 1px dashed var(--indigo);
+    border-bottom: 1px dashed var(--indigo);
     border-radius: 0;
-    background: transparent;
+    background: linear-gradient(var(--tint-indigo-10), var(--tint-indigo-10)) var(--surface);
     overflow: visible;
     white-space: normal;
-    padding: 0.1rem 0.3rem;
+    padding: 0 0.5rem;
     font-weight: 400;
   }
+  .cal-more:hover { border-color: var(--indigo); }
   .cal-more-count {
     font-size: 0.72rem;
     font-weight: 700;
-    color: var(--ink);
+    color: var(--indigo-deep);
+  }
+  .cal-more-count::before {
+    content: "…";
+    margin-right: 0.3rem;
+    font-weight: 400;
   }
   .cal-more-btn {
     font: inherit;
     font-size: 0.7rem;
-    color: var(--indigo-deep);
+    color: var(--ink);
     background: transparent;
-    border: 1px solid var(--indigo);
-    border-radius: 999px;
-    padding: 0.05rem 0.85rem;
+    border: none;
+    border-radius: 2px;
+    padding: 0.25rem 0.1rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
     cursor: pointer;
+    text-align: center;
   }
-  .cal-more-btn:hover { background: var(--tint-indigo-10); }
-  .cal-more-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .cal-more-btn:hover, .cal-more-btn:focus-visible { color: var(--indigo-deep); }
+  .cal-more-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
   /* ボタンで開く、その週の全件一覧(JSが帯・隠れたイベントのデータ属性から作る) */
   .cal-week-all {
     margin: 0.2rem 0.35rem 0.5rem;
@@ -791,13 +813,8 @@
   .cal-wl-dot-release { background: var(--seal); }
   .cal-wl-dot-other { background: var(--cal-other); }
   .cal-wl-brews { display: flex; flex-wrap: wrap; gap: 0.2rem; margin-top: 0.15rem; }
-  .cal-wl-tag, .cal-long-tag {
-    background: var(--tint-indigo-10);
-    color: var(--ink);
-    font-size: 0.68rem;
-    padding: 0 0.4rem;
-    border-radius: 2px;
-  }
+  /* 週の全件一覧・長期イベントの蔵バッジは、他の箇所と同じ .entry-brewery(リンク・枠・角丸)。ここでは並びの間隔だけ決める */
+  .cal-wl-tag, .cal-long-tag { margin-right: 0; }
   @media (max-width: 560px) {
     .cal-wl-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
   }
@@ -806,21 +823,27 @@
     border: 1px solid var(--tint-indigo-32);
     border-radius: 6px;
     background: var(--surface);
-    padding: 0.75rem 0.9rem 0.3rem;
+    padding: 0.75rem 0.9rem 0.6rem;
     margin: 0 0 0.75rem;
   }
   .cal-long[hidden] { display: none; }
   .cal-long-title { font-family: "Shippori Mincho", serif; font-size: 0.92rem; margin: 0 0 0.1rem; }
   .cal-long-sub { font-size: 0.76rem; color: var(--muted); margin: 0 0 0.35rem; }
-  .cal-long-list { list-style: none; margin: 0; padding: 0; }
+  .cal-long-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  /* 1件ずつのカード。開催中は枠が緑、終了は枠・影なしの暗い背景に沈める */
   .cal-long-item {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.35rem 0.9rem;
     align-items: center;
-    padding: 0.5rem 0;
-    border-top: 1px dashed var(--line);
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--tint-indigo-32);
+    border-radius: 6px;
+    background: var(--surface);
+    box-shadow: var(--cal-card-shadow);
   }
+  .cal-long-item.is-on { border-color: var(--cal-other); }
+  .cal-long-item.is-end { border-color: transparent; box-shadow: none; background: var(--cal-dim); }
   .cal-long-item[hidden] { display: none; }
   .cal-long-name { font-weight: 600; font-size: 0.86rem; min-width: 0; overflow-wrap: anywhere; color: var(--ink); }
   a.cal-long-name { color: var(--indigo-deep); }
@@ -844,14 +867,17 @@
   .cal-long-st:empty { display: none; }
   .cal-long-st.is-on { color: var(--cal-other); }
   .cal-long-st.is-soon { color: var(--indigo-deep); }
-  .cal-long-st.is-end { color: var(--muted); }
+  .cal-long-st.is-end { color: var(--cal-dim-text); }
   .cal-long-remain { text-align: right; line-height: 1.25; white-space: nowrap; }
   .cal-long-remain:empty { display: none; }
   .cal-long-remain strong { display: block; font-size: 1.02rem; }
   .cal-long-remain span { font-size: 0.7rem; color: var(--muted); }
   .cal-long-remain.is-on strong { color: var(--cal-other); }
   .cal-long-remain.is-soon strong { color: var(--indigo-deep); }
-  .cal-long-remain.is-end strong { color: var(--muted); font-size: 0.85rem; }
+  .cal-long-remain.is-end strong { color: var(--cal-dim-text); font-size: 0.85rem; }
+  .cal-long-item.is-end a.cal-long-name, .cal-long-item.is-end .cal-long-name { color: var(--cal-dim-text); font-weight: 500; }
+  .cal-long-item.is-end .cal-long-meta, .cal-long-item.is-end .cal-long-remain span, .cal-long-item.is-end .cal-long-period { color: var(--cal-dim-text); }
+  .cal-long-item.is-end .cal-long-tag { background: transparent; border-color: var(--cal-dim-text); color: var(--cal-dim-text); }
   @media (max-width: 480px) {
     .cal-long-item { grid-template-columns: minmax(0, 1fr); }
     .cal-long-remain { text-align: left; display: flex; gap: 0.5rem; align-items: baseline; }
