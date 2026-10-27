@@ -719,6 +719,138 @@
     text-align: center;
   }
   .cal-bar-overflow:hover { background: transparent; }
+  /* 週の「+N件」と「この週をすべて見る(全M件)」ボタン(帯に出しきれない週だけ) */
+  .cal-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.7rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+    white-space: normal;
+    padding: 0.1rem 0.3rem;
+    font-weight: 400;
+  }
+  .cal-more-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .cal-more-btn {
+    font: inherit;
+    font-size: 0.7rem;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--indigo);
+    border-radius: 999px;
+    padding: 0.05rem 0.85rem;
+    cursor: pointer;
+  }
+  .cal-more-btn:hover { background: var(--tint-indigo-10); }
+  .cal-more-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  /* ボタンで開く、その週の全件一覧(JSが帯・隠れたイベントのデータ属性から作る) */
+  .cal-week-all {
+    margin: 0.2rem 0.35rem 0.5rem;
+    border-top: 2px solid var(--indigo);
+    background: var(--surface);
+    padding: 0 0.2rem 0.2rem;
+    min-width: 0;
+  }
+  .cal-week-all[hidden] { display: none; }
+  .cal-wl-heading { font-size: 0.82rem; margin: 0.5rem 0 0.15rem; }
+  .cal-wl-list { list-style: none; margin: 0; padding: 0; }
+  .cal-wl-item {
+    display: grid;
+    grid-template-columns: 7.6em minmax(0, 1fr);
+    gap: 0.15rem 0.7rem;
+    padding: 0.4rem 0.1rem;
+    border-top: 1px dashed var(--line);
+    font-size: 0.8rem;
+  }
+  .cal-wl-item:first-child { border-top: none; }
+  .cal-wl-date { color: var(--muted); font-size: 0.74rem; }
+  .cal-wl-title { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+  .cal-wl-title a { color: var(--indigo-deep); }
+  .cal-wl-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+    background: var(--mustard);
+  }
+  .cal-wl-dot-release { background: var(--seal); }
+  .cal-wl-dot-other { background: var(--cal-other); }
+  .cal-wl-brews { display: flex; flex-wrap: wrap; gap: 0.2rem; margin-top: 0.15rem; }
+  .cal-wl-tag, .cal-long-tag {
+    background: var(--tint-indigo-10);
+    color: var(--ink);
+    font-size: 0.68rem;
+    padding: 0 0.4rem;
+    border-radius: 2px;
+  }
+  @media (max-width: 560px) {
+    .cal-wl-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  }
+  /* 長期イベント(連続7日以上)のパネル: カレンダーの帯から外して、月の上にまとめる */
+  .cal-long {
+    border: 1px solid var(--tint-indigo-32);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 0.75rem 0.9rem 0.3rem;
+    margin: 0 0 0.75rem;
+  }
+  .cal-long[hidden] { display: none; }
+  .cal-long-title { font-family: "Shippori Mincho", serif; font-size: 0.92rem; margin: 0 0 0.1rem; }
+  .cal-long-sub { font-size: 0.76rem; color: var(--muted); margin: 0 0 0.35rem; }
+  .cal-long-list { list-style: none; margin: 0; padding: 0; }
+  .cal-long-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.35rem 0.9rem;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-top: 1px dashed var(--line);
+  }
+  .cal-long-item[hidden] { display: none; }
+  .cal-long-name { font-weight: 600; font-size: 0.86rem; min-width: 0; overflow-wrap: anywhere; color: var(--ink); }
+  a.cal-long-name { color: var(--indigo-deep); }
+  a.cal-long-name:hover { text-decoration: underline; }
+  .cal-long-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.4rem;
+    align-items: center;
+    margin-top: 0.2rem;
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+  .cal-long-st {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+  }
+  .cal-long-st:empty { display: none; }
+  .cal-long-st.is-on { color: var(--cal-other); }
+  .cal-long-st.is-soon { color: var(--indigo-deep); }
+  .cal-long-st.is-end { color: var(--muted); }
+  .cal-long-remain { text-align: right; line-height: 1.25; white-space: nowrap; }
+  .cal-long-remain:empty { display: none; }
+  .cal-long-remain strong { display: block; font-size: 1.02rem; }
+  .cal-long-remain span { font-size: 0.7rem; color: var(--muted); }
+  .cal-long-remain.is-on strong { color: var(--cal-other); }
+  .cal-long-remain.is-soon strong { color: var(--indigo-deep); }
+  .cal-long-remain.is-end strong { color: var(--muted); font-size: 0.85rem; }
+  @media (max-width: 480px) {
+    .cal-long-item { grid-template-columns: minmax(0, 1fr); }
+    .cal-long-remain { text-align: left; display: flex; gap: 0.5rem; align-items: baseline; }
+    .cal-long-remain strong { display: inline; }
+  }
 
   .agenda-heading {
     font-family: "Shippori Mincho", serif;
