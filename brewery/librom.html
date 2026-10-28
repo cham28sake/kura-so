@@ -43,9 +43,6 @@
     --line: #ded8c5;
     --day-shade: #eaebef;
     --shadow: 0 1px 2px rgba(35,38,43,0.06);
-    --cal-dim: rgba(35, 38, 43, 0.07); /* 長期イベントの終了カードの沈んだ背景 */
-    --cal-dim-text: #6c675a; /* 終了カードの文字(沈めるのは背景・枠・影で行い、文字は沈めた背景の上で4.5:1以上) */
-    --cal-card-shadow: 0 1px 3px rgba(35, 38, 43, 0.14);
     /* 藍・朱・芥子・緑の淡い塗り(バッジ・チップ・ホバー・カテゴリフィルタの選択中) */
     --tint-indigo-8: rgba(44, 74, 110, 0.08);
     --tint-indigo-10: rgba(44, 74, 110, 0.1);
@@ -81,9 +78,6 @@
       --line: #3a3d43;
       --day-shade: #2b2e34;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      --cal-dim: rgba(0, 0, 0, 0.28); /* 長期イベントの終了カードの沈んだ背景 */
-      --cal-dim-text: #8d897e;
-      --cal-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       --tint-indigo-8: rgba(143, 176, 214, 0.1);
       --tint-indigo-10: rgba(143, 176, 214, 0.14);
       --tint-indigo-12: rgba(143, 176, 214, 0.16);
@@ -113,9 +107,6 @@
       --line: #3a3d43;
       --day-shade: #2b2e34;
       --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      --cal-dim: rgba(0, 0, 0, 0.28); /* 長期イベントの終了カードの沈んだ背景 */
-      --cal-dim-text: #8d897e;
-      --cal-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       --tint-indigo-8: rgba(143, 176, 214, 0.1);
       --tint-indigo-10: rgba(143, 176, 214, 0.14);
       --tint-indigo-12: rgba(143, 176, 214, 0.16);
@@ -632,7 +623,7 @@
   }
   .cal-dow-row {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr)) 1.9rem;
     background: var(--paper);
   }
   .cal-dow {
@@ -645,7 +636,7 @@
   }
   .cal-week {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr)) 1.9rem;
     grid-template-rows: auto minmax(20px, auto);
     grid-auto-rows: minmax(20px, auto);
     border-bottom: 1px solid var(--line);
@@ -727,69 +718,66 @@
     border-right: none;
     margin-right: 0;
   }
-  .cal-bar-overflow {
-    background: transparent;
-    border: 1px dashed var(--line);
-    color: var(--muted);
-    font-weight: 400;
-    text-align: center;
-  }
-  /* 週のまとめ行: 「+N件」(溢れがあるときだけ)と「この週をすべて見る(全M件)」ボタン。
-     帯とは別物に見せるため、薄い青灰の塗りと上下の破線にする。
-     3列グリッド: 「+N件」は中央列、ボタンは右列(右寄せ)。「+N件」が無い週はボタンだけが右に出る */
+  /* 週の右端の細い縦長の列(幅1.9rem): 「+N件」(溢れがあるときだけ)と「全M件 ▸」ボタンを、横書きを時計回りに90度回した向き(上から下へ読む)で下寄せに置く。
+     日付行から帯の最下段までの高さ。薄い青灰の不透明背景と左の破線で、帯とは別物に見せる。開いている間は背景を濃く・左の線を実線にする */
   .cal-more {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 1.5rem;
-    margin: 2px 0 2px;
-    border: none;
-    border-top: 1px dashed var(--indigo);
-    border-bottom: 1px dashed var(--indigo);
-    border-radius: 0;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 6px;
+    margin-left: 3px;
+    min-width: 0;
+    border-left: 1px dashed var(--indigo);
     background: linear-gradient(var(--tint-indigo-10), var(--tint-indigo-10)) var(--surface);
-    overflow: visible;
-    white-space: normal;
-    padding: 0 0.5rem;
-    font-weight: 400;
+    scroll-margin-block: 0.75rem; /* 下の「この週を閉じる」で戻るとき、列が画面の端にぴったり付かないように */
   }
-  .cal-more:hover { border-color: var(--indigo); }
-  .cal-more { scroll-margin-block: 0.75rem; } /* 下の「この週を閉じる」で戻るとき、行が画面の端にぴったり付かないように */
+  .cal-more[hidden] { display: none; }
+  .cal-more.is-open { background: linear-gradient(var(--tint-indigo-20), var(--tint-indigo-20)) var(--surface); border-left-style: solid; }
+  .cal-more-count, .cal-more-btn {
+    writing-mode: vertical-rl; /* 横書きを時計回りに90度回した向き(上から下へ読む) */
+    text-orientation: sideways;
+  }
   .cal-more-count {
-    grid-column: 2;
     font-size: 0.72rem;
     font-weight: 700;
     color: var(--indigo-deep);
-  }
-  .cal-more-count::before {
-    content: "…";
-    margin-right: 0.3rem;
-    font-weight: 400;
+    white-space: nowrap;
   }
   .cal-more-btn, .cal-foot-btn {
     font: inherit;
-    font-size: 0.7rem;
-    color: var(--ink);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--indigo-deep);
     background: transparent;
     border: none;
     border-radius: 2px;
-    padding: 0.25rem 0.1rem;
+    padding: 0.5rem 0.2rem; /* 縦に長く押せるように(縦書きなので上下=文字の前後) */
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    align-self: stretch; /* 列の幅いっぱいが押せる */
+  }
+  @media (max-width: 520px) {
+    .cal-more-count { font-size: 0.66rem; }
+    .cal-more-btn { font-size: 0.68rem; }
+  }
+  .cal-more-btn:hover { text-decoration: underline; }
+  .cal-foot-btn {
+    font-weight: 400;
+    letter-spacing: normal;
+    color: var(--ink);
     text-decoration: underline;
     text-underline-offset: 3px;
-    cursor: pointer;
-    grid-column: 3;
-    justify-self: end;
-    text-align: right;
+    padding: 0.25rem 0.1rem;
   }
-  /* 幅が狭くて「+N件」とボタンが重なるときは2行に折り返す(1行目=「+N件」中央、2行目=ボタン右寄せ) */
-  @media (max-width: 520px) {
-    .cal-more { grid-template-columns: minmax(0, 1fr); }
-    .cal-more-count { grid-column: 1; justify-self: center; padding-top: 0.1rem; }
-    .cal-more-btn { grid-column: 1; }
-  }
-  .cal-more-btn:hover, .cal-more-btn:focus-visible, .cal-foot-btn:hover, .cal-foot-btn:focus-visible { color: var(--indigo-deep); }
-  .cal-more-btn:focus-visible, .cal-foot-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
-  /* 開いた一覧の一番下の「下のまとめ行」: 上のまとめ行と同じ見た目・同じ幅(一覧の左右の余白を打ち消して広げる)・ボタンは右寄せ */
+  .cal-foot-btn:hover, .cal-foot-btn:focus-visible { color: var(--indigo-deep); }
+  .cal-foot-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
+  /* 右端の列は .cal-grid の overflow:hidden で外側が切れるので、フォーカスリングは内側に出す */
+  .cal-more-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: -2px; }
+  /* 開いた一覧の一番下の閉じる行: 薄い青灰の塗り・上下の破線・ボタンは右寄せ。一覧の左右の余白を打ち消して全幅に広げる */
   .cal-more-foot {
     display: flex;
     align-items: center;
@@ -803,10 +791,10 @@
   }
   /* ボタンで開く、その週の全件一覧(JSが帯・隠れたイベントのデータ属性から作る) */
   .cal-week-all {
-    margin: 0.2rem 0.35rem 0.5rem;
+    margin: 0.2rem 0 0.5rem;
     border-top: 2px solid var(--indigo);
     background: var(--surface);
-    padding: 0 0.2rem 0.2rem;
+    padding: 0 0.55rem 0.2rem;
     min-width: 0;
   }
   .cal-week-all[hidden] { display: none; }
@@ -835,75 +823,10 @@
   .cal-wl-dot-release { background: var(--seal); }
   .cal-wl-dot-other { background: var(--cal-other); }
   .cal-wl-brews { display: flex; flex-wrap: wrap; gap: 0.2rem; margin-top: 0.15rem; }
-  /* 週の全件一覧・長期イベントの蔵バッジは、他の箇所と同じ .entry-brewery(リンク・枠・角丸)。ここでは並びの間隔だけ決める */
-  .cal-wl-tag, .cal-long-tag { margin-right: 0; }
+  /* 週の全件一覧の蔵バッジは、他の箇所と同じ .entry-brewery(リンク・枠・角丸)。ここでは並びの間隔だけ決める */
+  .cal-wl-tag { margin-right: 0; }
   @media (max-width: 560px) {
     .cal-wl-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  }
-  /* 長期イベント(連続7日以上)のパネル: カレンダーの帯から外して、月の上にまとめる */
-  .cal-long {
-    border: 1px solid var(--tint-indigo-32);
-    border-radius: 6px;
-    background: var(--surface);
-    padding: 0.75rem 0.9rem 0.6rem;
-    margin: 0 0 0.75rem;
-  }
-  .cal-long[hidden] { display: none; }
-  .cal-long-title { font-family: "Shippori Mincho", serif; font-size: 0.92rem; margin: 0 0 0.1rem; }
-  .cal-long-sub { font-size: 0.76rem; color: var(--muted); margin: 0 0 0.35rem; }
-  .cal-long-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-  /* 1件ずつのカード。開催中は枠が緑、終了は枠・影なしの暗い背景に沈める */
-  .cal-long-item {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.35rem 0.9rem;
-    align-items: center;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid var(--tint-indigo-32);
-    border-radius: 6px;
-    background: var(--surface);
-    box-shadow: var(--cal-card-shadow);
-  }
-  .cal-long-item.is-on { border-color: var(--cal-other); }
-  .cal-long-item.is-end { border-color: transparent; box-shadow: none; background: var(--cal-dim); }
-  .cal-long-item[hidden] { display: none; }
-  .cal-long-name { font-weight: 600; font-size: 0.86rem; min-width: 0; overflow-wrap: anywhere; color: var(--ink); }
-  a.cal-long-name { color: var(--indigo-deep); }
-  a.cal-long-name:hover { text-decoration: underline; }
-  .cal-long-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 0.4rem;
-    align-items: center;
-    margin-top: 0.2rem;
-    font-size: 0.74rem;
-    color: var(--muted);
-  }
-  .cal-long-st {
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 0 0.45rem;
-    border-radius: 999px;
-    border: 1px solid currentColor;
-  }
-  .cal-long-st:empty { display: none; }
-  .cal-long-st.is-on { color: var(--cal-other); }
-  .cal-long-st.is-soon { color: var(--indigo-deep); }
-  .cal-long-st.is-end { color: var(--cal-dim-text); }
-  .cal-long-remain { text-align: right; line-height: 1.25; white-space: nowrap; }
-  .cal-long-remain:empty { display: none; }
-  .cal-long-remain strong { display: block; font-size: 1.02rem; }
-  .cal-long-remain span { font-size: 0.7rem; color: var(--muted); }
-  .cal-long-remain.is-on strong { color: var(--cal-other); }
-  .cal-long-remain.is-soon strong { color: var(--indigo-deep); }
-  .cal-long-remain.is-end strong { color: var(--cal-dim-text); font-size: 0.85rem; }
-  .cal-long-item.is-end a.cal-long-name, .cal-long-item.is-end .cal-long-name { color: var(--cal-dim-text); font-weight: 500; }
-  .cal-long-item.is-end .cal-long-meta, .cal-long-item.is-end .cal-long-remain span, .cal-long-item.is-end .cal-long-period { color: var(--cal-dim-text); }
-  .cal-long-item.is-end .cal-long-tag { background: transparent; border-color: var(--cal-dim-text); color: var(--cal-dim-text); }
-  @media (max-width: 480px) {
-    .cal-long-item { grid-template-columns: minmax(0, 1fr); }
-    .cal-long-remain { text-align: left; display: flex; gap: 0.5rem; align-items: baseline; }
-    .cal-long-remain strong { display: inline; }
   }
 
   .agenda-heading {
