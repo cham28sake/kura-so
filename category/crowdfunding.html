@@ -1,0 +1,1620 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>クラウドファンディング - クラフトサケ情報倉庫</title>
+<meta name="description" content="クラフトサケ醸造所の「クラウドファンディング」に関する情報のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f1eee3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1e22" media="(prefers-color-scheme: dark)">
+<link rel="alternate" type="application/atom+xml" title="クラフトサケ情報倉庫 新着" href="../feed.xml">
+<link rel="canonical" href="https://cham28sake.github.io/kura-so/category/crowdfunding.html">
+<meta property="og:url" content="https://cham28sake.github.io/kura-so/category/crowdfunding.html">
+<meta property="og:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://cham28sake.github.io/kura-so/assets/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="クラフトサケ情報倉庫">
+<meta property="og:title" content="クラウドファンディング - クラフトサケ情報倉庫">
+<meta property="og:description" content="クラフトサケ醸造所の「クラウドファンディング」に関する情報のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="クラウドファンディング - クラフトサケ情報倉庫">
+<meta name="twitter:description" content="クラフトサケ醸造所の「クラウドファンディング」に関する情報のまとめ(非公式ファンサイト「クラフトサケ情報倉庫」)。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍶</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f1eee3;
+    --surface: #faf8f1;
+    --ink: #23262b;
+    --indigo: #2c4a6e;
+    --indigo-deep: #1b3350;
+    --seal: #a8341f;
+    --mustard: #9c7a1f;
+    --cal-other: #3f6b4a;
+    --chip-org-bg: #eee9d9; /* 業界全般のチップ背景(通常チップ var(--surface) #faf8f1 より一段だけ濃い) */
+    --muted: #726c5e;
+    --rss: #b4531c; /* 蔵ページのRSSリンク(橙) */
+    --line: #ded8c5;
+    --day-shade: #eaebef;
+    --shadow: 0 1px 2px rgba(35,38,43,0.06);
+    /* 藍・朱・芥子・緑の淡い塗り(バッジ・チップ・ホバー・カテゴリフィルタの選択中) */
+    --tint-indigo-8: rgba(44, 74, 110, 0.08);
+    --tint-indigo-10: rgba(44, 74, 110, 0.1);
+    --tint-indigo-12: rgba(44, 74, 110, 0.12);
+    --tint-indigo-20: rgba(44, 74, 110, 0.2);
+    --tint-indigo-32: rgba(44, 74, 110, 0.32);
+    --tint-seal-12: rgba(168, 52, 31, 0.12);
+    --tint-seal-20: rgba(168, 52, 31, 0.2);
+    --tint-mustard-20: rgba(156, 122, 31, 0.2);
+    --tint-other-20: rgba(63,107,74,0.2);
+    --badge-archived-bg: #e4e1d6;
+    /* 塗りつぶしのバッジ・バナー(--muted / --seal 地)の上に載せる文字色 */
+    --on-muted: #fff;
+    --on-seal: #fff;
+    --radius-input: 10px; /* テキスト入力枠の角丸(ボタン・セレクト・チップのカプセル形と見分けるため、少し小さく) */
+    color-scheme: light dark;
+  }
+  /* ダークモード(システム設定に追従)。和紙・藍・朱の世界観を保った暗色。文字と背景の
+     コントラストはWCAG AA(通常文字 4.5:1)を目安にしている(_test_site_a11y_dark.py で検証)。 */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1e22;
+      --surface: #25282d;
+      --ink: #e8e5da;
+      --indigo: #8fb0d6;
+      --indigo-deep: #b4cdea;
+      --seal: #e0826e;
+      --mustard: #d9b45f;
+      --cal-other: #7fc197;
+      --chip-org-bg: #2c3036;
+      --muted: #a09a8a;
+      --rss: #f0a070;
+      --line: #3a3d43;
+      --day-shade: #2b2e34;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --tint-indigo-8: rgba(143, 176, 214, 0.1);
+      --tint-indigo-10: rgba(143, 176, 214, 0.14);
+      --tint-indigo-12: rgba(143, 176, 214, 0.16);
+      --tint-indigo-20: rgba(143, 176, 214, 0.24);
+      --tint-indigo-32: rgba(143, 176, 214, 0.28);
+      --tint-seal-12: rgba(224, 130, 110, 0.1);
+      --tint-seal-20: rgba(224, 130, 110, 0.24);
+      --tint-mustard-20: rgba(217, 180, 95, 0.22);
+      --tint-other-20: rgba(127, 193, 151, 0.22);
+      --badge-archived-bg: #3a3d43;
+      --on-muted: #1c1e22;
+      --on-seal: #1c1e22;
+    }
+  }
+  :root[data-theme="dark"] {
+      --paper: #1c1e22;
+      --surface: #25282d;
+      --ink: #e8e5da;
+      --indigo: #8fb0d6;
+      --indigo-deep: #b4cdea;
+      --seal: #e0826e;
+      --mustard: #d9b45f;
+      --cal-other: #7fc197;
+      --chip-org-bg: #2c3036;
+      --muted: #a09a8a;
+      --rss: #f0a070;
+      --line: #3a3d43;
+      --day-shade: #2b2e34;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      --tint-indigo-8: rgba(143, 176, 214, 0.1);
+      --tint-indigo-10: rgba(143, 176, 214, 0.14);
+      --tint-indigo-12: rgba(143, 176, 214, 0.16);
+      --tint-indigo-20: rgba(143, 176, 214, 0.24);
+      --tint-indigo-32: rgba(143, 176, 214, 0.28);
+      --tint-seal-12: rgba(224, 130, 110, 0.1);
+      --tint-seal-20: rgba(224, 130, 110, 0.24);
+      --tint-mustard-20: rgba(217, 180, 95, 0.22);
+      --tint-other-20: rgba(127, 193, 151, 0.22);
+      --badge-archived-bg: #3a3d43;
+      --on-muted: #1c1e22;
+      --on-seal: #1c1e22;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.7;
+    font-variant-numeric: tabular-nums;
+  }
+  a { color: var(--indigo); }
+
+  .stripe {
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg, var(--indigo) 0 28px, var(--seal) 28px 32px, var(--indigo) 32px 60px, var(--paper) 60px 64px
+    );
+    opacity: 0.9;
+  }
+
+  header.hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.1rem 1.5rem 1rem;
+  }
+  h1 {
+    font-family: "Hachi Maru Pop", cursive;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    margin: 0.4rem 0 0.75rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .hero-title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .hero-title-link:hover {
+    color: var(--indigo);
+  }
+  .page-breadcrumb {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.82rem;
+  }
+  .page-breadcrumb a {
+    color: var(--indigo-deep);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .page-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .page-breadcrumb span {
+    color: var(--muted);
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin: 0;
+  }
+  .lede-quote {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin: 0 0 0.6rem;
+    padding-left: 0.5rem;
+  }
+  .lede-note {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 0.75rem;
+  }
+  .chips-label {
+    max-width: 760px;
+    margin: 0.25rem auto 0;
+    padding: 0 1.5rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  nav.chips {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--indigo-deep);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+  }
+  .chip:hover { border-color: var(--indigo); }
+  /* 業界全般(醸造所ではない枠)のチップ: 破線ボーダー+背景を少しだけ濃く */
+  .chip.chip-organization {
+    border-style: dashed;
+    background: var(--chip-org-bg);
+  }
+  .chip.chip-current {
+    background: var(--indigo);
+    color: var(--paper);
+    border-color: var(--indigo);
+    font-weight: 700;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .timeline-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .panel-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .updated-at {
+    font-size: 0.72rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: -0.25rem 0 1.25rem;
+  }
+
+  .badge-category {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-10);
+    border: 1px solid transparent;
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    text-decoration: none;
+  }
+  .badge-category:hover { text-decoration: underline; }
+  .entry-brewery {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 0.5rem;
+  }
+  .entry-brewery:hover { border-color: var(--indigo); }
+  .entry-brewery-other { border-style: dashed; }
+
+  .chips-archive {
+    padding-top: 0;
+  }
+  .chip-archive {
+    background: var(--tint-indigo-10);
+    border-color: transparent;
+  }
+  .chip-archive.chip-current {
+    background: var(--tint-indigo-32);
+    border-color: transparent;
+    color: var(--indigo-deep);
+    font-weight: 700;
+  }
+
+  .archive-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .archive-panel > h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  section.archive-category {
+    margin-bottom: 1.5rem;
+  }
+  section.archive-category h3 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .archive-count {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .badge-new {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    background: var(--seal);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .badge-new-mark {
+    /* まとめ行で、新しく加わった蔵のタグにだけ付ける小さな+NEW。 */
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-left: 0.35rem;
+    white-space: nowrap;
+    color: var(--seal);
+    background: var(--tint-seal-12);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+  }
+  .badge-updated {
+    /* NEW(新規公開、--seal=朱色)とは別の見た目にして、新規公開と更新を区別する。 */
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+    background: var(--indigo);
+    padding: 0.08rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .entry-badge-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-updated-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+  .entry-date-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .badge-cal {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  /* 実施期間が複数ある情報(event_periods): 期間ごとに1つずつ📅バッジを、日付の列に縦に並べる(各バッジは1期間のバッジと同じ見た目) */
+  .badge-cal-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  a.badge-cal:hover {
+    border-color: var(--indigo);
+    background: var(--tint-indigo-8);
+  }
+  .badge-archived {
+    /* 下書き込みプレビューだけに出る、アーカイブ(非公開)のバッジ。下書きとは別のグレー系 */
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    background: var(--badge-archived-bg);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .entry-archived-note {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+  /* リンク切れ: クリックできない形(span)にして、取り消し線のグレー表示+小さな「リンク切れ」バッジ */
+  .link-dead,
+  .entry-source-link.link-dead,
+  .agenda-source-link.link-dead {
+    color: var(--muted);
+    text-decoration: line-through;
+    cursor: default;
+  }
+  .entry-title-dead {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .badge-dead {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+  }
+  .badge-draft {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--on-muted);
+    background: var(--muted);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  .badge-tentative {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  .draft-banner {
+    max-width: 760px;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.25rem;
+    border-radius: 10px;
+    background: var(--seal);
+    color: var(--on-seal);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .draft-banner-link {
+    flex: none;
+    color: var(--on-seal);
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+  .draft-banner-text {
+    flex: 1;
+  }
+
+  .badge-unofficial {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px dashed var(--muted);
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .calendar-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  .calendar-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .panel-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 1.25rem;
+  }
+  .cal-brewery-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-load-status {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .cal-brewery-select {
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    max-width: 100%;
+  }
+  .cal-category-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .cal-category-label { white-space: nowrap; }
+  .cal-category-chips { display: flex; gap: 0.4rem; }
+  .cat-filter-chip {
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+  }
+  .cat-filter-all { color: var(--indigo); border: 1.5px dashed var(--indigo); }
+  .cat-filter-all.is-active { background: var(--tint-indigo-20); color: var(--indigo-deep); border: 1.5px solid var(--indigo); }
+  .cat-filter-event { color: var(--mustard); border: 1.5px dashed var(--mustard); }
+  .cat-filter-event.is-active { background: var(--tint-mustard-20); color: var(--mustard); border: 1.5px solid var(--mustard); }
+  .cat-filter-release { color: var(--seal); border: 1.5px dashed var(--seal); }
+  .cat-filter-release.is-active { background: var(--tint-seal-20); color: var(--seal); border: 1.5px solid var(--seal); }
+  .cat-filter-other { color: var(--cal-other); border: 1.5px dashed var(--cal-other); }
+  .cat-filter-other.is-active { background: var(--tint-other-20); color: var(--cal-other); border: 1.5px solid var(--cal-other); }
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cal-nav-btn {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+  }
+  .cal-nav-btn:hover:not(:disabled) { border-color: var(--indigo); }
+  .cal-nav-btn:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .cal-nav-label {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1rem;
+    min-width: 6em;
+    text-align: center;
+  }
+  .cal-months {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+  .cal-months[hidden] { display: none; }
+  .cal-grid {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cal-dow-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) 1.9rem;
+    background: var(--paper);
+  }
+  .cal-dow {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    min-width: 0;
+  }
+  .cal-week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) 1.9rem;
+    grid-template-rows: auto minmax(20px, auto);
+    grid-auto-rows: minmax(20px, auto);
+    border-bottom: 1px solid var(--line);
+  }
+  .cal-week:last-child { border-bottom: none; }
+  .cal-daynum-cell {
+    min-width: 0;
+    padding: 0.3rem 0.3rem 0.2rem;
+    border-right: 1px solid var(--line);
+  }
+  .cal-daynum-cell-last { border-right: none; }
+  .cal-day-bg {
+    background: var(--day-shade);
+    pointer-events: none;
+  }
+  .cal-vline {
+    width: 1px;
+    justify-self: end;
+    background: var(--line);
+    pointer-events: none;
+  }
+  .cal-vline[hidden] { display: none; }
+  .cal-vline-outside { opacity: 0.35; }
+  .cal-day-outside { opacity: 0.35; }
+  .cal-daynum {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .cal-day-today .cal-daynum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: var(--indigo-deep);
+    color: var(--paper);
+  }
+  .cal-bar {
+    display: block;
+    min-width: 0;
+    margin: 0 2px 2px;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cal-bar[hidden] { display: none; }
+  .cal-bar:hover { border-color: var(--indigo); color: var(--indigo); }
+  .cal-bar-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.35rem;
+  }
+  .cal-bar-continues-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    margin-left: 0;
+  }
+  .cal-bar-continues-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    margin-right: 0;
+  }
+  /* 週の右端の細い縦長の列(幅1.9rem): 「+N件」(溢れがあるときだけ)と「全M件 ▸」ボタンを、横書きを時計回りに90度回した向き(上から下へ読む)で下寄せに置く。
+     日付行から帯の最下段までの高さ。薄い青灰の不透明背景と左の破線で、帯とは別物に見せる。開いている間は背景を濃く・左の線を実線にする */
+  .cal-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-bottom: 6px;
+    margin-left: 3px;
+    min-width: 0;
+    border-left: 1px dashed var(--indigo);
+    background: linear-gradient(var(--tint-indigo-10), var(--tint-indigo-10)) var(--surface);
+    scroll-margin-block: 0.75rem; /* 下の「この週を閉じる」で戻るとき、列が画面の端にぴったり付かないように */
+  }
+  .cal-more[hidden] { display: none; }
+  .cal-more.is-open { background: linear-gradient(var(--tint-indigo-20), var(--tint-indigo-20)) var(--surface); border-left-style: solid; }
+  .cal-more-count, .cal-more-btn {
+    writing-mode: vertical-rl; /* 横書きを時計回りに90度回した向き(上から下へ読む) */
+    text-orientation: sideways;
+  }
+  .cal-more-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--indigo-deep);
+    white-space: nowrap;
+  }
+  .cal-more-btn, .cal-foot-btn {
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem 0.2rem; /* 縦に長く押せるように(縦書きなので上下=文字の前後) */
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    align-self: stretch; /* 列の幅いっぱいが押せる */
+  }
+  @media (max-width: 520px) {
+    .cal-more-count { font-size: 0.66rem; }
+    .cal-more-btn { font-size: 0.68rem; }
+  }
+  .cal-more-btn:hover { text-decoration: underline; }
+  .cal-foot-btn {
+    font-weight: 400;
+    letter-spacing: normal;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0.25rem 0.1rem;
+  }
+  .cal-foot-btn:hover, .cal-foot-btn:focus-visible { color: var(--indigo-deep); }
+  .cal-foot-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: 2px; }
+  /* 右端の列は .cal-grid の overflow:hidden で外側が切れるので、フォーカスリングは内側に出す */
+  .cal-more-btn:focus-visible { outline: 2px solid var(--indigo-deep); outline-offset: -2px; }
+  /* 開いた一覧の一番下の閉じる行: 薄い青灰の塗り・上下の破線・ボタンは右寄せ。一覧の左右の余白を打ち消して全幅に広げる */
+  .cal-more-foot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 1.5rem;
+    margin: 0.5rem -0.55rem -0.2rem;
+    border-top: 1px dashed var(--indigo);
+    border-bottom: 1px dashed var(--indigo);
+    background: linear-gradient(var(--tint-indigo-10), var(--tint-indigo-10)) var(--surface);
+    padding: 0 0.5rem;
+  }
+  /* ボタンで開く、その週の全件一覧(JSが帯・隠れたイベントのデータ属性から作る) */
+  .cal-week-all {
+    margin: 0.2rem 0 0.5rem;
+    border-top: 2px solid var(--indigo);
+    background: var(--surface);
+    padding: 0 0.55rem 0.2rem;
+    min-width: 0;
+  }
+  .cal-week-all[hidden] { display: none; }
+  .cal-wl-heading { font-size: 0.82rem; margin: 0.5rem 0 0.15rem; }
+  .cal-wl-list { list-style: none; margin: 0; padding: 0; }
+  .cal-wl-item {
+    display: grid;
+    grid-template-columns: 7.6em minmax(0, 1fr);
+    gap: 0.15rem 0.7rem;
+    padding: 0.4rem 0.1rem;
+    border-top: 1px dashed var(--line);
+    font-size: 0.8rem;
+  }
+  .cal-wl-item:first-child { border-top: none; }
+  .cal-wl-date { color: var(--muted); font-size: 0.74rem; }
+  .cal-wl-title { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
+  .cal-wl-title a { color: var(--indigo-deep); }
+  .cal-wl-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+    background: var(--mustard);
+  }
+  .cal-wl-dot-release { background: var(--seal); }
+  .cal-wl-dot-other { background: var(--cal-other); }
+  .cal-wl-brews { display: flex; flex-wrap: wrap; gap: 0.2rem; margin-top: 0.15rem; }
+  /* 週の全件一覧の蔵バッジは、他の箇所と同じ .entry-brewery(リンク・枠・角丸)。ここでは並びの間隔だけ決める */
+  .cal-wl-tag { margin-right: 0; }
+  @media (max-width: 560px) {
+    .cal-wl-item { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  }
+
+  .agenda-heading {
+    font-family: "Shippori Mincho", serif;
+    font-size: 0.95rem;
+    margin: 1.75rem 0 0.75rem;
+  }
+  ul.agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .agenda-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .agenda-item[hidden] { display: none; }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-item-cat-event {
+    border-left: 3px solid var(--mustard);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-release {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-item-cat-other {
+    border-left: 3px solid var(--cal-other);
+    padding-left: 0.7rem;
+    margin-left: -0.7rem;
+  }
+  .agenda-date {
+    flex: 0 0 9em;
+  }
+  /* 実施期間が複数ある情報の予定一覧: 日付の列に期間ごとのバッジを縦に並べる(列は少し広げる。狭い画面では日付を本文の上に積み、バッジは横に並べる) */
+  .agenda-item.agenda-item-multi .agenda-date { flex: 0 0 11.5em; }
+  @media (max-width: 600px) {
+    .agenda-item.agenda-item-multi { flex-direction: column; gap: 0.3rem; }
+    .agenda-item.agenda-item-multi .agenda-date { flex: 0 0 auto; }
+    .agenda-item.agenda-item-multi .badge-cal-list { flex-direction: row; flex-wrap: wrap; }
+  }
+  .agenda-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .agenda-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+  }
+  .agenda-title:hover { color: var(--indigo); }
+  .agenda-breweries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .agenda-link {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 0.05rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .agenda-link:hover { border-color: var(--indigo); }
+  .agenda-source-link {
+    font-size: 0.74rem;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+  }
+  .agenda-summary {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .agenda-empty { color: var(--muted); }
+
+  section.brewery {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--indigo);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  .brewery-head {
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .brewery-name-row {
+    margin: 0 0 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .brewery-name-row h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.3rem;
+    margin: 0;
+    min-width: 0;
+  }
+  /* この醸造所のRSS(醸造所名の行の右端。幅が狭くても右端に固定し、名前側が折り返す) */
+  .brewery-rss {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    flex: none;
+    padding: 2px 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--rss);
+    text-decoration: none;
+  }
+  .brewery-rss:hover { text-decoration: underline; }
+  .brewery-rss .icon-rss { width: 0.95rem; height: 0.95rem; flex: none; }
+  .brewery-location {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+  .brewery-official-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .brewery-official-link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .brewery-official-link:hover { text-decoration: underline; }
+
+  .link-icon {
+    display: block;
+  }
+  .brewery-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.6rem 0 0;
+  }
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    color: var(--indigo-deep);
+    background: var(--paper);
+  }
+  .social-icon:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .brewery-personal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin: 0.5rem 0 0;
+  }
+  .personal-icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .personal-icon-link .link-icon {
+    color: var(--muted);
+  }
+  .personal-icon-link:hover,
+  .personal-icon-link:hover .link-icon {
+    color: var(--indigo);
+  }
+  .personal-label {
+    white-space: nowrap;
+  }
+
+  ul.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.entry {
+    display: flex;
+    gap: 1.1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px dashed var(--line);
+    scroll-margin-top: 3.5rem;
+  }
+  li.entry:last-child { border-bottom: none; }
+  /* 実施期間が複数ある情報のカード: 日付の列(公開日の下)に期間ごとのバッジを縦に並べる。日付の列は少し広げる(最長のバッジが収まる幅)。
+     狭い画面では日付の列が本文の上に積まれ、バッジは横に並んで折り返す */
+  li.entry.entry-multi-period .entry-date { flex: 0 0 11.5em; }
+  @media (max-width: 600px) {
+    li.entry.entry-multi-period { flex-direction: column; gap: 0.35rem; }
+    li.entry.entry-multi-period .entry-date { flex: 0 0 auto; }
+    li.entry.entry-multi-period .badge-cal-list { flex-direction: row; flex-wrap: wrap; }
+  }
+  .entries-more {
+    margin: 0.6rem 0 0.2rem;
+  }
+  .entries-more-link {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--indigo-deep);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    text-decoration: none;
+  }
+  .entries-more-link:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+  }
+  .entry-date {
+    flex: 0 0 7.5em;
+    color: var(--muted);
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .entry-body {
+    /* flexの子は既定でmin-width:auto=内容幅より縮まないため、長い情報源リンク等でスマホ幅の横はみ出しになる */
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .entry-title {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .entry-title:hover { color: var(--indigo); }
+  .entry-source {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--indigo-deep);
+    margin-top: 0.3rem;
+  }
+  .entry-source-link {
+    color: inherit;
+    text-decoration: underline;
+    margin-right: 0.5rem;
+  }
+  .icon-inline-source {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-right: 0.15em;
+  }
+  .entry-source-link:hover,
+  .agenda-source-link:hover,
+  .lede-quote a:hover,
+  .lede-note a:hover,
+  .footer-contact a:hover,
+  .entry-summary a:hover,
+  .agenda-summary a:hover,
+  .entry-update-note:hover {
+    background: var(--tint-indigo-12);
+    border-radius: 2px;
+  }
+  .entry-summary {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.6rem;
+    margin: 0.35rem 0 0;
+  }
+  .entry-update-note {
+    display: inline-block;
+    color: var(--indigo-deep);
+    text-decoration: underline;
+    font-size: 0.85rem;
+  }
+  .no-entries {
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  /* キーワード検索: ヘッダの検索ボックス・検索ページ(色は変数のみ=ダークモードに追従) */
+  /* ページ上部の1本のバー: ロゴ(h1)・非公式バッジ・検索・テーマ切替アイコン */
+  .site-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-bar .site-brand {
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .site-bar-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .icon-btn {
+    width: 2.1rem;
+    height: 2.1rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    flex: none;
+  }
+  .icon-btn:hover { border-color: var(--indigo); }
+  .icon-btn[hidden] { display: none; }
+  .theme-btn .ic-theme { display: none; }
+  .theme-btn[data-state="auto"] .ic-auto,
+  .theme-btn[data-state="light"] .ic-light,
+  .theme-btn[data-state="dark"] .ic-dark { display: block; }
+  .search-toggle { display: none; }
+  .badge-unofficial .badge-long {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  details.about { margin-top: 0.45rem; font-size: 0.82rem; }
+  details.about summary {
+    cursor: pointer;
+    color: var(--indigo-deep);
+    font-size: 0.8rem;
+    width: fit-content;
+  }
+  details.about[open] summary { margin-bottom: 0.5rem; }
+  .about-feeds { margin-top: 0.4rem; }
+  details.feed-list { margin-top: 0.3rem; }
+  details.feed-list summary { cursor: pointer; color: var(--indigo-deep); font-size: 0.78rem; width: fit-content; }
+  details.feed-list ul {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.25rem;
+  }
+  details.feed-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.6rem;
+    align-items: baseline;
+    font-size: 0.76rem;
+  }
+  details.feed-list .feed-name { min-width: 9em; color: var(--ink); }
+  details.feed-list .feed-url { color: var(--muted); overflow-wrap: anywhere; }
+  @media (max-width: 600px) {
+    .site-bar-tools { display: contents; }
+    .site-bar { column-gap: 0.45rem; }
+    .site-bar .site-brand { font-size: 1rem; }
+    .search-toggle:not([hidden]) { display: inline-flex; margin-left: auto; }
+    .site-search { order: 10; flex-basis: 100%; margin-left: 0; }
+    .site-search.is-collapsible:not(.is-open) { display: none; }
+    .site-search .search-field { flex: 1; }
+    .site-search input[type="search"] { flex: 1; width: 100%; }
+    .site-bar-tools > .theme-btn:first-child { margin-left: auto; }
+  }
+  .site-search {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: auto;
+  }
+  .site-search input[type="search"],
+  .search-form input[type="search"] {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-input);
+    padding: 0.3rem 0.85rem;
+    min-width: 0;
+  }
+  .site-search input[type="search"] { width: 12.5rem; }
+  .search-form input[type="search"] { flex: 1; width: 100%; font-size: 0.9rem; padding: 0.4rem 1rem; }
+  /* 入力欄の中の虫眼鏡(装飾。クリックは入力欄へ通す)。「テキストを入力する欄」と「押すボタン」を見分けやすくする */
+  .search-field {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+  .search-form .search-field { flex: 1; }
+  .search-field .field-icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    transform: translateY(-50%);
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .site-search .search-field input[type="search"] { padding-left: 2rem; }
+  .search-form .search-field input[type="search"] { padding-left: 2.2rem; }
+  @media (max-width: 380px) {
+    /* 320px級の狭い画面でも、検索ページのプレースホルダー「キーワードで探す」が切れないように余白と文字を少し詰める */
+    .search-panel { padding-left: 1rem; padding-right: 1rem; }
+    .search-form { gap: 0.4rem; }
+    .search-form .search-field input[type="search"] { font-size: 0.85rem; padding-left: 2rem; padding-right: 0.5rem; }
+  }
+  .site-search input::placeholder,
+  .search-form input::placeholder { color: var(--muted); }
+  .site-search button,
+  .search-form button,
+  .search-more {
+    font-family: inherit;
+    font-size: 0.78rem;
+    color: var(--indigo-deep);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    cursor: pointer;
+  }
+  .site-search button:hover,
+  .search-form button:hover,
+  .search-more:hover { border-color: var(--indigo); }
+  .search-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .search-panel h2 {
+    font-family: "Shippori Mincho", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+  }
+  .search-form { display: flex; gap: 0.5rem; margin: 0.6rem 0 0.8rem; }
+  .search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .search-filters select {
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+  .search-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.6rem; }
+  .search-tags[hidden] { display: none; }
+  .search-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.75rem;
+    color: var(--indigo-deep);
+    background: var(--tint-indigo-12);
+    border: 1px solid var(--tint-indigo-32);
+    border-radius: 999px;
+    padding: 0.1rem 0.2rem 0.1rem 0.7rem;
+  }
+  .search-tag button {
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: inherit;
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+  }
+  .search-tag button:hover { background: var(--tint-indigo-20); }
+  .search-status { font-size: 0.85rem; margin: 0.4rem 0 0.8rem; }
+  .search-status:focus { outline: none; }
+  .search-hint { font-size: 0.8rem; color: var(--muted); }
+  .search-hint p { margin: 0.2rem 0; }
+  mark {
+    background: var(--tint-mustard-20);
+    color: inherit;
+    border-radius: 2px;
+  }
+
+  /* 読み上げ専用のテキスト(画面には出さない)・スキップリンク・キーボード操作時のフォーカス表示 */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    color: var(--ink);
+    border: 2px solid var(--indigo);
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  .skip-link:focus {
+    top: 0.5rem;
+  }
+  main:focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--indigo);
+    outline-offset: 2px;
+  }
+</style>
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem("kura-theme");
+    if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); }
+  } catch (e) { /* 保存値なし=自動 */ }
+})();
+</script>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+<div class="stripe" aria-hidden="true"></div>
+
+<nav class="page-breadcrumb" aria-label="パンくずリスト">
+  <a href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a> ＞ <span aria-current="page">クラウドファンディング</span>
+</nav>
+<header class="hero">
+  <div class="site-bar">
+    <h1 class="site-brand"><a class="hero-title-link" href="https://cham28sake.github.io/kura-so/">クラフトサケ情報倉庫</a></h1>
+    <span class="badge-unofficial">非公式<span class="badge-long">ファンサイト</span></span>
+    <div class="site-bar-tools">
+      <form id="site-search-form" class="site-search" role="search" action="../search.html" method="get" data-index="../assets/search_index.js">
+        <label class="visually-hidden" for="site-search-q">クラウドファンディング内を検索</label>
+        <span class="search-field"><svg class="field-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="site-search-q" type="search" name="q" placeholder="クラウドファンディング内を検索" autocomplete="off"></span><input type="hidden" name="cat" value="crowdfunding">
+        <button type="submit">検索</button>
+      </form>
+      <button type="button" id="search-toggle" class="icon-btn search-toggle" aria-label="検索を開く" aria-expanded="false" aria-controls="site-search-form" hidden><svg class="ic-search" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button type="button" id="theme-toggle" class="icon-btn theme-btn" data-state="auto" aria-label="表示テーマ: 自動(押すとライトに切り替え)" title="表示テーマ: 自動(押すとライトに切り替え)" hidden><svg class="ic-theme ic-auto" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg><svg class="ic-theme ic-light" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ic-theme ic-dark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z"/></svg></button>
+    </div>
+  </div>
+  <details class="about">
+    <summary>このサイトについて</summary>
+    <p class="lede">日本酒の技術をベースに、自由な発想で造られる新しいお酒「クラフトサケ」</p>
+    <p class="lede-quote">引用：<a href="https://craftsakebreweries.com/" target="_blank" rel="noopener noreferrer">クラフトサケブリュワリー協会のページ<span class="visually-hidden">(新しいタブで開く)</span></a>（以下、協会ページ）</p>
+    <p class="lede">このページでは、インターネット上に公開されているクラフトサケの新商品やイベント情報を個人的にまとめている情報倉庫的な非公式ファンサイトです。</p>
+    <p class="lede-note">
+      現在は、協会加盟醸造所＋αの情報となっていますが、今後、他の情報も掲載するかも？<br>
+      内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+    </p>
+    <div class="about-feeds">
+      <p class="lede-note">
+        新着情報はRSS(Atomフィード)でも購読できます。
+        <a href="../feed.xml">全体の新着フィード</a>(直近14日分・最大50件)のほか、醸造所ごとのフィード(最新30件)があります。
+      </p>
+      <details class="feed-list">
+        <summary>醸造所ごとのフィード一覧</summary>
+        <ul><li><span class="feed-name">木花之醸造所</span><a class="feed-url" href="../feed/konohanano.xml">https://cham28sake.github.io/kura-so/feed/konohanano.xml</a></li><li><span class="feed-name">haccoba</span><a class="feed-url" href="../feed/haccoba.xml">https://cham28sake.github.io/kura-so/feed/haccoba.xml</a></li><li><span class="feed-name">LIBROM</span><a class="feed-url" href="../feed/librom.xml">https://cham28sake.github.io/kura-so/feed/librom.xml</a></li><li><span class="feed-name">稲とアガベ</span><a class="feed-url" href="../feed/ine_to_agave.xml">https://cham28sake.github.io/kura-so/feed/ine_to_agave.xml</a></li><li><span class="feed-name">LAGOON BREWERY</span><a class="feed-url" href="../feed/lagoon.xml">https://cham28sake.github.io/kura-so/feed/lagoon.xml</a></li><li><span class="feed-name">ハッピー太郎醸造所</span><a class="feed-url" href="../feed/happytaro.xml">https://cham28sake.github.io/kura-so/feed/happytaro.xml</a></li><li><span class="feed-name">平六醸造</span><a class="feed-url" href="../feed/hiraroku.xml">https://cham28sake.github.io/kura-so/feed/hiraroku.xml</a></li><li><span class="feed-name">ぷくぷく醸造</span><a class="feed-url" href="../feed/pukupuku.xml">https://cham28sake.github.io/kura-so/feed/pukupuku.xml</a></li><li><span class="feed-name">足立農醸</span><a class="feed-url" href="../feed/adachi_noujo.xml">https://cham28sake.github.io/kura-so/feed/adachi_noujo.xml</a></li><li><span class="feed-name">はじまりの学校</span><a class="feed-url" href="../feed/hajimari.xml">https://cham28sake.github.io/kura-so/feed/hajimari.xml</a></li><li><span class="feed-name">SAKENOVA BREWERY</span><a class="feed-url" href="../feed/sakenova.xml">https://cham28sake.github.io/kura-so/feed/sakenova.xml</a></li><li><span class="feed-name">弥栄醸造</span><a class="feed-url" href="../feed/iyasaka.xml">https://cham28sake.github.io/kura-so/feed/iyasaka.xml</a></li><li><span class="feed-name">LINNÉ</span><a class="feed-url" href="../feed/linne.xml">https://cham28sake.github.io/kura-so/feed/linne.xml</a></li><li><span class="feed-name">SENDAI STATION BREWERY Fermenteria</span><a class="feed-url" href="../feed/fermenteria.xml">https://cham28sake.github.io/kura-so/feed/fermenteria.xml</a></li><li><span class="feed-name">秋保ハートロックサケ</span><a class="feed-url" href="../feed/heartrock.xml">https://cham28sake.github.io/kura-so/feed/heartrock.xml</a></li><li><span class="feed-name">業界全般</span><a class="feed-url" href="../feed/industry.xml">https://cham28sake.github.io/kura-so/feed/industry.xml</a></li></ul>
+      </details>
+    </div>
+  </details>
+</header>
+
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ上部)">
+<a class="chip" href="../brewery/konohanano.html">木花之</a>
+<a class="chip" href="../brewery/haccoba.html">haccoba</a>
+<a class="chip" href="../brewery/librom.html">LIBROM</a>
+<a class="chip" href="../brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="../brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="../brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="../brewery/hiraroku.html">平六</a>
+<a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="../brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="../brewery/hajimari.html">はじまり</a>
+<a class="chip" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="../brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="../brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ上部)">
+<a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
+<a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
+</nav>
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ上部)">
+<a class="chip chip-archive" href="../category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="../category/event.html">イベント</a>
+<a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive chip-current" href="../category/crowdfunding.html" aria-current="page">クラウドファンディング</a>
+<a class="chip chip-archive" href="../category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="../category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="../category/other.html">その他</a>
+</nav>
+
+<main id="main" tabindex="-1">
+
+      <div class="archive-panel">
+        <h2>クラウドファンディング<span class="archive-count">1件</span></h2>
+        <p class="panel-note">これまでに収集した情報を一覧表示しています。</p>
+        <ul class="entries">
+        <li class="entry">
+          <div class="entry-date"><span class="entry-badge-row"><span class="badge-new">NEW</span></span><span class="entry-date-group"><span class="entry-date-row">2026年11月5日</span></span><a class="badge-cal" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=%E3%80%90LINN%C3%89%E3%80%91%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%83%95%E3%82%A1%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%AE%E4%BA%8B%E5%89%8D%E7%99%BB%E9%8C%B2%E3%82%92%E9%96%8B%E5%A7%8B%E3%80%81%E4%BA%AC%E9%83%BD%E3%83%BB%E6%B8%85%E6%B0%B4%E4%BA%94%E6%9D%A1%E3%81%AB%E8%87%AA%E7%A4%BE%E9%86%B8%E9%80%A0%E6%89%80%E3%81%A8%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%92%E9%96%8B%E6%A5%AD%E3%81%B8%2811%2F20%E9%96%8B%E5%A7%8B%E4%BA%88%E5%AE%9A%29&amp;dates=20261120%2F20261121&amp;details=2027%E5%B9%B4%E6%98%A5%E3%81%AB%E4%BA%AC%E9%83%BD%E3%83%BB%E6%B8%85%E6%B0%B4%E4%BA%94%E6%9D%A1%E3%81%A7%E8%87%AA%E7%A4%BE%E9%86%B8%E9%80%A0%E6%89%80%E3%81%A8%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%92%E9%96%8B%E6%A5%AD%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%80%8111%2F20%28%E9%87%91%29%E3%81%8B%E3%82%89CAMPFIRE%E3%81%A7%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%83%95%E3%82%A1%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E4%BA%88%E5%AE%9A%E3%81%A7%E3%80%8111%2F5%E3%81%AB%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%9A%E3%83%BC%E3%82%B8%28https%3A%2F%2Fcamp-fire.jp%2Fprojects%2F987819%2Fpreview%3Ftoken%3D1c3gs0zq%29%E3%82%92%E5%85%AC%E9%96%8B%E3%81%97%E3%80%81%E3%80%8C%E4%BA%8B%E5%89%8D%E3%81%8A%E6%B0%97%E3%81%AB%E5%85%A5%E3%82%8A%E7%99%BB%E9%8C%B2%E3%80%8D%E3%81%AE%E5%8F%97%E4%BB%98%E3%82%92%E5%A7%8B%E3%82%81%E3%81%9F%E3%80%82%0A%E7%9B%AE%E6%A8%99%E9%87%91%E9%A1%8D%E3%81%AF300%E4%B8%87%E5%86%86%E3%81%A7%E3%80%81%E6%94%AF%E6%8F%B4%E5%8F%97%E4%BB%98%E3%81%AF11%2F20%E3%80%9C12%E6%9C%88%E4%B8%8B%E6%97%AC%E3%81%AE%E4%BA%88%E5%AE%9A%E3%80%82%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3%E3%81%AF%E3%80%81%E5%88%9D%E5%9B%9E%E9%86%B8%E9%80%A0%E3%81%A9%E3%81%B6%E3%82%8D%E3%81%8F%285%2C000%E5%86%86%29%E3%80%81%E9%85%92%E3%81%AE%E9%A3%B2%E3%81%BF%E6%AF%94%E3%81%B9%EF%BC%86%E7%AA%AF%E5%85%83%E5%B7%A1%E3%82%8A%2810%2C000%E5%86%86%29%E3%80%81%E7%89%B9%E5%88%A5%E3%83%87%E3%82%A3%E3%83%8A%E3%83%BC%E3%83%9A%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%B3%E3%83%BC%E3%82%B9%E9%A3%9F%E4%BA%8B%E5%88%B8%2818%2C000%E5%86%86%29%E3%81%AA%E3%81%A9%28%E7%A8%8E%E8%BE%BC%29%E3%81%A7%E3%80%81%E6%95%B0%E9%87%8F%E9%99%90%E5%AE%9A%E3%81%AE%E6%97%A9%E5%89%B2%E3%82%82%E3%81%82%E3%82%8B%E3%80%82%0A%E9%86%B8%E9%80%A0%E6%89%80%E3%81%AF%E4%BA%AC%E9%83%BD%E6%9C%80%E5%A4%A7%E7%B4%9A%E3%81%AE%E6%B8%85%E6%B0%B4%E7%84%BC%E3%81%AE%E7%99%BB%E3%82%8A%E7%AA%AF%E3%81%8C%E6%AE%8B%E3%82%8B%E6%95%B7%E5%9C%B0%E3%81%AB%E5%BB%BA%E3%81%A1%E3%80%812027%E5%B9%B42%E6%9C%88%E4%B8%8B%E6%97%AC%E3%81%AB%E9%86%B8%E9%80%A0%E6%89%80%E3%80%814%E6%9C%88%E4%B8%AD%E6%97%AC%E3%81%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%E3%82%92%E9%96%8B%E6%A5%AD%E3%81%99%E3%82%8B%E4%BA%88%E5%AE%9A%E3%80%82%0A%0A%E3%83%AA%E3%83%B3%E3%82%AF%0A%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%28PR+TIMES%E3%80%81%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BELinn%C3%A9%29%3A+https%3A%2F%2Fprtimes.jp%2Fmain%2Fhtml%2Frd%2Fp%2F000000024.000147935.html%0AX%28%40shoya_imai%29%3A+https%3A%2F%2Fx.com%2Fshoya_imai%2Fstatus%2F2118151885014335576%0AInstagram%28%40linne.sake%29%3A+https%3A%2F%2Fwww.instagram.com%2Fp%2FDfV0S50zmjj%2F%0ACAMPFIRE%28%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%9A%E3%83%BC%E3%82%B8%29%3A+https%3A%2F%2Fcamp-fire.jp%2Fprojects%2F987819%2Fpreview%3Ftoken%3D1c3gs0zq" target="_blank" rel="noopener noreferrer" title="Googleカレンダーに追加" aria-label="Googleカレンダーに追加: クラウドファンディングの事前登録を開始、京都・清水五条に自社醸造所とレストランを開業へ(11/20開始予定)(2026年11月20日)(新しいタブで開く)">📅 2026年11月20日</a></div>
+          <div class="entry-body">
+            <a class="entry-title" href="https://prtimes.jp/main/html/rd/p/000000024.000147935.html" target="_blank" rel="noopener noreferrer">クラウドファンディングの事前登録を開始、京都・清水五条に自社醸造所とレストランを開業へ(11/20開始予定)<span class="visually-hidden">(新しいタブで開く)</span></a>
+            <span class="entry-source" role="group" aria-label="クラウドファンディングの事前登録を開始、京都・清水五条に自社醸造所とレストランを開業へ(11/20開始予定)の関連情報"><a class="entry-brewery" href="../brewery/linne.html">LINNÉ</a><a class="entry-source-link" href="https://prtimes.jp/main/html/rd/p/000000024.000147935.html" target="_blank" rel="noopener noreferrer" title="プレスリリース(PR TIMES、株式会社Linné)">プレスリリース(PR TIMES、株式会社Linné)<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://x.com/shoya_imai/status/2118151885014335576" target="_blank" rel="noopener noreferrer" title="X(@shoya_imai)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@shoya_imai<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://www.instagram.com/p/DfV0S50zmjj/" target="_blank" rel="noopener noreferrer" title="Instagram(@linne.sake)"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>@linne.sake<span class="visually-hidden">(新しいタブで開く)</span></a><a class="entry-source-link" href="https://camp-fire.jp/projects/987819/preview?token=1c3gs0zq" target="_blank" rel="noopener noreferrer" title="CAMPFIRE(プロジェクトページ)">CAMPFIRE(プロジェクトページ)<span class="visually-hidden">(新しいタブで開く)</span></a></span>
+            <p class="entry-summary">2027年春に京都・清水五条で自社醸造所とレストランを開業するため、11/20(金)からCAMPFIREでクラウドファンディングを始める予定で、11/5に<a href="https://camp-fire.jp/projects/987819/preview?token=1c3gs0zq" target="_blank" rel="noopener noreferrer">プロジェクトページ<span class="visually-hidden">(新しいタブで開く)</span></a>を公開し、「事前お気に入り登録」の受付を始めた。<br>目標金額は300万円で、支援受付は11/20〜12月下旬の予定。リターンは、初回醸造どぶろく(5,000円)、酒の飲み比べ＆窯元巡り(10,000円)、特別ディナーペアリングコース食事券(18,000円)など(税込)で、数量限定の早割もある。<br>醸造所は京都最大級の清水焼の登り窯が残る敷地に建ち、2027年2月下旬に醸造所、4月中旬にレストランを開業する予定。</p>
+            
+            
+          </div>
+        </li>
+        </ul>
+      </div>
+</main>
+
+<div class="chips-label" aria-hidden="true">協会加盟醸造所（協会ページ表示順）</div>
+<nav class="chips" aria-label="協会加盟醸造所（協会ページ表示順）(ページ下部)">
+<a class="chip" href="../brewery/konohanano.html">木花之</a>
+<a class="chip" href="../brewery/haccoba.html">haccoba</a>
+<a class="chip" href="../brewery/librom.html">LIBROM</a>
+<a class="chip" href="../brewery/ine_to_agave.html">稲アガ</a>
+<a class="chip" href="../brewery/lagoon.html">LAGOON</a>
+<a class="chip" href="../brewery/happytaro.html">ハッピー太郎</a>
+<a class="chip" href="../brewery/hiraroku.html">平六</a>
+<a class="chip" href="../brewery/pukupuku.html">ぷくぷく</a>
+<a class="chip" href="../brewery/adachi_noujo.html">足立</a>
+<a class="chip" href="../brewery/hajimari.html">はじまり</a>
+<a class="chip" href="../brewery/sakenova.html">SAKENOVA</a>
+<a class="chip" href="../brewery/iyasaka.html">弥栄</a>
+<a class="chip" href="../brewery/linne.html">LINNÉ</a>
+</nav>
+<div class="chips-label" aria-hidden="true">気になる醸造所・業界全般</div>
+<nav class="chips" aria-label="気になる醸造所・業界全般(ページ下部)">
+<a class="chip" href="../brewery/fermenteria.html">Fermenteria</a>
+<a class="chip" href="../brewery/heartrock.html">秋保♡ロック</a>
+<a class="chip chip-organization" href="../brewery/industry.html">業界全般</a>
+</nav>
+<div class="chips-label" aria-hidden="true">カテゴリ</div>
+<nav class="chips chips-archive" aria-label="カテゴリ(ページ下部)">
+<a class="chip chip-archive" href="../category/new_release.html">新商品</a>
+<a class="chip chip-archive" href="../category/event.html">イベント</a>
+<a class="chip chip-archive" href="../category/brewery_news.html">醸造所ニュース</a>
+<a class="chip chip-archive chip-current" href="../category/crowdfunding.html" aria-current="page">クラウドファンディング</a>
+<a class="chip chip-archive" href="../category/media.html">メディア掲載・受賞</a>
+<a class="chip chip-archive" href="../category/community.html">地域・コミュニティ活動</a>
+<a class="chip chip-archive" href="../category/other.html">その他</a>
+</nav>
+
+<footer>
+  <p>
+    本ページは個人的に運営する非公式のファンページです。掲載中の醸造所・企業・団体
+    （株式会社モトックス、クラフトサケブリュワリー協会を含む）とは一切提携・関連しておらず、
+    公式の見解を示すものでもありません。「クラフトサケ」は株式会社モトックスの登録商標であり、
+    本ページではお酒のジャンルを指す一般的な呼び方として使用しています。
+  </p>
+  <p>
+    掲載情報は各蔵の公式サイト・プレスリリース・報道記事をもとに手作業で収集しており、
+    正確性・最新性を保証するものではありません。最新情報は必ず各リンク先の一次情報で
+    ご確認ください。
+  </p>
+  <p class="footer-contact">
+    内容の間違いや挙動がおかしいところ、掲載して欲しい情報などがありましたら、<a href="https://x.com/cham28sake" target="_blank" rel="noopener noreferrer"><svg class="icon-inline-source" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>@cham28sake<span class="visually-hidden">(新しいタブで開く)</span></a>までリプライでもDMでも構わないのでご連絡いただけるとありがたいです。
+  </p>
+</footer>
+<script>
+(function () {
+  var form = document.getElementById("site-search-form");
+  var btn = document.getElementById("search-toggle");
+  var done = false;
+  document.addEventListener("focusin", function (e) {
+    var t = e.target;
+    if (done || !t || !t.closest || !t.closest(".site-search")) { return; }
+    done = true;
+    var l = document.createElement("link"); l.rel = "prefetch"; l.as = "script";
+    l.href = t.closest(".site-search").getAttribute("data-index");
+    document.head.appendChild(l);
+  });
+  // スマホ幅(CSSの600px以下)では検索ボックスをアイコンで開閉する。JSが無ければ検索ボックスは常に表示。
+  if (!form || !btn) { return; }
+  var input = form.querySelector('input[type="search"]');
+  function setOpen(open, focusInput) {
+    form.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && focusInput) { input.focus(); }
+  }
+  form.classList.add("is-collapsible");
+  btn.hidden = false;
+  btn.addEventListener("click", function () {
+    var open = !form.classList.contains("is-open");
+    setOpen(open, true);
+  });
+  form.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && form.classList.contains("is-open")) { setOpen(false); btn.focus(); }
+  });
+  form.addEventListener("submit", function () { setOpen(false); });
+})();
+</script>
+<script>
+(function () {
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) { return; }
+  var root = document.documentElement;
+  var COLORS = { light: "#f1eee3", dark: "#1c1e22" };
+  var ORDER = ["auto", "light", "dark"];
+  var NAME = { auto: "自動", light: "ライト", dark: "ダーク" };
+  function current() {
+    var t = root.getAttribute("data-theme");
+    return t === "light" || t === "dark" ? t : "auto";
+  }
+  function themeColors(mode) {
+    // 手動指定のときは、ブラウザのUI色(theme-color)も合わせる。自動は元の(メディアクエリ付き)指定に戻す
+    var metas = document.querySelectorAll('meta[name="theme-color"]');
+    metas.forEach(function (m) {
+      if (!m.hasAttribute("data-media")) { m.setAttribute("data-media", m.getAttribute("media")); }
+      var scheme = /dark/.test(m.getAttribute("data-media")) ? "dark" : "light";
+      if (mode === "auto") { m.setAttribute("media", m.getAttribute("data-media")); m.setAttribute("content", COLORS[scheme]); }
+      else { m.setAttribute("media", "all"); m.setAttribute("content", COLORS[mode]); }
+    });
+  }
+  function apply(mode, save) {
+    if (mode === "auto") { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", mode); }
+    if (save) {
+      try { if (mode === "auto") { localStorage.removeItem("kura-theme"); } else { localStorage.setItem("kura-theme", mode); } } catch (e) { /* 保存できなくても切り替えは有効 */ }
+    }
+    themeColors(mode);
+    var next = ORDER[(ORDER.indexOf(mode) + 1) % ORDER.length];
+    var label = "表示テーマ: " + NAME[mode] + "(押すと" + NAME[next] + "に切り替え)";
+    btn.setAttribute("data-state", mode);
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
+  }
+  btn.addEventListener("click", function () {
+    apply(ORDER[(ORDER.indexOf(current()) + 1) % ORDER.length], true);
+  });
+  apply(current(), false);
+  btn.hidden = false;
+})();
+</script>
